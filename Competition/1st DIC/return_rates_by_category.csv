@@ -1,0 +1,2788 @@
+Product Category,Payment Method,Device Type,Subscription Status,Location,Return Customer
+Beauty,Bank Transfer,Desktop,Free,Barisal,0.75
+Beauty,Bank Transfer,Desktop,Free,Chittagong,0.5
+Beauty,Bank Transfer,Desktop,Free,Dhaka,0.75
+Beauty,Bank Transfer,Desktop,Free,Khulna,0.5
+Beauty,Bank Transfer,Desktop,Free,Mymensingh,0.8
+Beauty,Bank Transfer,Desktop,Free,Rajshahi,0.5
+Beauty,Bank Transfer,Desktop,Free,Rangpur,0.3333333333333333
+Beauty,Bank Transfer,Desktop,Free,Sylhet,0.3333333333333333
+Beauty,Bank Transfer,Desktop,Premium,Barisal,0.25
+Beauty,Bank Transfer,Desktop,Premium,Chittagong,0.0
+Beauty,Bank Transfer,Desktop,Premium,Dhaka,0.42857142857142855
+Beauty,Bank Transfer,Desktop,Premium,Khulna,0.3333333333333333
+Beauty,Bank Transfer,Desktop,Premium,Rajshahi,0.5
+Beauty,Bank Transfer,Desktop,Premium,Rangpur,0.3333333333333333
+Beauty,Bank Transfer,Desktop,Trial,Barisal,1.0
+Beauty,Bank Transfer,Desktop,Trial,Chittagong,1.0
+Beauty,Bank Transfer,Desktop,Trial,Dhaka,0.2
+Beauty,Bank Transfer,Desktop,Trial,Khulna,0.5
+Beauty,Bank Transfer,Desktop,Trial,Mymensingh,0.8
+Beauty,Bank Transfer,Desktop,Trial,Rajshahi,0.5
+Beauty,Bank Transfer,Desktop,Trial,Rangpur,0.25
+Beauty,Bank Transfer,Desktop,Trial,Sylhet,0.5
+Beauty,Bank Transfer,Mobile,Free,Barisal,0.0
+Beauty,Bank Transfer,Mobile,Free,Chittagong,0.6
+Beauty,Bank Transfer,Mobile,Free,Dhaka,0.3333333333333333
+Beauty,Bank Transfer,Mobile,Free,Khulna,0.5
+Beauty,Bank Transfer,Mobile,Free,Mymensingh,0.75
+Beauty,Bank Transfer,Mobile,Free,Rajshahi,0.6666666666666666
+Beauty,Bank Transfer,Mobile,Free,Rangpur,1.0
+Beauty,Bank Transfer,Mobile,Free,Sylhet,0.25
+Beauty,Bank Transfer,Mobile,Premium,Barisal,0.75
+Beauty,Bank Transfer,Mobile,Premium,Chittagong,0.6666666666666666
+Beauty,Bank Transfer,Mobile,Premium,Dhaka,1.0
+Beauty,Bank Transfer,Mobile,Premium,Mymensingh,0.6666666666666666
+Beauty,Bank Transfer,Mobile,Premium,Rajshahi,0.6666666666666666
+Beauty,Bank Transfer,Mobile,Premium,Rangpur,0.3333333333333333
+Beauty,Bank Transfer,Mobile,Premium,Sylhet,0.3333333333333333
+Beauty,Bank Transfer,Mobile,Trial,Barisal,0.5
+Beauty,Bank Transfer,Mobile,Trial,Chittagong,0.5
+Beauty,Bank Transfer,Mobile,Trial,Dhaka,0.5714285714285714
+Beauty,Bank Transfer,Mobile,Trial,Khulna,0.625
+Beauty,Bank Transfer,Mobile,Trial,Mymensingh,0.3333333333333333
+Beauty,Bank Transfer,Mobile,Trial,Rajshahi,0.75
+Beauty,Bank Transfer,Mobile,Trial,Rangpur,0.0
+Beauty,Bank Transfer,Mobile,Trial,Sylhet,0.5
+Beauty,Bank Transfer,Tablet,Free,Barisal,1.0
+Beauty,Bank Transfer,Tablet,Free,Chittagong,0.3333333333333333
+Beauty,Bank Transfer,Tablet,Free,Dhaka,0.25
+Beauty,Bank Transfer,Tablet,Free,Khulna,0.5
+Beauty,Bank Transfer,Tablet,Free,Mymensingh,0.5
+Beauty,Bank Transfer,Tablet,Free,Rajshahi,0.5
+Beauty,Bank Transfer,Tablet,Free,Rangpur,0.6666666666666666
+Beauty,Bank Transfer,Tablet,Premium,Barisal,0.0
+Beauty,Bank Transfer,Tablet,Premium,Chittagong,0.4
+Beauty,Bank Transfer,Tablet,Premium,Dhaka,0.6666666666666666
+Beauty,Bank Transfer,Tablet,Premium,Khulna,0.6666666666666666
+Beauty,Bank Transfer,Tablet,Premium,Mymensingh,0.4
+Beauty,Bank Transfer,Tablet,Premium,Rajshahi,0.8571428571428571
+Beauty,Bank Transfer,Tablet,Premium,Rangpur,0.5
+Beauty,Bank Transfer,Tablet,Premium,Sylhet,0.3333333333333333
+Beauty,Bank Transfer,Tablet,Trial,Barisal,0.0
+Beauty,Bank Transfer,Tablet,Trial,Chittagong,0.6
+Beauty,Bank Transfer,Tablet,Trial,Dhaka,0.6666666666666666
+Beauty,Bank Transfer,Tablet,Trial,Khulna,0.3333333333333333
+Beauty,Bank Transfer,Tablet,Trial,Mymensingh,0.5714285714285714
+Beauty,Bank Transfer,Tablet,Trial,Rajshahi,0.75
+Beauty,Bank Transfer,Tablet,Trial,Sylhet,0.0
+Beauty,Cash on Delivery,Desktop,Free,Barisal,1.0
+Beauty,Cash on Delivery,Desktop,Free,Chittagong,0.16666666666666666
+Beauty,Cash on Delivery,Desktop,Free,Dhaka,1.0
+Beauty,Cash on Delivery,Desktop,Free,Khulna,0.0
+Beauty,Cash on Delivery,Desktop,Free,Mymensingh,0.4
+Beauty,Cash on Delivery,Desktop,Free,Rajshahi,0.6666666666666666
+Beauty,Cash on Delivery,Desktop,Free,Rangpur,0.6666666666666666
+Beauty,Cash on Delivery,Desktop,Free,Sylhet,0.5
+Beauty,Cash on Delivery,Desktop,Premium,Barisal,0.4
+Beauty,Cash on Delivery,Desktop,Premium,Chittagong,0.0
+Beauty,Cash on Delivery,Desktop,Premium,Dhaka,0.6666666666666666
+Beauty,Cash on Delivery,Desktop,Premium,Khulna,0.2
+Beauty,Cash on Delivery,Desktop,Premium,Mymensingh,0.5714285714285714
+Beauty,Cash on Delivery,Desktop,Premium,Rajshahi,0.25
+Beauty,Cash on Delivery,Desktop,Premium,Rangpur,1.0
+Beauty,Cash on Delivery,Desktop,Premium,Sylhet,0.6666666666666666
+Beauty,Cash on Delivery,Desktop,Trial,Barisal,0.25
+Beauty,Cash on Delivery,Desktop,Trial,Chittagong,0.5
+Beauty,Cash on Delivery,Desktop,Trial,Dhaka,0.8
+Beauty,Cash on Delivery,Desktop,Trial,Khulna,0.3333333333333333
+Beauty,Cash on Delivery,Desktop,Trial,Mymensingh,0.8333333333333334
+Beauty,Cash on Delivery,Desktop,Trial,Rajshahi,0.0
+Beauty,Cash on Delivery,Desktop,Trial,Rangpur,1.0
+Beauty,Cash on Delivery,Desktop,Trial,Sylhet,0.0
+Beauty,Cash on Delivery,Mobile,Free,Barisal,0.8
+Beauty,Cash on Delivery,Mobile,Free,Chittagong,0.6666666666666666
+Beauty,Cash on Delivery,Mobile,Free,Dhaka,0.3333333333333333
+Beauty,Cash on Delivery,Mobile,Free,Khulna,0.5
+Beauty,Cash on Delivery,Mobile,Free,Mymensingh,0.0
+Beauty,Cash on Delivery,Mobile,Free,Rajshahi,0.5
+Beauty,Cash on Delivery,Mobile,Free,Rangpur,0.6666666666666666
+Beauty,Cash on Delivery,Mobile,Free,Sylhet,0.0
+Beauty,Cash on Delivery,Mobile,Premium,Barisal,0.25
+Beauty,Cash on Delivery,Mobile,Premium,Chittagong,1.0
+Beauty,Cash on Delivery,Mobile,Premium,Dhaka,0.5
+Beauty,Cash on Delivery,Mobile,Premium,Khulna,0.3333333333333333
+Beauty,Cash on Delivery,Mobile,Premium,Mymensingh,0.6666666666666666
+Beauty,Cash on Delivery,Mobile,Premium,Rajshahi,0.25
+Beauty,Cash on Delivery,Mobile,Premium,Rangpur,0.6666666666666666
+Beauty,Cash on Delivery,Mobile,Premium,Sylhet,0.4
+Beauty,Cash on Delivery,Mobile,Trial,Barisal,0.6
+Beauty,Cash on Delivery,Mobile,Trial,Chittagong,0.42857142857142855
+Beauty,Cash on Delivery,Mobile,Trial,Dhaka,0.5555555555555556
+Beauty,Cash on Delivery,Mobile,Trial,Khulna,0.25
+Beauty,Cash on Delivery,Mobile,Trial,Mymensingh,0.5
+Beauty,Cash on Delivery,Mobile,Trial,Rajshahi,0.0
+Beauty,Cash on Delivery,Mobile,Trial,Rangpur,0.0
+Beauty,Cash on Delivery,Mobile,Trial,Sylhet,0.4
+Beauty,Cash on Delivery,Tablet,Free,Barisal,0.3333333333333333
+Beauty,Cash on Delivery,Tablet,Free,Chittagong,0.5
+Beauty,Cash on Delivery,Tablet,Free,Dhaka,0.5
+Beauty,Cash on Delivery,Tablet,Free,Khulna,0.6
+Beauty,Cash on Delivery,Tablet,Free,Mymensingh,0.0
+Beauty,Cash on Delivery,Tablet,Free,Rajshahi,0.6666666666666666
+Beauty,Cash on Delivery,Tablet,Free,Rangpur,0.6666666666666666
+Beauty,Cash on Delivery,Tablet,Free,Sylhet,0.3333333333333333
+Beauty,Cash on Delivery,Tablet,Premium,Barisal,0.8333333333333334
+Beauty,Cash on Delivery,Tablet,Premium,Chittagong,0.5
+Beauty,Cash on Delivery,Tablet,Premium,Dhaka,0.4
+Beauty,Cash on Delivery,Tablet,Premium,Khulna,0.4
+Beauty,Cash on Delivery,Tablet,Premium,Mymensingh,0.6666666666666666
+Beauty,Cash on Delivery,Tablet,Premium,Rajshahi,0.2
+Beauty,Cash on Delivery,Tablet,Premium,Rangpur,0.0
+Beauty,Cash on Delivery,Tablet,Premium,Sylhet,0.5
+Beauty,Cash on Delivery,Tablet,Trial,Barisal,0.25
+Beauty,Cash on Delivery,Tablet,Trial,Chittagong,1.0
+Beauty,Cash on Delivery,Tablet,Trial,Dhaka,0.5
+Beauty,Cash on Delivery,Tablet,Trial,Khulna,0.3333333333333333
+Beauty,Cash on Delivery,Tablet,Trial,Mymensingh,0.3333333333333333
+Beauty,Cash on Delivery,Tablet,Trial,Rajshahi,0.4
+Beauty,Cash on Delivery,Tablet,Trial,Rangpur,0.3333333333333333
+Beauty,Cash on Delivery,Tablet,Trial,Sylhet,0.3333333333333333
+Beauty,Credit Card,Desktop,Free,Barisal,0.75
+Beauty,Credit Card,Desktop,Free,Chittagong,0.2
+Beauty,Credit Card,Desktop,Free,Dhaka,0.5
+Beauty,Credit Card,Desktop,Free,Khulna,0.0
+Beauty,Credit Card,Desktop,Free,Mymensingh,1.0
+Beauty,Credit Card,Desktop,Free,Rajshahi,0.5
+Beauty,Credit Card,Desktop,Free,Rangpur,0.3333333333333333
+Beauty,Credit Card,Desktop,Free,Sylhet,0.25
+Beauty,Credit Card,Desktop,Premium,Barisal,0.3333333333333333
+Beauty,Credit Card,Desktop,Premium,Chittagong,0.2
+Beauty,Credit Card,Desktop,Premium,Dhaka,0.6666666666666666
+Beauty,Credit Card,Desktop,Premium,Khulna,0.5
+Beauty,Credit Card,Desktop,Premium,Mymensingh,0.25
+Beauty,Credit Card,Desktop,Premium,Rajshahi,0.6666666666666666
+Beauty,Credit Card,Desktop,Premium,Rangpur,0.5
+Beauty,Credit Card,Desktop,Premium,Sylhet,0.0
+Beauty,Credit Card,Desktop,Trial,Barisal,1.0
+Beauty,Credit Card,Desktop,Trial,Chittagong,0.8
+Beauty,Credit Card,Desktop,Trial,Dhaka,0.0
+Beauty,Credit Card,Desktop,Trial,Khulna,0.25
+Beauty,Credit Card,Desktop,Trial,Mymensingh,0.5
+Beauty,Credit Card,Desktop,Trial,Rajshahi,1.0
+Beauty,Credit Card,Desktop,Trial,Rangpur,0.5714285714285714
+Beauty,Credit Card,Mobile,Free,Barisal,0.4444444444444444
+Beauty,Credit Card,Mobile,Free,Chittagong,0.4
+Beauty,Credit Card,Mobile,Free,Dhaka,0.3333333333333333
+Beauty,Credit Card,Mobile,Free,Khulna,0.0
+Beauty,Credit Card,Mobile,Free,Mymensingh,0.75
+Beauty,Credit Card,Mobile,Free,Rajshahi,0.5
+Beauty,Credit Card,Mobile,Free,Rangpur,1.0
+Beauty,Credit Card,Mobile,Free,Sylhet,0.4
+Beauty,Credit Card,Mobile,Premium,Barisal,0.3333333333333333
+Beauty,Credit Card,Mobile,Premium,Chittagong,0.75
+Beauty,Credit Card,Mobile,Premium,Dhaka,1.0
+Beauty,Credit Card,Mobile,Premium,Khulna,0.6666666666666666
+Beauty,Credit Card,Mobile,Premium,Mymensingh,0.6666666666666666
+Beauty,Credit Card,Mobile,Premium,Rajshahi,0.5
+Beauty,Credit Card,Mobile,Premium,Rangpur,1.0
+Beauty,Credit Card,Mobile,Premium,Sylhet,1.0
+Beauty,Credit Card,Mobile,Trial,Barisal,0.8333333333333334
+Beauty,Credit Card,Mobile,Trial,Chittagong,0.8
+Beauty,Credit Card,Mobile,Trial,Dhaka,0.3333333333333333
+Beauty,Credit Card,Mobile,Trial,Khulna,1.0
+Beauty,Credit Card,Mobile,Trial,Mymensingh,0.25
+Beauty,Credit Card,Mobile,Trial,Rajshahi,0.6
+Beauty,Credit Card,Mobile,Trial,Rangpur,0.6
+Beauty,Credit Card,Mobile,Trial,Sylhet,0.6666666666666666
+Beauty,Credit Card,Tablet,Free,Barisal,0.0
+Beauty,Credit Card,Tablet,Free,Dhaka,0.4
+Beauty,Credit Card,Tablet,Free,Khulna,1.0
+Beauty,Credit Card,Tablet,Free,Mymensingh,0.4
+Beauty,Credit Card,Tablet,Free,Rajshahi,0.5
+Beauty,Credit Card,Tablet,Free,Rangpur,0.0
+Beauty,Credit Card,Tablet,Free,Sylhet,0.6666666666666666
+Beauty,Credit Card,Tablet,Premium,Barisal,0.5
+Beauty,Credit Card,Tablet,Premium,Chittagong,0.0
+Beauty,Credit Card,Tablet,Premium,Dhaka,0.5
+Beauty,Credit Card,Tablet,Premium,Khulna,0.3333333333333333
+Beauty,Credit Card,Tablet,Premium,Mymensingh,0.5
+Beauty,Credit Card,Tablet,Premium,Rajshahi,0.75
+Beauty,Credit Card,Tablet,Premium,Rangpur,1.0
+Beauty,Credit Card,Tablet,Premium,Sylhet,0.25
+Beauty,Credit Card,Tablet,Trial,Barisal,0.0
+Beauty,Credit Card,Tablet,Trial,Chittagong,0.5
+Beauty,Credit Card,Tablet,Trial,Dhaka,0.25
+Beauty,Credit Card,Tablet,Trial,Khulna,0.6
+Beauty,Credit Card,Tablet,Trial,Mymensingh,0.5
+Beauty,Credit Card,Tablet,Trial,Rajshahi,0.8
+Beauty,Credit Card,Tablet,Trial,Rangpur,0.5
+Beauty,Credit Card,Tablet,Trial,Sylhet,0.5
+Beauty,Debit Card,Desktop,Free,Barisal,1.0
+Beauty,Debit Card,Desktop,Free,Chittagong,0.75
+Beauty,Debit Card,Desktop,Free,Dhaka,0.3333333333333333
+Beauty,Debit Card,Desktop,Free,Khulna,0.25
+Beauty,Debit Card,Desktop,Free,Mymensingh,0.5
+Beauty,Debit Card,Desktop,Free,Rajshahi,1.0
+Beauty,Debit Card,Desktop,Free,Rangpur,0.5
+Beauty,Debit Card,Desktop,Free,Sylhet,0.6666666666666666
+Beauty,Debit Card,Desktop,Premium,Chittagong,0.5
+Beauty,Debit Card,Desktop,Premium,Dhaka,0.5
+Beauty,Debit Card,Desktop,Premium,Khulna,0.0
+Beauty,Debit Card,Desktop,Premium,Mymensingh,0.75
+Beauty,Debit Card,Desktop,Premium,Rajshahi,0.0
+Beauty,Debit Card,Desktop,Premium,Rangpur,0.75
+Beauty,Debit Card,Desktop,Premium,Sylhet,0.42857142857142855
+Beauty,Debit Card,Desktop,Trial,Barisal,0.3333333333333333
+Beauty,Debit Card,Desktop,Trial,Chittagong,1.0
+Beauty,Debit Card,Desktop,Trial,Dhaka,0.5
+Beauty,Debit Card,Desktop,Trial,Khulna,0.8333333333333334
+Beauty,Debit Card,Desktop,Trial,Mymensingh,0.8
+Beauty,Debit Card,Desktop,Trial,Rajshahi,0.5
+Beauty,Debit Card,Desktop,Trial,Rangpur,0.0
+Beauty,Debit Card,Desktop,Trial,Sylhet,1.0
+Beauty,Debit Card,Mobile,Free,Barisal,0.5
+Beauty,Debit Card,Mobile,Free,Chittagong,0.5
+Beauty,Debit Card,Mobile,Free,Khulna,0.3333333333333333
+Beauty,Debit Card,Mobile,Free,Mymensingh,0.3333333333333333
+Beauty,Debit Card,Mobile,Free,Rajshahi,0.0
+Beauty,Debit Card,Mobile,Free,Rangpur,0.5
+Beauty,Debit Card,Mobile,Free,Sylhet,0.5
+Beauty,Debit Card,Mobile,Premium,Barisal,0.5
+Beauty,Debit Card,Mobile,Premium,Chittagong,0.3333333333333333
+Beauty,Debit Card,Mobile,Premium,Dhaka,0.8333333333333334
+Beauty,Debit Card,Mobile,Premium,Khulna,0.6
+Beauty,Debit Card,Mobile,Premium,Mymensingh,1.0
+Beauty,Debit Card,Mobile,Premium,Rajshahi,0.6666666666666666
+Beauty,Debit Card,Mobile,Premium,Rangpur,1.0
+Beauty,Debit Card,Mobile,Premium,Sylhet,0.25
+Beauty,Debit Card,Mobile,Trial,Barisal,0.25
+Beauty,Debit Card,Mobile,Trial,Chittagong,0.5
+Beauty,Debit Card,Mobile,Trial,Dhaka,0.0
+Beauty,Debit Card,Mobile,Trial,Khulna,0.5
+Beauty,Debit Card,Mobile,Trial,Mymensingh,1.0
+Beauty,Debit Card,Mobile,Trial,Rajshahi,0.4
+Beauty,Debit Card,Mobile,Trial,Rangpur,0.75
+Beauty,Debit Card,Mobile,Trial,Sylhet,0.0
+Beauty,Debit Card,Tablet,Free,Barisal,0.6666666666666666
+Beauty,Debit Card,Tablet,Free,Chittagong,0.25
+Beauty,Debit Card,Tablet,Free,Dhaka,0.6
+Beauty,Debit Card,Tablet,Free,Khulna,0.25
+Beauty,Debit Card,Tablet,Free,Mymensingh,0.5
+Beauty,Debit Card,Tablet,Free,Rajshahi,0.3333333333333333
+Beauty,Debit Card,Tablet,Free,Rangpur,0.16666666666666666
+Beauty,Debit Card,Tablet,Free,Sylhet,0.5
+Beauty,Debit Card,Tablet,Premium,Barisal,0.0
+Beauty,Debit Card,Tablet,Premium,Chittagong,0.5
+Beauty,Debit Card,Tablet,Premium,Dhaka,1.0
+Beauty,Debit Card,Tablet,Premium,Khulna,0.5
+Beauty,Debit Card,Tablet,Premium,Mymensingh,0.5
+Beauty,Debit Card,Tablet,Premium,Rajshahi,0.2
+Beauty,Debit Card,Tablet,Premium,Rangpur,0.75
+Beauty,Debit Card,Tablet,Premium,Sylhet,0.3333333333333333
+Beauty,Debit Card,Tablet,Trial,Barisal,0.3333333333333333
+Beauty,Debit Card,Tablet,Trial,Chittagong,1.0
+Beauty,Debit Card,Tablet,Trial,Dhaka,0.5
+Beauty,Debit Card,Tablet,Trial,Khulna,0.75
+Beauty,Debit Card,Tablet,Trial,Mymensingh,0.0
+Beauty,Debit Card,Tablet,Trial,Rajshahi,1.0
+Beauty,Debit Card,Tablet,Trial,Rangpur,1.0
+Beauty,PayPal,Desktop,Free,Barisal,0.0
+Beauty,PayPal,Desktop,Free,Chittagong,0.3333333333333333
+Beauty,PayPal,Desktop,Free,Dhaka,0.6666666666666666
+Beauty,PayPal,Desktop,Free,Khulna,0.75
+Beauty,PayPal,Desktop,Free,Mymensingh,0.3333333333333333
+Beauty,PayPal,Desktop,Free,Rajshahi,0.8333333333333334
+Beauty,PayPal,Desktop,Free,Rangpur,1.0
+Beauty,PayPal,Desktop,Free,Sylhet,0.6
+Beauty,PayPal,Desktop,Premium,Barisal,0.6
+Beauty,PayPal,Desktop,Premium,Chittagong,0.0
+Beauty,PayPal,Desktop,Premium,Dhaka,0.3333333333333333
+Beauty,PayPal,Desktop,Premium,Khulna,1.0
+Beauty,PayPal,Desktop,Premium,Mymensingh,0.3333333333333333
+Beauty,PayPal,Desktop,Premium,Rajshahi,0.75
+Beauty,PayPal,Desktop,Premium,Rangpur,0.0
+Beauty,PayPal,Desktop,Premium,Sylhet,0.6666666666666666
+Beauty,PayPal,Desktop,Trial,Barisal,0.2857142857142857
+Beauty,PayPal,Desktop,Trial,Chittagong,0.6666666666666666
+Beauty,PayPal,Desktop,Trial,Dhaka,0.25
+Beauty,PayPal,Desktop,Trial,Khulna,0.0
+Beauty,PayPal,Desktop,Trial,Mymensingh,0.6666666666666666
+Beauty,PayPal,Desktop,Trial,Rajshahi,0.0
+Beauty,PayPal,Desktop,Trial,Rangpur,0.5
+Beauty,PayPal,Desktop,Trial,Sylhet,0.6666666666666666
+Beauty,PayPal,Mobile,Free,Barisal,0.25
+Beauty,PayPal,Mobile,Free,Chittagong,0.25
+Beauty,PayPal,Mobile,Free,Dhaka,0.5
+Beauty,PayPal,Mobile,Free,Khulna,0.0
+Beauty,PayPal,Mobile,Free,Mymensingh,1.0
+Beauty,PayPal,Mobile,Free,Rajshahi,1.0
+Beauty,PayPal,Mobile,Free,Rangpur,0.0
+Beauty,PayPal,Mobile,Free,Sylhet,0.25
+Beauty,PayPal,Mobile,Premium,Barisal,0.2
+Beauty,PayPal,Mobile,Premium,Chittagong,0.6666666666666666
+Beauty,PayPal,Mobile,Premium,Dhaka,0.0
+Beauty,PayPal,Mobile,Premium,Khulna,1.0
+Beauty,PayPal,Mobile,Premium,Mymensingh,0.8
+Beauty,PayPal,Mobile,Premium,Rajshahi,0.25
+Beauty,PayPal,Mobile,Premium,Rangpur,0.0
+Beauty,PayPal,Mobile,Premium,Sylhet,0.0
+Beauty,PayPal,Mobile,Trial,Barisal,0.75
+Beauty,PayPal,Mobile,Trial,Chittagong,0.6
+Beauty,PayPal,Mobile,Trial,Mymensingh,0.0
+Beauty,PayPal,Mobile,Trial,Rajshahi,1.0
+Beauty,PayPal,Mobile,Trial,Sylhet,0.8
+Beauty,PayPal,Tablet,Free,Barisal,0.0
+Beauty,PayPal,Tablet,Free,Chittagong,0.42857142857142855
+Beauty,PayPal,Tablet,Free,Dhaka,0.0
+Beauty,PayPal,Tablet,Free,Khulna,0.3333333333333333
+Beauty,PayPal,Tablet,Free,Mymensingh,0.2
+Beauty,PayPal,Tablet,Free,Rajshahi,0.0
+Beauty,PayPal,Tablet,Free,Rangpur,0.0
+Beauty,PayPal,Tablet,Free,Sylhet,0.6666666666666666
+Beauty,PayPal,Tablet,Premium,Barisal,0.5
+Beauty,PayPal,Tablet,Premium,Chittagong,0.0
+Beauty,PayPal,Tablet,Premium,Dhaka,0.5
+Beauty,PayPal,Tablet,Premium,Mymensingh,1.0
+Beauty,PayPal,Tablet,Premium,Rajshahi,0.0
+Beauty,PayPal,Tablet,Premium,Rangpur,0.6666666666666666
+Beauty,PayPal,Tablet,Premium,Sylhet,0.5
+Beauty,PayPal,Tablet,Trial,Barisal,0.5
+Beauty,PayPal,Tablet,Trial,Chittagong,0.3333333333333333
+Beauty,PayPal,Tablet,Trial,Khulna,0.0
+Beauty,PayPal,Tablet,Trial,Mymensingh,1.0
+Beauty,PayPal,Tablet,Trial,Rajshahi,1.0
+Beauty,PayPal,Tablet,Trial,Rangpur,0.0
+Books,Bank Transfer,Desktop,Free,Barisal,0.5
+Books,Bank Transfer,Desktop,Free,Chittagong,0.4
+Books,Bank Transfer,Desktop,Free,Dhaka,0.6666666666666666
+Books,Bank Transfer,Desktop,Free,Khulna,0.5
+Books,Bank Transfer,Desktop,Free,Mymensingh,0.0
+Books,Bank Transfer,Desktop,Free,Rajshahi,0.4
+Books,Bank Transfer,Desktop,Free,Rangpur,1.0
+Books,Bank Transfer,Desktop,Free,Sylhet,0.5
+Books,Bank Transfer,Desktop,Premium,Barisal,0.0
+Books,Bank Transfer,Desktop,Premium,Chittagong,1.0
+Books,Bank Transfer,Desktop,Premium,Dhaka,0.6
+Books,Bank Transfer,Desktop,Premium,Khulna,0.0
+Books,Bank Transfer,Desktop,Premium,Mymensingh,0.6
+Books,Bank Transfer,Desktop,Premium,Rajshahi,0.5
+Books,Bank Transfer,Desktop,Premium,Rangpur,0.6666666666666666
+Books,Bank Transfer,Desktop,Premium,Sylhet,0.4
+Books,Bank Transfer,Desktop,Trial,Barisal,0.42857142857142855
+Books,Bank Transfer,Desktop,Trial,Chittagong,0.25
+Books,Bank Transfer,Desktop,Trial,Dhaka,0.25
+Books,Bank Transfer,Desktop,Trial,Mymensingh,0.5
+Books,Bank Transfer,Desktop,Trial,Rajshahi,0.5
+Books,Bank Transfer,Desktop,Trial,Rangpur,0.0
+Books,Bank Transfer,Desktop,Trial,Sylhet,0.0
+Books,Bank Transfer,Mobile,Free,Barisal,0.4
+Books,Bank Transfer,Mobile,Free,Chittagong,0.6
+Books,Bank Transfer,Mobile,Free,Dhaka,0.0
+Books,Bank Transfer,Mobile,Free,Khulna,1.0
+Books,Bank Transfer,Mobile,Free,Mymensingh,0.6
+Books,Bank Transfer,Mobile,Free,Rajshahi,1.0
+Books,Bank Transfer,Mobile,Free,Rangpur,0.4
+Books,Bank Transfer,Mobile,Free,Sylhet,0.6
+Books,Bank Transfer,Mobile,Premium,Barisal,0.6666666666666666
+Books,Bank Transfer,Mobile,Premium,Chittagong,0.3333333333333333
+Books,Bank Transfer,Mobile,Premium,Dhaka,0.0
+Books,Bank Transfer,Mobile,Premium,Khulna,0.75
+Books,Bank Transfer,Mobile,Premium,Mymensingh,0.5
+Books,Bank Transfer,Mobile,Premium,Rajshahi,0.6666666666666666
+Books,Bank Transfer,Mobile,Premium,Rangpur,0.5
+Books,Bank Transfer,Mobile,Premium,Sylhet,0.25
+Books,Bank Transfer,Mobile,Trial,Barisal,0.6
+Books,Bank Transfer,Mobile,Trial,Chittagong,0.5714285714285714
+Books,Bank Transfer,Mobile,Trial,Dhaka,0.4
+Books,Bank Transfer,Mobile,Trial,Khulna,0.5
+Books,Bank Transfer,Mobile,Trial,Rajshahi,1.0
+Books,Bank Transfer,Mobile,Trial,Rangpur,0.75
+Books,Bank Transfer,Mobile,Trial,Sylhet,0.5
+Books,Bank Transfer,Tablet,Free,Chittagong,0.2
+Books,Bank Transfer,Tablet,Free,Dhaka,0.5
+Books,Bank Transfer,Tablet,Free,Khulna,0.75
+Books,Bank Transfer,Tablet,Free,Mymensingh,1.0
+Books,Bank Transfer,Tablet,Free,Rajshahi,0.8
+Books,Bank Transfer,Tablet,Free,Rangpur,0.2
+Books,Bank Transfer,Tablet,Free,Sylhet,0.0
+Books,Bank Transfer,Tablet,Premium,Barisal,0.0
+Books,Bank Transfer,Tablet,Premium,Chittagong,0.5
+Books,Bank Transfer,Tablet,Premium,Dhaka,0.8571428571428571
+Books,Bank Transfer,Tablet,Premium,Khulna,0.25
+Books,Bank Transfer,Tablet,Premium,Mymensingh,0.2
+Books,Bank Transfer,Tablet,Premium,Rajshahi,0.42857142857142855
+Books,Bank Transfer,Tablet,Premium,Rangpur,0.6666666666666666
+Books,Bank Transfer,Tablet,Premium,Sylhet,1.0
+Books,Bank Transfer,Tablet,Trial,Barisal,0.6666666666666666
+Books,Bank Transfer,Tablet,Trial,Chittagong,0.75
+Books,Bank Transfer,Tablet,Trial,Dhaka,0.2
+Books,Bank Transfer,Tablet,Trial,Khulna,0.6
+Books,Bank Transfer,Tablet,Trial,Mymensingh,0.0
+Books,Bank Transfer,Tablet,Trial,Rajshahi,0.2
+Books,Bank Transfer,Tablet,Trial,Rangpur,0.0
+Books,Bank Transfer,Tablet,Trial,Sylhet,0.4
+Books,Cash on Delivery,Desktop,Free,Barisal,1.0
+Books,Cash on Delivery,Desktop,Free,Chittagong,0.5
+Books,Cash on Delivery,Desktop,Free,Dhaka,0.0
+Books,Cash on Delivery,Desktop,Free,Khulna,0.6666666666666666
+Books,Cash on Delivery,Desktop,Free,Mymensingh,0.2857142857142857
+Books,Cash on Delivery,Desktop,Free,Rajshahi,0.4
+Books,Cash on Delivery,Desktop,Free,Rangpur,0.4
+Books,Cash on Delivery,Desktop,Free,Sylhet,0.5
+Books,Cash on Delivery,Desktop,Premium,Barisal,0.3333333333333333
+Books,Cash on Delivery,Desktop,Premium,Chittagong,0.5
+Books,Cash on Delivery,Desktop,Premium,Dhaka,0.3333333333333333
+Books,Cash on Delivery,Desktop,Premium,Khulna,0.0
+Books,Cash on Delivery,Desktop,Premium,Mymensingh,0.42857142857142855
+Books,Cash on Delivery,Desktop,Premium,Rajshahi,0.5
+Books,Cash on Delivery,Desktop,Premium,Rangpur,0.5
+Books,Cash on Delivery,Desktop,Premium,Sylhet,1.0
+Books,Cash on Delivery,Desktop,Trial,Barisal,0.5
+Books,Cash on Delivery,Desktop,Trial,Chittagong,0.0
+Books,Cash on Delivery,Desktop,Trial,Dhaka,0.3333333333333333
+Books,Cash on Delivery,Desktop,Trial,Khulna,0.0
+Books,Cash on Delivery,Desktop,Trial,Mymensingh,0.25
+Books,Cash on Delivery,Desktop,Trial,Rajshahi,1.0
+Books,Cash on Delivery,Desktop,Trial,Rangpur,1.0
+Books,Cash on Delivery,Desktop,Trial,Sylhet,0.0
+Books,Cash on Delivery,Mobile,Free,Barisal,1.0
+Books,Cash on Delivery,Mobile,Free,Chittagong,0.75
+Books,Cash on Delivery,Mobile,Free,Dhaka,0.75
+Books,Cash on Delivery,Mobile,Free,Khulna,0.42857142857142855
+Books,Cash on Delivery,Mobile,Free,Mymensingh,0.3333333333333333
+Books,Cash on Delivery,Mobile,Free,Rajshahi,0.0
+Books,Cash on Delivery,Mobile,Free,Rangpur,0.6666666666666666
+Books,Cash on Delivery,Mobile,Free,Sylhet,0.25
+Books,Cash on Delivery,Mobile,Premium,Barisal,0.2
+Books,Cash on Delivery,Mobile,Premium,Chittagong,0.4
+Books,Cash on Delivery,Mobile,Premium,Dhaka,0.0
+Books,Cash on Delivery,Mobile,Premium,Khulna,0.75
+Books,Cash on Delivery,Mobile,Premium,Mymensingh,0.25
+Books,Cash on Delivery,Mobile,Premium,Rajshahi,0.6666666666666666
+Books,Cash on Delivery,Mobile,Premium,Rangpur,0.0
+Books,Cash on Delivery,Mobile,Premium,Sylhet,0.0
+Books,Cash on Delivery,Mobile,Trial,Barisal,0.3333333333333333
+Books,Cash on Delivery,Mobile,Trial,Chittagong,0.0
+Books,Cash on Delivery,Mobile,Trial,Dhaka,1.0
+Books,Cash on Delivery,Mobile,Trial,Khulna,1.0
+Books,Cash on Delivery,Mobile,Trial,Mymensingh,0.6666666666666666
+Books,Cash on Delivery,Mobile,Trial,Rajshahi,1.0
+Books,Cash on Delivery,Mobile,Trial,Rangpur,0.0
+Books,Cash on Delivery,Mobile,Trial,Sylhet,0.5
+Books,Cash on Delivery,Tablet,Free,Barisal,0.5714285714285714
+Books,Cash on Delivery,Tablet,Free,Chittagong,0.8
+Books,Cash on Delivery,Tablet,Free,Dhaka,0.3333333333333333
+Books,Cash on Delivery,Tablet,Free,Khulna,0.8
+Books,Cash on Delivery,Tablet,Free,Mymensingh,0.0
+Books,Cash on Delivery,Tablet,Free,Rajshahi,1.0
+Books,Cash on Delivery,Tablet,Free,Rangpur,0.0
+Books,Cash on Delivery,Tablet,Free,Sylhet,0.4444444444444444
+Books,Cash on Delivery,Tablet,Premium,Barisal,0.3333333333333333
+Books,Cash on Delivery,Tablet,Premium,Chittagong,0.0
+Books,Cash on Delivery,Tablet,Premium,Dhaka,1.0
+Books,Cash on Delivery,Tablet,Premium,Khulna,0.5
+Books,Cash on Delivery,Tablet,Premium,Mymensingh,0.0
+Books,Cash on Delivery,Tablet,Premium,Rajshahi,0.5
+Books,Cash on Delivery,Tablet,Premium,Rangpur,0.5
+Books,Cash on Delivery,Tablet,Premium,Sylhet,0.3333333333333333
+Books,Cash on Delivery,Tablet,Trial,Barisal,1.0
+Books,Cash on Delivery,Tablet,Trial,Chittagong,0.3333333333333333
+Books,Cash on Delivery,Tablet,Trial,Dhaka,0.16666666666666666
+Books,Cash on Delivery,Tablet,Trial,Khulna,1.0
+Books,Cash on Delivery,Tablet,Trial,Mymensingh,0.75
+Books,Cash on Delivery,Tablet,Trial,Rajshahi,0.75
+Books,Cash on Delivery,Tablet,Trial,Rangpur,1.0
+Books,Cash on Delivery,Tablet,Trial,Sylhet,0.5714285714285714
+Books,Credit Card,Desktop,Free,Barisal,1.0
+Books,Credit Card,Desktop,Free,Chittagong,0.0
+Books,Credit Card,Desktop,Free,Dhaka,0.75
+Books,Credit Card,Desktop,Free,Mymensingh,1.0
+Books,Credit Card,Desktop,Free,Rajshahi,1.0
+Books,Credit Card,Desktop,Free,Rangpur,0.25
+Books,Credit Card,Desktop,Free,Sylhet,0.5
+Books,Credit Card,Desktop,Premium,Barisal,1.0
+Books,Credit Card,Desktop,Premium,Chittagong,0.0
+Books,Credit Card,Desktop,Premium,Dhaka,0.2
+Books,Credit Card,Desktop,Premium,Khulna,0.5
+Books,Credit Card,Desktop,Premium,Mymensingh,0.5
+Books,Credit Card,Desktop,Premium,Rajshahi,0.5
+Books,Credit Card,Desktop,Premium,Rangpur,0.3333333333333333
+Books,Credit Card,Desktop,Premium,Sylhet,0.6666666666666666
+Books,Credit Card,Desktop,Trial,Barisal,0.2857142857142857
+Books,Credit Card,Desktop,Trial,Chittagong,0.5
+Books,Credit Card,Desktop,Trial,Dhaka,0.8
+Books,Credit Card,Desktop,Trial,Khulna,0.625
+Books,Credit Card,Desktop,Trial,Mymensingh,0.0
+Books,Credit Card,Desktop,Trial,Rajshahi,0.5
+Books,Credit Card,Desktop,Trial,Rangpur,0.0
+Books,Credit Card,Desktop,Trial,Sylhet,0.5
+Books,Credit Card,Mobile,Free,Barisal,0.16666666666666666
+Books,Credit Card,Mobile,Free,Chittagong,0.4
+Books,Credit Card,Mobile,Free,Dhaka,0.4
+Books,Credit Card,Mobile,Free,Khulna,0.0
+Books,Credit Card,Mobile,Free,Mymensingh,0.25
+Books,Credit Card,Mobile,Free,Rajshahi,0.25
+Books,Credit Card,Mobile,Free,Rangpur,1.0
+Books,Credit Card,Mobile,Free,Sylhet,0.75
+Books,Credit Card,Mobile,Premium,Barisal,0.8
+Books,Credit Card,Mobile,Premium,Chittagong,0.3333333333333333
+Books,Credit Card,Mobile,Premium,Dhaka,0.0
+Books,Credit Card,Mobile,Premium,Khulna,1.0
+Books,Credit Card,Mobile,Premium,Mymensingh,0.3333333333333333
+Books,Credit Card,Mobile,Premium,Rajshahi,0.75
+Books,Credit Card,Mobile,Premium,Rangpur,0.6
+Books,Credit Card,Mobile,Premium,Sylhet,1.0
+Books,Credit Card,Mobile,Trial,Chittagong,0.5
+Books,Credit Card,Mobile,Trial,Dhaka,0.0
+Books,Credit Card,Mobile,Trial,Khulna,0.0
+Books,Credit Card,Mobile,Trial,Mymensingh,0.5
+Books,Credit Card,Mobile,Trial,Rajshahi,1.0
+Books,Credit Card,Mobile,Trial,Rangpur,1.0
+Books,Credit Card,Mobile,Trial,Sylhet,0.5
+Books,Credit Card,Tablet,Free,Barisal,0.5
+Books,Credit Card,Tablet,Free,Chittagong,0.8
+Books,Credit Card,Tablet,Free,Dhaka,0.6666666666666666
+Books,Credit Card,Tablet,Free,Khulna,0.5
+Books,Credit Card,Tablet,Free,Mymensingh,1.0
+Books,Credit Card,Tablet,Free,Rajshahi,0.6666666666666666
+Books,Credit Card,Tablet,Free,Rangpur,0.5
+Books,Credit Card,Tablet,Free,Sylhet,0.5
+Books,Credit Card,Tablet,Premium,Barisal,0.5
+Books,Credit Card,Tablet,Premium,Chittagong,0.8
+Books,Credit Card,Tablet,Premium,Dhaka,0.75
+Books,Credit Card,Tablet,Premium,Khulna,0.6666666666666666
+Books,Credit Card,Tablet,Premium,Mymensingh,0.4
+Books,Credit Card,Tablet,Premium,Rajshahi,1.0
+Books,Credit Card,Tablet,Premium,Rangpur,0.5
+Books,Credit Card,Tablet,Premium,Sylhet,0.6666666666666666
+Books,Credit Card,Tablet,Trial,Barisal,0.3333333333333333
+Books,Credit Card,Tablet,Trial,Chittagong,0.3333333333333333
+Books,Credit Card,Tablet,Trial,Dhaka,0.8
+Books,Credit Card,Tablet,Trial,Khulna,0.6666666666666666
+Books,Credit Card,Tablet,Trial,Mymensingh,0.6666666666666666
+Books,Credit Card,Tablet,Trial,Rajshahi,1.0
+Books,Credit Card,Tablet,Trial,Rangpur,0.6
+Books,Credit Card,Tablet,Trial,Sylhet,1.0
+Books,Debit Card,Desktop,Free,Barisal,0.5
+Books,Debit Card,Desktop,Free,Chittagong,0.6666666666666666
+Books,Debit Card,Desktop,Free,Dhaka,0.0
+Books,Debit Card,Desktop,Free,Khulna,0.0
+Books,Debit Card,Desktop,Free,Mymensingh,0.6666666666666666
+Books,Debit Card,Desktop,Free,Rajshahi,0.6
+Books,Debit Card,Desktop,Free,Rangpur,0.5
+Books,Debit Card,Desktop,Free,Sylhet,0.6666666666666666
+Books,Debit Card,Desktop,Premium,Barisal,0.25
+Books,Debit Card,Desktop,Premium,Chittagong,0.2
+Books,Debit Card,Desktop,Premium,Dhaka,0.6666666666666666
+Books,Debit Card,Desktop,Premium,Khulna,0.6
+Books,Debit Card,Desktop,Premium,Mymensingh,0.16666666666666666
+Books,Debit Card,Desktop,Premium,Rajshahi,0.6
+Books,Debit Card,Desktop,Premium,Rangpur,1.0
+Books,Debit Card,Desktop,Premium,Sylhet,1.0
+Books,Debit Card,Desktop,Trial,Barisal,0.5
+Books,Debit Card,Desktop,Trial,Chittagong,0.5
+Books,Debit Card,Desktop,Trial,Dhaka,0.2
+Books,Debit Card,Desktop,Trial,Khulna,0.3333333333333333
+Books,Debit Card,Desktop,Trial,Mymensingh,0.3333333333333333
+Books,Debit Card,Desktop,Trial,Rajshahi,0.5
+Books,Debit Card,Desktop,Trial,Rangpur,0.2
+Books,Debit Card,Desktop,Trial,Sylhet,0.75
+Books,Debit Card,Mobile,Free,Chittagong,0.0
+Books,Debit Card,Mobile,Free,Dhaka,0.5
+Books,Debit Card,Mobile,Free,Khulna,1.0
+Books,Debit Card,Mobile,Free,Mymensingh,0.5
+Books,Debit Card,Mobile,Free,Rajshahi,1.0
+Books,Debit Card,Mobile,Free,Rangpur,0.6666666666666666
+Books,Debit Card,Mobile,Free,Sylhet,0.6
+Books,Debit Card,Mobile,Premium,Barisal,0.6
+Books,Debit Card,Mobile,Premium,Chittagong,0.0
+Books,Debit Card,Mobile,Premium,Dhaka,0.5
+Books,Debit Card,Mobile,Premium,Khulna,0.0
+Books,Debit Card,Mobile,Premium,Mymensingh,0.0
+Books,Debit Card,Mobile,Premium,Rajshahi,0.6666666666666666
+Books,Debit Card,Mobile,Premium,Rangpur,1.0
+Books,Debit Card,Mobile,Premium,Sylhet,0.5
+Books,Debit Card,Mobile,Trial,Barisal,1.0
+Books,Debit Card,Mobile,Trial,Chittagong,1.0
+Books,Debit Card,Mobile,Trial,Dhaka,1.0
+Books,Debit Card,Mobile,Trial,Khulna,0.3333333333333333
+Books,Debit Card,Mobile,Trial,Mymensingh,1.0
+Books,Debit Card,Mobile,Trial,Rajshahi,0.5
+Books,Debit Card,Mobile,Trial,Rangpur,0.0
+Books,Debit Card,Mobile,Trial,Sylhet,0.0
+Books,Debit Card,Tablet,Free,Barisal,0.6
+Books,Debit Card,Tablet,Free,Chittagong,0.2
+Books,Debit Card,Tablet,Free,Dhaka,0.0
+Books,Debit Card,Tablet,Free,Khulna,0.8
+Books,Debit Card,Tablet,Free,Mymensingh,0.0
+Books,Debit Card,Tablet,Free,Rajshahi,0.6666666666666666
+Books,Debit Card,Tablet,Free,Rangpur,0.8
+Books,Debit Card,Tablet,Free,Sylhet,0.6666666666666666
+Books,Debit Card,Tablet,Premium,Barisal,0.3333333333333333
+Books,Debit Card,Tablet,Premium,Chittagong,0.42857142857142855
+Books,Debit Card,Tablet,Premium,Dhaka,0.0
+Books,Debit Card,Tablet,Premium,Khulna,0.5
+Books,Debit Card,Tablet,Premium,Mymensingh,0.6666666666666666
+Books,Debit Card,Tablet,Premium,Rajshahi,0.5
+Books,Debit Card,Tablet,Premium,Rangpur,0.3333333333333333
+Books,Debit Card,Tablet,Premium,Sylhet,0.4
+Books,Debit Card,Tablet,Trial,Barisal,0.5
+Books,Debit Card,Tablet,Trial,Chittagong,0.25
+Books,Debit Card,Tablet,Trial,Dhaka,0.75
+Books,Debit Card,Tablet,Trial,Khulna,0.6666666666666666
+Books,Debit Card,Tablet,Trial,Mymensingh,0.5
+Books,Debit Card,Tablet,Trial,Rajshahi,0.5
+Books,Debit Card,Tablet,Trial,Rangpur,1.0
+Books,Debit Card,Tablet,Trial,Sylhet,1.0
+Books,PayPal,Desktop,Free,Barisal,0.3333333333333333
+Books,PayPal,Desktop,Free,Chittagong,0.3333333333333333
+Books,PayPal,Desktop,Free,Dhaka,0.0
+Books,PayPal,Desktop,Free,Khulna,0.75
+Books,PayPal,Desktop,Free,Mymensingh,0.5
+Books,PayPal,Desktop,Free,Rajshahi,0.5
+Books,PayPal,Desktop,Free,Rangpur,0.25
+Books,PayPal,Desktop,Free,Sylhet,1.0
+Books,PayPal,Desktop,Premium,Barisal,0.4
+Books,PayPal,Desktop,Premium,Chittagong,0.5555555555555556
+Books,PayPal,Desktop,Premium,Dhaka,0.0
+Books,PayPal,Desktop,Premium,Khulna,0.8
+Books,PayPal,Desktop,Premium,Mymensingh,0.6666666666666666
+Books,PayPal,Desktop,Premium,Rangpur,0.6666666666666666
+Books,PayPal,Desktop,Premium,Sylhet,0.6666666666666666
+Books,PayPal,Desktop,Trial,Barisal,0.0
+Books,PayPal,Desktop,Trial,Chittagong,0.5
+Books,PayPal,Desktop,Trial,Dhaka,1.0
+Books,PayPal,Desktop,Trial,Khulna,0.3333333333333333
+Books,PayPal,Desktop,Trial,Mymensingh,0.5
+Books,PayPal,Desktop,Trial,Rajshahi,0.6666666666666666
+Books,PayPal,Desktop,Trial,Rangpur,0.5
+Books,PayPal,Desktop,Trial,Sylhet,0.6666666666666666
+Books,PayPal,Mobile,Free,Barisal,0.3333333333333333
+Books,PayPal,Mobile,Free,Chittagong,0.0
+Books,PayPal,Mobile,Free,Dhaka,0.7142857142857143
+Books,PayPal,Mobile,Free,Khulna,0.0
+Books,PayPal,Mobile,Free,Mymensingh,0.0
+Books,PayPal,Mobile,Free,Rajshahi,0.6666666666666666
+Books,PayPal,Mobile,Free,Rangpur,0.375
+Books,PayPal,Mobile,Free,Sylhet,0.5
+Books,PayPal,Mobile,Premium,Barisal,0.0
+Books,PayPal,Mobile,Premium,Chittagong,0.4
+Books,PayPal,Mobile,Premium,Dhaka,0.3333333333333333
+Books,PayPal,Mobile,Premium,Khulna,1.0
+Books,PayPal,Mobile,Premium,Mymensingh,0.0
+Books,PayPal,Mobile,Premium,Rajshahi,0.4
+Books,PayPal,Mobile,Premium,Rangpur,0.3333333333333333
+Books,PayPal,Mobile,Premium,Sylhet,0.25
+Books,PayPal,Mobile,Trial,Barisal,0.3333333333333333
+Books,PayPal,Mobile,Trial,Chittagong,0.3333333333333333
+Books,PayPal,Mobile,Trial,Dhaka,0.3333333333333333
+Books,PayPal,Mobile,Trial,Khulna,0.0
+Books,PayPal,Mobile,Trial,Mymensingh,0.4
+Books,PayPal,Mobile,Trial,Rajshahi,0.4
+Books,PayPal,Mobile,Trial,Sylhet,0.6666666666666666
+Books,PayPal,Tablet,Free,Barisal,0.75
+Books,PayPal,Tablet,Free,Chittagong,0.6666666666666666
+Books,PayPal,Tablet,Free,Dhaka,0.6666666666666666
+Books,PayPal,Tablet,Free,Khulna,0.8333333333333334
+Books,PayPal,Tablet,Free,Mymensingh,0.6
+Books,PayPal,Tablet,Free,Rajshahi,1.0
+Books,PayPal,Tablet,Free,Rangpur,0.375
+Books,PayPal,Tablet,Free,Sylhet,1.0
+Books,PayPal,Tablet,Premium,Barisal,0.8
+Books,PayPal,Tablet,Premium,Chittagong,0.6666666666666666
+Books,PayPal,Tablet,Premium,Dhaka,0.8333333333333334
+Books,PayPal,Tablet,Premium,Khulna,0.3333333333333333
+Books,PayPal,Tablet,Premium,Mymensingh,0.0
+Books,PayPal,Tablet,Premium,Rajshahi,0.0
+Books,PayPal,Tablet,Premium,Rangpur,0.6666666666666666
+Books,PayPal,Tablet,Premium,Sylhet,0.3333333333333333
+Books,PayPal,Tablet,Trial,Barisal,0.5
+Books,PayPal,Tablet,Trial,Chittagong,0.3333333333333333
+Books,PayPal,Tablet,Trial,Dhaka,0.3333333333333333
+Books,PayPal,Tablet,Trial,Khulna,0.5
+Books,PayPal,Tablet,Trial,Mymensingh,0.25
+Books,PayPal,Tablet,Trial,Rajshahi,0.0
+Books,PayPal,Tablet,Trial,Rangpur,0.5
+Books,PayPal,Tablet,Trial,Sylhet,0.3333333333333333
+Clothing,Bank Transfer,Desktop,Free,Barisal,1.0
+Clothing,Bank Transfer,Desktop,Free,Chittagong,0.6
+Clothing,Bank Transfer,Desktop,Free,Dhaka,0.7142857142857143
+Clothing,Bank Transfer,Desktop,Free,Khulna,0.6666666666666666
+Clothing,Bank Transfer,Desktop,Free,Mymensingh,1.0
+Clothing,Bank Transfer,Desktop,Free,Rajshahi,0.75
+Clothing,Bank Transfer,Desktop,Free,Rangpur,0.75
+Clothing,Bank Transfer,Desktop,Free,Sylhet,0.5
+Clothing,Bank Transfer,Desktop,Premium,Barisal,0.42857142857142855
+Clothing,Bank Transfer,Desktop,Premium,Chittagong,0.5714285714285714
+Clothing,Bank Transfer,Desktop,Premium,Dhaka,1.0
+Clothing,Bank Transfer,Desktop,Premium,Khulna,0.5
+Clothing,Bank Transfer,Desktop,Premium,Mymensingh,0.6666666666666666
+Clothing,Bank Transfer,Desktop,Premium,Rajshahi,0.6666666666666666
+Clothing,Bank Transfer,Desktop,Premium,Rangpur,0.75
+Clothing,Bank Transfer,Desktop,Premium,Sylhet,0.8333333333333334
+Clothing,Bank Transfer,Desktop,Trial,Barisal,0.8
+Clothing,Bank Transfer,Desktop,Trial,Chittagong,0.7142857142857143
+Clothing,Bank Transfer,Desktop,Trial,Khulna,0.7142857142857143
+Clothing,Bank Transfer,Desktop,Trial,Mymensingh,0.25
+Clothing,Bank Transfer,Desktop,Trial,Rajshahi,0.25
+Clothing,Bank Transfer,Desktop,Trial,Rangpur,0.5
+Clothing,Bank Transfer,Desktop,Trial,Sylhet,0.5
+Clothing,Bank Transfer,Mobile,Free,Chittagong,0.5555555555555556
+Clothing,Bank Transfer,Mobile,Free,Dhaka,0.0
+Clothing,Bank Transfer,Mobile,Free,Khulna,0.3333333333333333
+Clothing,Bank Transfer,Mobile,Free,Mymensingh,1.0
+Clothing,Bank Transfer,Mobile,Free,Rajshahi,1.0
+Clothing,Bank Transfer,Mobile,Free,Rangpur,0.8
+Clothing,Bank Transfer,Mobile,Free,Sylhet,0.4
+Clothing,Bank Transfer,Mobile,Premium,Barisal,0.5
+Clothing,Bank Transfer,Mobile,Premium,Chittagong,0.6
+Clothing,Bank Transfer,Mobile,Premium,Dhaka,0.5
+Clothing,Bank Transfer,Mobile,Premium,Khulna,0.6666666666666666
+Clothing,Bank Transfer,Mobile,Premium,Mymensingh,0.2857142857142857
+Clothing,Bank Transfer,Mobile,Premium,Rajshahi,0.14285714285714285
+Clothing,Bank Transfer,Mobile,Premium,Rangpur,0.4
+Clothing,Bank Transfer,Mobile,Premium,Sylhet,0.5
+Clothing,Bank Transfer,Mobile,Trial,Barisal,0.25
+Clothing,Bank Transfer,Mobile,Trial,Chittagong,0.5
+Clothing,Bank Transfer,Mobile,Trial,Dhaka,1.0
+Clothing,Bank Transfer,Mobile,Trial,Khulna,0.25
+Clothing,Bank Transfer,Mobile,Trial,Mymensingh,1.0
+Clothing,Bank Transfer,Mobile,Trial,Rajshahi,0.5
+Clothing,Bank Transfer,Mobile,Trial,Rangpur,1.0
+Clothing,Bank Transfer,Mobile,Trial,Sylhet,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Free,Barisal,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Free,Chittagong,0.75
+Clothing,Bank Transfer,Tablet,Free,Dhaka,0.5
+Clothing,Bank Transfer,Tablet,Free,Khulna,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Free,Mymensingh,0.5
+Clothing,Bank Transfer,Tablet,Free,Rajshahi,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Free,Rangpur,0.0
+Clothing,Bank Transfer,Tablet,Free,Sylhet,0.0
+Clothing,Bank Transfer,Tablet,Premium,Barisal,0.5
+Clothing,Bank Transfer,Tablet,Premium,Chittagong,0.75
+Clothing,Bank Transfer,Tablet,Premium,Dhaka,0.5
+Clothing,Bank Transfer,Tablet,Premium,Khulna,0.5
+Clothing,Bank Transfer,Tablet,Premium,Mymensingh,0.25
+Clothing,Bank Transfer,Tablet,Premium,Rajshahi,0.6
+Clothing,Bank Transfer,Tablet,Premium,Rangpur,0.0
+Clothing,Bank Transfer,Tablet,Premium,Sylhet,0.5
+Clothing,Bank Transfer,Tablet,Trial,Barisal,0.75
+Clothing,Bank Transfer,Tablet,Trial,Chittagong,0.25
+Clothing,Bank Transfer,Tablet,Trial,Dhaka,0.6
+Clothing,Bank Transfer,Tablet,Trial,Khulna,0.0
+Clothing,Bank Transfer,Tablet,Trial,Mymensingh,0.6666666666666666
+Clothing,Bank Transfer,Tablet,Trial,Rajshahi,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Trial,Rangpur,0.3333333333333333
+Clothing,Bank Transfer,Tablet,Trial,Sylhet,0.8
+Clothing,Cash on Delivery,Desktop,Free,Barisal,0.5
+Clothing,Cash on Delivery,Desktop,Free,Chittagong,0.2
+Clothing,Cash on Delivery,Desktop,Free,Dhaka,0.5714285714285714
+Clothing,Cash on Delivery,Desktop,Free,Khulna,0.75
+Clothing,Cash on Delivery,Desktop,Free,Mymensingh,0.3333333333333333
+Clothing,Cash on Delivery,Desktop,Free,Rajshahi,0.3333333333333333
+Clothing,Cash on Delivery,Desktop,Free,Rangpur,1.0
+Clothing,Cash on Delivery,Desktop,Free,Sylhet,1.0
+Clothing,Cash on Delivery,Desktop,Premium,Barisal,0.6666666666666666
+Clothing,Cash on Delivery,Desktop,Premium,Chittagong,0.5
+Clothing,Cash on Delivery,Desktop,Premium,Dhaka,0.0
+Clothing,Cash on Delivery,Desktop,Premium,Khulna,0.6
+Clothing,Cash on Delivery,Desktop,Premium,Mymensingh,0.0
+Clothing,Cash on Delivery,Desktop,Premium,Rajshahi,0.5
+Clothing,Cash on Delivery,Desktop,Premium,Rangpur,0.4444444444444444
+Clothing,Cash on Delivery,Desktop,Premium,Sylhet,0.25
+Clothing,Cash on Delivery,Desktop,Trial,Barisal,1.0
+Clothing,Cash on Delivery,Desktop,Trial,Chittagong,1.0
+Clothing,Cash on Delivery,Desktop,Trial,Dhaka,1.0
+Clothing,Cash on Delivery,Desktop,Trial,Khulna,0.0
+Clothing,Cash on Delivery,Desktop,Trial,Mymensingh,1.0
+Clothing,Cash on Delivery,Desktop,Trial,Rajshahi,0.5
+Clothing,Cash on Delivery,Desktop,Trial,Rangpur,0.5
+Clothing,Cash on Delivery,Desktop,Trial,Sylhet,0.0
+Clothing,Cash on Delivery,Mobile,Free,Barisal,1.0
+Clothing,Cash on Delivery,Mobile,Free,Chittagong,0.5
+Clothing,Cash on Delivery,Mobile,Free,Dhaka,0.6666666666666666
+Clothing,Cash on Delivery,Mobile,Free,Khulna,0.5
+Clothing,Cash on Delivery,Mobile,Free,Mymensingh,0.0
+Clothing,Cash on Delivery,Mobile,Free,Rajshahi,0.2857142857142857
+Clothing,Cash on Delivery,Mobile,Free,Rangpur,0.5
+Clothing,Cash on Delivery,Mobile,Free,Sylhet,0.3333333333333333
+Clothing,Cash on Delivery,Mobile,Premium,Barisal,0.0
+Clothing,Cash on Delivery,Mobile,Premium,Chittagong,0.25
+Clothing,Cash on Delivery,Mobile,Premium,Dhaka,0.3333333333333333
+Clothing,Cash on Delivery,Mobile,Premium,Khulna,0.5
+Clothing,Cash on Delivery,Mobile,Premium,Mymensingh,0.0
+Clothing,Cash on Delivery,Mobile,Premium,Rajshahi,1.0
+Clothing,Cash on Delivery,Mobile,Premium,Rangpur,0.5
+Clothing,Cash on Delivery,Mobile,Premium,Sylhet,0.4
+Clothing,Cash on Delivery,Mobile,Trial,Barisal,0.4
+Clothing,Cash on Delivery,Mobile,Trial,Chittagong,1.0
+Clothing,Cash on Delivery,Mobile,Trial,Dhaka,0.0
+Clothing,Cash on Delivery,Mobile,Trial,Khulna,0.3333333333333333
+Clothing,Cash on Delivery,Mobile,Trial,Mymensingh,0.0
+Clothing,Cash on Delivery,Mobile,Trial,Rajshahi,1.0
+Clothing,Cash on Delivery,Mobile,Trial,Rangpur,0.6666666666666666
+Clothing,Cash on Delivery,Mobile,Trial,Sylhet,0.5
+Clothing,Cash on Delivery,Tablet,Free,Barisal,0.5
+Clothing,Cash on Delivery,Tablet,Free,Chittagong,0.4
+Clothing,Cash on Delivery,Tablet,Free,Dhaka,1.0
+Clothing,Cash on Delivery,Tablet,Free,Khulna,0.6
+Clothing,Cash on Delivery,Tablet,Free,Mymensingh,1.0
+Clothing,Cash on Delivery,Tablet,Free,Rajshahi,0.8
+Clothing,Cash on Delivery,Tablet,Free,Rangpur,0.0
+Clothing,Cash on Delivery,Tablet,Free,Sylhet,0.3333333333333333
+Clothing,Cash on Delivery,Tablet,Premium,Barisal,0.0
+Clothing,Cash on Delivery,Tablet,Premium,Chittagong,0.6666666666666666
+Clothing,Cash on Delivery,Tablet,Premium,Dhaka,0.25
+Clothing,Cash on Delivery,Tablet,Premium,Khulna,0.6
+Clothing,Cash on Delivery,Tablet,Premium,Mymensingh,0.4
+Clothing,Cash on Delivery,Tablet,Premium,Rajshahi,0.0
+Clothing,Cash on Delivery,Tablet,Premium,Rangpur,0.0
+Clothing,Cash on Delivery,Tablet,Premium,Sylhet,0.2
+Clothing,Cash on Delivery,Tablet,Trial,Barisal,0.0
+Clothing,Cash on Delivery,Tablet,Trial,Chittagong,0.3333333333333333
+Clothing,Cash on Delivery,Tablet,Trial,Dhaka,1.0
+Clothing,Cash on Delivery,Tablet,Trial,Khulna,0.16666666666666666
+Clothing,Cash on Delivery,Tablet,Trial,Mymensingh,0.6666666666666666
+Clothing,Cash on Delivery,Tablet,Trial,Rajshahi,0.4
+Clothing,Cash on Delivery,Tablet,Trial,Rangpur,0.3333333333333333
+Clothing,Cash on Delivery,Tablet,Trial,Sylhet,0.5
+Clothing,Credit Card,Desktop,Free,Barisal,1.0
+Clothing,Credit Card,Desktop,Free,Chittagong,0.6
+Clothing,Credit Card,Desktop,Free,Dhaka,0.8
+Clothing,Credit Card,Desktop,Free,Khulna,0.3333333333333333
+Clothing,Credit Card,Desktop,Free,Mymensingh,0.75
+Clothing,Credit Card,Desktop,Free,Rajshahi,1.0
+Clothing,Credit Card,Desktop,Free,Rangpur,0.8
+Clothing,Credit Card,Desktop,Free,Sylhet,0.0
+Clothing,Credit Card,Desktop,Premium,Barisal,0.6666666666666666
+Clothing,Credit Card,Desktop,Premium,Chittagong,1.0
+Clothing,Credit Card,Desktop,Premium,Dhaka,0.7142857142857143
+Clothing,Credit Card,Desktop,Premium,Khulna,0.5
+Clothing,Credit Card,Desktop,Premium,Mymensingh,0.6666666666666666
+Clothing,Credit Card,Desktop,Premium,Rajshahi,0.3333333333333333
+Clothing,Credit Card,Desktop,Premium,Rangpur,0.5
+Clothing,Credit Card,Desktop,Premium,Sylhet,0.3333333333333333
+Clothing,Credit Card,Desktop,Trial,Barisal,0.6
+Clothing,Credit Card,Desktop,Trial,Chittagong,0.5
+Clothing,Credit Card,Desktop,Trial,Dhaka,0.3333333333333333
+Clothing,Credit Card,Desktop,Trial,Khulna,0.6
+Clothing,Credit Card,Desktop,Trial,Mymensingh,0.6
+Clothing,Credit Card,Desktop,Trial,Rajshahi,0.5
+Clothing,Credit Card,Desktop,Trial,Rangpur,0.6666666666666666
+Clothing,Credit Card,Desktop,Trial,Sylhet,1.0
+Clothing,Credit Card,Mobile,Free,Barisal,0.0
+Clothing,Credit Card,Mobile,Free,Chittagong,0.3333333333333333
+Clothing,Credit Card,Mobile,Free,Dhaka,0.3333333333333333
+Clothing,Credit Card,Mobile,Free,Khulna,0.4
+Clothing,Credit Card,Mobile,Free,Mymensingh,0.5
+Clothing,Credit Card,Mobile,Free,Rajshahi,0.0
+Clothing,Credit Card,Mobile,Free,Rangpur,0.3333333333333333
+Clothing,Credit Card,Mobile,Free,Sylhet,0.6
+Clothing,Credit Card,Mobile,Premium,Barisal,0.4
+Clothing,Credit Card,Mobile,Premium,Chittagong,0.6666666666666666
+Clothing,Credit Card,Mobile,Premium,Dhaka,0.5
+Clothing,Credit Card,Mobile,Premium,Khulna,0.14285714285714285
+Clothing,Credit Card,Mobile,Premium,Mymensingh,0.5
+Clothing,Credit Card,Mobile,Premium,Rajshahi,0.5
+Clothing,Credit Card,Mobile,Premium,Rangpur,0.0
+Clothing,Credit Card,Mobile,Premium,Sylhet,0.4
+Clothing,Credit Card,Mobile,Trial,Barisal,0.3333333333333333
+Clothing,Credit Card,Mobile,Trial,Chittagong,0.25
+Clothing,Credit Card,Mobile,Trial,Dhaka,1.0
+Clothing,Credit Card,Mobile,Trial,Khulna,0.6
+Clothing,Credit Card,Mobile,Trial,Mymensingh,0.3333333333333333
+Clothing,Credit Card,Mobile,Trial,Rajshahi,0.8
+Clothing,Credit Card,Mobile,Trial,Rangpur,0.3333333333333333
+Clothing,Credit Card,Mobile,Trial,Sylhet,0.0
+Clothing,Credit Card,Tablet,Free,Barisal,0.5
+Clothing,Credit Card,Tablet,Free,Chittagong,0.5555555555555556
+Clothing,Credit Card,Tablet,Free,Dhaka,0.5
+Clothing,Credit Card,Tablet,Free,Khulna,0.3333333333333333
+Clothing,Credit Card,Tablet,Free,Mymensingh,0.8333333333333334
+Clothing,Credit Card,Tablet,Free,Rajshahi,0.6666666666666666
+Clothing,Credit Card,Tablet,Free,Rangpur,0.6
+Clothing,Credit Card,Tablet,Free,Sylhet,0.0
+Clothing,Credit Card,Tablet,Premium,Barisal,1.0
+Clothing,Credit Card,Tablet,Premium,Chittagong,0.42857142857142855
+Clothing,Credit Card,Tablet,Premium,Dhaka,0.6
+Clothing,Credit Card,Tablet,Premium,Khulna,0.6
+Clothing,Credit Card,Tablet,Premium,Mymensingh,0.8
+Clothing,Credit Card,Tablet,Premium,Rajshahi,1.0
+Clothing,Credit Card,Tablet,Premium,Rangpur,0.7142857142857143
+Clothing,Credit Card,Tablet,Premium,Sylhet,0.3333333333333333
+Clothing,Credit Card,Tablet,Trial,Barisal,0.7142857142857143
+Clothing,Credit Card,Tablet,Trial,Chittagong,0.25
+Clothing,Credit Card,Tablet,Trial,Dhaka,0.5
+Clothing,Credit Card,Tablet,Trial,Khulna,1.0
+Clothing,Credit Card,Tablet,Trial,Mymensingh,1.0
+Clothing,Credit Card,Tablet,Trial,Rajshahi,0.0
+Clothing,Credit Card,Tablet,Trial,Rangpur,1.0
+Clothing,Debit Card,Desktop,Free,Barisal,0.0
+Clothing,Debit Card,Desktop,Free,Chittagong,0.4
+Clothing,Debit Card,Desktop,Free,Dhaka,0.3333333333333333
+Clothing,Debit Card,Desktop,Free,Khulna,0.75
+Clothing,Debit Card,Desktop,Free,Mymensingh,0.6666666666666666
+Clothing,Debit Card,Desktop,Free,Rajshahi,0.75
+Clothing,Debit Card,Desktop,Free,Rangpur,0.5
+Clothing,Debit Card,Desktop,Free,Sylhet,0.7142857142857143
+Clothing,Debit Card,Desktop,Premium,Barisal,1.0
+Clothing,Debit Card,Desktop,Premium,Chittagong,1.0
+Clothing,Debit Card,Desktop,Premium,Dhaka,0.5
+Clothing,Debit Card,Desktop,Premium,Khulna,0.0
+Clothing,Debit Card,Desktop,Premium,Mymensingh,0.4
+Clothing,Debit Card,Desktop,Premium,Rajshahi,0.75
+Clothing,Debit Card,Desktop,Premium,Rangpur,0.5
+Clothing,Debit Card,Desktop,Premium,Sylhet,1.0
+Clothing,Debit Card,Desktop,Trial,Barisal,0.2
+Clothing,Debit Card,Desktop,Trial,Chittagong,0.3333333333333333
+Clothing,Debit Card,Desktop,Trial,Dhaka,0.5
+Clothing,Debit Card,Desktop,Trial,Khulna,0.0
+Clothing,Debit Card,Desktop,Trial,Mymensingh,0.2
+Clothing,Debit Card,Desktop,Trial,Rajshahi,0.0
+Clothing,Debit Card,Desktop,Trial,Rangpur,0.0
+Clothing,Debit Card,Desktop,Trial,Sylhet,0.6666666666666666
+Clothing,Debit Card,Mobile,Free,Barisal,0.3333333333333333
+Clothing,Debit Card,Mobile,Free,Dhaka,1.0
+Clothing,Debit Card,Mobile,Free,Khulna,0.0
+Clothing,Debit Card,Mobile,Free,Mymensingh,0.4
+Clothing,Debit Card,Mobile,Free,Rajshahi,0.3333333333333333
+Clothing,Debit Card,Mobile,Free,Rangpur,0.6
+Clothing,Debit Card,Mobile,Free,Sylhet,0.5
+Clothing,Debit Card,Mobile,Premium,Barisal,0.25
+Clothing,Debit Card,Mobile,Premium,Chittagong,1.0
+Clothing,Debit Card,Mobile,Premium,Dhaka,0.0
+Clothing,Debit Card,Mobile,Premium,Khulna,0.0
+Clothing,Debit Card,Mobile,Premium,Mymensingh,1.0
+Clothing,Debit Card,Mobile,Premium,Rajshahi,0.0
+Clothing,Debit Card,Mobile,Premium,Sylhet,0.6
+Clothing,Debit Card,Mobile,Trial,Barisal,0.0
+Clothing,Debit Card,Mobile,Trial,Chittagong,0.3333333333333333
+Clothing,Debit Card,Mobile,Trial,Dhaka,0.0
+Clothing,Debit Card,Mobile,Trial,Khulna,0.5714285714285714
+Clothing,Debit Card,Mobile,Trial,Mymensingh,0.0
+Clothing,Debit Card,Mobile,Trial,Rajshahi,0.4
+Clothing,Debit Card,Mobile,Trial,Rangpur,0.6666666666666666
+Clothing,Debit Card,Mobile,Trial,Sylhet,0.7142857142857143
+Clothing,Debit Card,Tablet,Free,Barisal,0.6666666666666666
+Clothing,Debit Card,Tablet,Free,Chittagong,1.0
+Clothing,Debit Card,Tablet,Free,Dhaka,0.4
+Clothing,Debit Card,Tablet,Free,Khulna,0.5555555555555556
+Clothing,Debit Card,Tablet,Free,Mymensingh,1.0
+Clothing,Debit Card,Tablet,Free,Rajshahi,0.5
+Clothing,Debit Card,Tablet,Free,Rangpur,0.3333333333333333
+Clothing,Debit Card,Tablet,Free,Sylhet,0.3333333333333333
+Clothing,Debit Card,Tablet,Premium,Chittagong,0.8
+Clothing,Debit Card,Tablet,Premium,Dhaka,0.75
+Clothing,Debit Card,Tablet,Premium,Khulna,0.3333333333333333
+Clothing,Debit Card,Tablet,Premium,Mymensingh,0.0
+Clothing,Debit Card,Tablet,Premium,Rajshahi,0.4
+Clothing,Debit Card,Tablet,Premium,Rangpur,0.0
+Clothing,Debit Card,Tablet,Premium,Sylhet,0.5
+Clothing,Debit Card,Tablet,Trial,Barisal,0.6666666666666666
+Clothing,Debit Card,Tablet,Trial,Chittagong,1.0
+Clothing,Debit Card,Tablet,Trial,Dhaka,0.25
+Clothing,Debit Card,Tablet,Trial,Khulna,0.0
+Clothing,Debit Card,Tablet,Trial,Mymensingh,0.8
+Clothing,Debit Card,Tablet,Trial,Rajshahi,1.0
+Clothing,Debit Card,Tablet,Trial,Rangpur,1.0
+Clothing,Debit Card,Tablet,Trial,Sylhet,0.25
+Clothing,PayPal,Desktop,Free,Barisal,0.25
+Clothing,PayPal,Desktop,Free,Chittagong,1.0
+Clothing,PayPal,Desktop,Free,Dhaka,0.2
+Clothing,PayPal,Desktop,Free,Khulna,0.6
+Clothing,PayPal,Desktop,Free,Mymensingh,0.6666666666666666
+Clothing,PayPal,Desktop,Free,Rajshahi,0.625
+Clothing,PayPal,Desktop,Free,Rangpur,0.5
+Clothing,PayPal,Desktop,Free,Sylhet,1.0
+Clothing,PayPal,Desktop,Premium,Barisal,0.5
+Clothing,PayPal,Desktop,Premium,Chittagong,0.6666666666666666
+Clothing,PayPal,Desktop,Premium,Dhaka,0.5
+Clothing,PayPal,Desktop,Premium,Khulna,0.4
+Clothing,PayPal,Desktop,Premium,Mymensingh,0.5
+Clothing,PayPal,Desktop,Premium,Rajshahi,0.5
+Clothing,PayPal,Desktop,Premium,Rangpur,0.6666666666666666
+Clothing,PayPal,Desktop,Premium,Sylhet,1.0
+Clothing,PayPal,Desktop,Trial,Barisal,1.0
+Clothing,PayPal,Desktop,Trial,Chittagong,0.6666666666666666
+Clothing,PayPal,Desktop,Trial,Dhaka,1.0
+Clothing,PayPal,Desktop,Trial,Khulna,0.6
+Clothing,PayPal,Desktop,Trial,Mymensingh,0.0
+Clothing,PayPal,Desktop,Trial,Rajshahi,0.75
+Clothing,PayPal,Desktop,Trial,Rangpur,1.0
+Clothing,PayPal,Desktop,Trial,Sylhet,0.5
+Clothing,PayPal,Mobile,Free,Barisal,0.25
+Clothing,PayPal,Mobile,Free,Chittagong,0.3333333333333333
+Clothing,PayPal,Mobile,Free,Dhaka,0.8
+Clothing,PayPal,Mobile,Free,Khulna,0.75
+Clothing,PayPal,Mobile,Free,Mymensingh,0.5
+Clothing,PayPal,Mobile,Free,Rajshahi,0.75
+Clothing,PayPal,Mobile,Free,Rangpur,0.7142857142857143
+Clothing,PayPal,Mobile,Free,Sylhet,0.3333333333333333
+Clothing,PayPal,Mobile,Premium,Barisal,1.0
+Clothing,PayPal,Mobile,Premium,Chittagong,0.0
+Clothing,PayPal,Mobile,Premium,Dhaka,0.25
+Clothing,PayPal,Mobile,Premium,Khulna,0.6666666666666666
+Clothing,PayPal,Mobile,Premium,Mymensingh,0.25
+Clothing,PayPal,Mobile,Premium,Rajshahi,0.0
+Clothing,PayPal,Mobile,Premium,Rangpur,0.75
+Clothing,PayPal,Mobile,Premium,Sylhet,0.2857142857142857
+Clothing,PayPal,Mobile,Trial,Barisal,0.0
+Clothing,PayPal,Mobile,Trial,Chittagong,1.0
+Clothing,PayPal,Mobile,Trial,Dhaka,0.4
+Clothing,PayPal,Mobile,Trial,Khulna,0.0
+Clothing,PayPal,Mobile,Trial,Mymensingh,0.42857142857142855
+Clothing,PayPal,Mobile,Trial,Rajshahi,0.6666666666666666
+Clothing,PayPal,Mobile,Trial,Rangpur,0.2857142857142857
+Clothing,PayPal,Tablet,Free,Barisal,0.4
+Clothing,PayPal,Tablet,Free,Chittagong,0.6666666666666666
+Clothing,PayPal,Tablet,Free,Dhaka,0.6666666666666666
+Clothing,PayPal,Tablet,Free,Khulna,0.2
+Clothing,PayPal,Tablet,Free,Mymensingh,0.5
+Clothing,PayPal,Tablet,Free,Rajshahi,1.0
+Clothing,PayPal,Tablet,Free,Rangpur,0.5
+Clothing,PayPal,Tablet,Free,Sylhet,0.3333333333333333
+Clothing,PayPal,Tablet,Premium,Barisal,1.0
+Clothing,PayPal,Tablet,Premium,Chittagong,0.0
+Clothing,PayPal,Tablet,Premium,Dhaka,0.6
+Clothing,PayPal,Tablet,Premium,Khulna,0.0
+Clothing,PayPal,Tablet,Premium,Mymensingh,1.0
+Clothing,PayPal,Tablet,Premium,Rajshahi,0.5
+Clothing,PayPal,Tablet,Premium,Rangpur,0.6666666666666666
+Clothing,PayPal,Tablet,Premium,Sylhet,0.6
+Clothing,PayPal,Tablet,Trial,Barisal,0.5
+Clothing,PayPal,Tablet,Trial,Chittagong,0.6
+Clothing,PayPal,Tablet,Trial,Dhaka,0.5
+Clothing,PayPal,Tablet,Trial,Khulna,1.0
+Clothing,PayPal,Tablet,Trial,Mymensingh,1.0
+Clothing,PayPal,Tablet,Trial,Rajshahi,0.5
+Clothing,PayPal,Tablet,Trial,Rangpur,1.0
+Clothing,PayPal,Tablet,Trial,Sylhet,0.25
+Electronics,Bank Transfer,Desktop,Free,Barisal,0.4
+Electronics,Bank Transfer,Desktop,Free,Dhaka,0.8
+Electronics,Bank Transfer,Desktop,Free,Khulna,0.5
+Electronics,Bank Transfer,Desktop,Free,Mymensingh,0.16666666666666666
+Electronics,Bank Transfer,Desktop,Free,Rajshahi,1.0
+Electronics,Bank Transfer,Desktop,Free,Rangpur,1.0
+Electronics,Bank Transfer,Desktop,Free,Sylhet,0.0
+Electronics,Bank Transfer,Desktop,Premium,Barisal,0.8
+Electronics,Bank Transfer,Desktop,Premium,Chittagong,0.42857142857142855
+Electronics,Bank Transfer,Desktop,Premium,Dhaka,0.5
+Electronics,Bank Transfer,Desktop,Premium,Khulna,1.0
+Electronics,Bank Transfer,Desktop,Premium,Mymensingh,0.6
+Electronics,Bank Transfer,Desktop,Premium,Rajshahi,0.5
+Electronics,Bank Transfer,Desktop,Premium,Rangpur,0.5
+Electronics,Bank Transfer,Desktop,Premium,Sylhet,0.5
+Electronics,Bank Transfer,Desktop,Trial,Barisal,0.2
+Electronics,Bank Transfer,Desktop,Trial,Chittagong,0.8333333333333334
+Electronics,Bank Transfer,Desktop,Trial,Dhaka,0.5
+Electronics,Bank Transfer,Desktop,Trial,Khulna,0.4
+Electronics,Bank Transfer,Desktop,Trial,Mymensingh,0.5714285714285714
+Electronics,Bank Transfer,Desktop,Trial,Rajshahi,0.5
+Electronics,Bank Transfer,Desktop,Trial,Rangpur,0.75
+Electronics,Bank Transfer,Desktop,Trial,Sylhet,1.0
+Electronics,Bank Transfer,Mobile,Free,Barisal,0.6666666666666666
+Electronics,Bank Transfer,Mobile,Free,Chittagong,0.0
+Electronics,Bank Transfer,Mobile,Free,Dhaka,0.7142857142857143
+Electronics,Bank Transfer,Mobile,Free,Khulna,0.5
+Electronics,Bank Transfer,Mobile,Free,Mymensingh,0.5
+Electronics,Bank Transfer,Mobile,Free,Rajshahi,0.0
+Electronics,Bank Transfer,Mobile,Free,Rangpur,0.5
+Electronics,Bank Transfer,Mobile,Free,Sylhet,0.5
+Electronics,Bank Transfer,Mobile,Premium,Barisal,0.0
+Electronics,Bank Transfer,Mobile,Premium,Chittagong,0.6
+Electronics,Bank Transfer,Mobile,Premium,Dhaka,0.6666666666666666
+Electronics,Bank Transfer,Mobile,Premium,Khulna,1.0
+Electronics,Bank Transfer,Mobile,Premium,Mymensingh,0.6666666666666666
+Electronics,Bank Transfer,Mobile,Premium,Rajshahi,1.0
+Electronics,Bank Transfer,Mobile,Premium,Rangpur,0.42857142857142855
+Electronics,Bank Transfer,Mobile,Premium,Sylhet,0.6666666666666666
+Electronics,Bank Transfer,Mobile,Trial,Barisal,0.5
+Electronics,Bank Transfer,Mobile,Trial,Chittagong,1.0
+Electronics,Bank Transfer,Mobile,Trial,Dhaka,1.0
+Electronics,Bank Transfer,Mobile,Trial,Khulna,0.6666666666666666
+Electronics,Bank Transfer,Mobile,Trial,Mymensingh,0.25
+Electronics,Bank Transfer,Mobile,Trial,Rajshahi,1.0
+Electronics,Bank Transfer,Mobile,Trial,Rangpur,0.8333333333333334
+Electronics,Bank Transfer,Mobile,Trial,Sylhet,0.3333333333333333
+Electronics,Bank Transfer,Tablet,Free,Barisal,0.4
+Electronics,Bank Transfer,Tablet,Free,Chittagong,0.0
+Electronics,Bank Transfer,Tablet,Free,Dhaka,0.5
+Electronics,Bank Transfer,Tablet,Free,Khulna,0.25
+Electronics,Bank Transfer,Tablet,Free,Mymensingh,0.75
+Electronics,Bank Transfer,Tablet,Free,Rajshahi,0.75
+Electronics,Bank Transfer,Tablet,Free,Rangpur,1.0
+Electronics,Bank Transfer,Tablet,Free,Sylhet,0.6666666666666666
+Electronics,Bank Transfer,Tablet,Premium,Barisal,1.0
+Electronics,Bank Transfer,Tablet,Premium,Chittagong,1.0
+Electronics,Bank Transfer,Tablet,Premium,Dhaka,1.0
+Electronics,Bank Transfer,Tablet,Premium,Khulna,0.25
+Electronics,Bank Transfer,Tablet,Premium,Mymensingh,0.5
+Electronics,Bank Transfer,Tablet,Premium,Rajshahi,0.8
+Electronics,Bank Transfer,Tablet,Premium,Rangpur,0.6
+Electronics,Bank Transfer,Tablet,Premium,Sylhet,0.25
+Electronics,Bank Transfer,Tablet,Trial,Barisal,0.8
+Electronics,Bank Transfer,Tablet,Trial,Chittagong,0.6666666666666666
+Electronics,Bank Transfer,Tablet,Trial,Dhaka,0.3333333333333333
+Electronics,Bank Transfer,Tablet,Trial,Khulna,0.75
+Electronics,Bank Transfer,Tablet,Trial,Mymensingh,0.8
+Electronics,Bank Transfer,Tablet,Trial,Rajshahi,0.6
+Electronics,Bank Transfer,Tablet,Trial,Rangpur,0.2857142857142857
+Electronics,Bank Transfer,Tablet,Trial,Sylhet,0.5
+Electronics,Cash on Delivery,Desktop,Free,Barisal,0.25
+Electronics,Cash on Delivery,Desktop,Free,Chittagong,0.6666666666666666
+Electronics,Cash on Delivery,Desktop,Free,Dhaka,0.0
+Electronics,Cash on Delivery,Desktop,Free,Khulna,0.6666666666666666
+Electronics,Cash on Delivery,Desktop,Free,Mymensingh,0.3333333333333333
+Electronics,Cash on Delivery,Desktop,Free,Rajshahi,0.7142857142857143
+Electronics,Cash on Delivery,Desktop,Free,Rangpur,0.75
+Electronics,Cash on Delivery,Desktop,Free,Sylhet,0.5
+Electronics,Cash on Delivery,Desktop,Premium,Barisal,0.42857142857142855
+Electronics,Cash on Delivery,Desktop,Premium,Chittagong,0.5714285714285714
+Electronics,Cash on Delivery,Desktop,Premium,Dhaka,0.4
+Electronics,Cash on Delivery,Desktop,Premium,Khulna,0.6666666666666666
+Electronics,Cash on Delivery,Desktop,Premium,Mymensingh,0.25
+Electronics,Cash on Delivery,Desktop,Premium,Rangpur,0.2
+Electronics,Cash on Delivery,Desktop,Premium,Sylhet,0.5714285714285714
+Electronics,Cash on Delivery,Desktop,Trial,Barisal,0.5
+Electronics,Cash on Delivery,Desktop,Trial,Dhaka,0.4
+Electronics,Cash on Delivery,Desktop,Trial,Khulna,0.0
+Electronics,Cash on Delivery,Desktop,Trial,Mymensingh,1.0
+Electronics,Cash on Delivery,Desktop,Trial,Rajshahi,0.3333333333333333
+Electronics,Cash on Delivery,Desktop,Trial,Rangpur,0.4
+Electronics,Cash on Delivery,Desktop,Trial,Sylhet,0.5
+Electronics,Cash on Delivery,Mobile,Free,Chittagong,1.0
+Electronics,Cash on Delivery,Mobile,Free,Dhaka,0.0
+Electronics,Cash on Delivery,Mobile,Free,Khulna,1.0
+Electronics,Cash on Delivery,Mobile,Free,Mymensingh,1.0
+Electronics,Cash on Delivery,Mobile,Free,Rajshahi,0.3333333333333333
+Electronics,Cash on Delivery,Mobile,Free,Rangpur,0.5
+Electronics,Cash on Delivery,Mobile,Free,Sylhet,0.5
+Electronics,Cash on Delivery,Mobile,Premium,Barisal,0.8333333333333334
+Electronics,Cash on Delivery,Mobile,Premium,Chittagong,0.0
+Electronics,Cash on Delivery,Mobile,Premium,Dhaka,0.5
+Electronics,Cash on Delivery,Mobile,Premium,Khulna,1.0
+Electronics,Cash on Delivery,Mobile,Premium,Mymensingh,1.0
+Electronics,Cash on Delivery,Mobile,Premium,Rajshahi,0.6666666666666666
+Electronics,Cash on Delivery,Mobile,Premium,Rangpur,1.0
+Electronics,Cash on Delivery,Mobile,Premium,Sylhet,0.2
+Electronics,Cash on Delivery,Mobile,Trial,Barisal,1.0
+Electronics,Cash on Delivery,Mobile,Trial,Chittagong,1.0
+Electronics,Cash on Delivery,Mobile,Trial,Dhaka,0.6666666666666666
+Electronics,Cash on Delivery,Mobile,Trial,Khulna,0.8
+Electronics,Cash on Delivery,Mobile,Trial,Mymensingh,0.6666666666666666
+Electronics,Cash on Delivery,Mobile,Trial,Rajshahi,0.6666666666666666
+Electronics,Cash on Delivery,Mobile,Trial,Rangpur,0.25
+Electronics,Cash on Delivery,Mobile,Trial,Sylhet,0.5
+Electronics,Cash on Delivery,Tablet,Free,Barisal,0.5
+Electronics,Cash on Delivery,Tablet,Free,Dhaka,1.0
+Electronics,Cash on Delivery,Tablet,Free,Khulna,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Free,Mymensingh,0.6666666666666666
+Electronics,Cash on Delivery,Tablet,Free,Rajshahi,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Free,Rangpur,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Free,Sylhet,0.16666666666666666
+Electronics,Cash on Delivery,Tablet,Premium,Barisal,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Premium,Chittagong,0.0
+Electronics,Cash on Delivery,Tablet,Premium,Dhaka,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Premium,Khulna,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Premium,Mymensingh,0.25
+Electronics,Cash on Delivery,Tablet,Premium,Rajshahi,0.5
+Electronics,Cash on Delivery,Tablet,Premium,Rangpur,0.5
+Electronics,Cash on Delivery,Tablet,Premium,Sylhet,0.5
+Electronics,Cash on Delivery,Tablet,Trial,Barisal,0.5
+Electronics,Cash on Delivery,Tablet,Trial,Chittagong,0.0
+Electronics,Cash on Delivery,Tablet,Trial,Dhaka,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Trial,Khulna,0.3333333333333333
+Electronics,Cash on Delivery,Tablet,Trial,Mymensingh,0.0
+Electronics,Cash on Delivery,Tablet,Trial,Rajshahi,0.5
+Electronics,Cash on Delivery,Tablet,Trial,Rangpur,0.6
+Electronics,Cash on Delivery,Tablet,Trial,Sylhet,0.375
+Electronics,Credit Card,Desktop,Free,Barisal,1.0
+Electronics,Credit Card,Desktop,Free,Chittagong,0.5
+Electronics,Credit Card,Desktop,Free,Dhaka,0.5
+Electronics,Credit Card,Desktop,Free,Khulna,0.3333333333333333
+Electronics,Credit Card,Desktop,Free,Mymensingh,1.0
+Electronics,Credit Card,Desktop,Free,Rajshahi,0.6
+Electronics,Credit Card,Desktop,Free,Rangpur,0.0
+Electronics,Credit Card,Desktop,Free,Sylhet,0.625
+Electronics,Credit Card,Desktop,Premium,Barisal,0.25
+Electronics,Credit Card,Desktop,Premium,Chittagong,0.25
+Electronics,Credit Card,Desktop,Premium,Dhaka,0.8
+Electronics,Credit Card,Desktop,Premium,Khulna,0.5
+Electronics,Credit Card,Desktop,Premium,Mymensingh,0.5714285714285714
+Electronics,Credit Card,Desktop,Premium,Rajshahi,0.25
+Electronics,Credit Card,Desktop,Premium,Rangpur,1.0
+Electronics,Credit Card,Desktop,Premium,Sylhet,0.3333333333333333
+Electronics,Credit Card,Desktop,Trial,Barisal,0.5
+Electronics,Credit Card,Desktop,Trial,Chittagong,1.0
+Electronics,Credit Card,Desktop,Trial,Dhaka,0.25
+Electronics,Credit Card,Desktop,Trial,Khulna,0.6666666666666666
+Electronics,Credit Card,Desktop,Trial,Mymensingh,0.5
+Electronics,Credit Card,Desktop,Trial,Rajshahi,0.5
+Electronics,Credit Card,Desktop,Trial,Rangpur,0.5
+Electronics,Credit Card,Desktop,Trial,Sylhet,0.5
+Electronics,Credit Card,Mobile,Free,Barisal,0.5
+Electronics,Credit Card,Mobile,Free,Chittagong,1.0
+Electronics,Credit Card,Mobile,Free,Dhaka,0.75
+Electronics,Credit Card,Mobile,Free,Khulna,0.0
+Electronics,Credit Card,Mobile,Free,Mymensingh,0.5
+Electronics,Credit Card,Mobile,Free,Rajshahi,0.3333333333333333
+Electronics,Credit Card,Mobile,Free,Rangpur,1.0
+Electronics,Credit Card,Mobile,Free,Sylhet,0.5
+Electronics,Credit Card,Mobile,Premium,Barisal,0.0
+Electronics,Credit Card,Mobile,Premium,Chittagong,1.0
+Electronics,Credit Card,Mobile,Premium,Dhaka,0.0
+Electronics,Credit Card,Mobile,Premium,Khulna,0.5
+Electronics,Credit Card,Mobile,Premium,Mymensingh,0.6666666666666666
+Electronics,Credit Card,Mobile,Premium,Rajshahi,0.6666666666666666
+Electronics,Credit Card,Mobile,Premium,Rangpur,0.6666666666666666
+Electronics,Credit Card,Mobile,Premium,Sylhet,0.6666666666666666
+Electronics,Credit Card,Mobile,Trial,Barisal,0.3333333333333333
+Electronics,Credit Card,Mobile,Trial,Chittagong,0.3333333333333333
+Electronics,Credit Card,Mobile,Trial,Dhaka,0.2
+Electronics,Credit Card,Mobile,Trial,Khulna,0.0
+Electronics,Credit Card,Mobile,Trial,Mymensingh,0.6
+Electronics,Credit Card,Mobile,Trial,Rajshahi,0.3333333333333333
+Electronics,Credit Card,Mobile,Trial,Rangpur,0.3333333333333333
+Electronics,Credit Card,Mobile,Trial,Sylhet,0.3333333333333333
+Electronics,Credit Card,Tablet,Free,Barisal,0.8
+Electronics,Credit Card,Tablet,Free,Chittagong,0.0
+Electronics,Credit Card,Tablet,Free,Dhaka,0.3333333333333333
+Electronics,Credit Card,Tablet,Free,Khulna,0.3333333333333333
+Electronics,Credit Card,Tablet,Free,Mymensingh,1.0
+Electronics,Credit Card,Tablet,Free,Rajshahi,0.5714285714285714
+Electronics,Credit Card,Tablet,Free,Rangpur,0.6666666666666666
+Electronics,Credit Card,Tablet,Free,Sylhet,0.4
+Electronics,Credit Card,Tablet,Premium,Barisal,1.0
+Electronics,Credit Card,Tablet,Premium,Chittagong,0.5
+Electronics,Credit Card,Tablet,Premium,Khulna,1.0
+Electronics,Credit Card,Tablet,Premium,Mymensingh,1.0
+Electronics,Credit Card,Tablet,Premium,Rajshahi,0.4
+Electronics,Credit Card,Tablet,Premium,Rangpur,0.5
+Electronics,Credit Card,Tablet,Premium,Sylhet,0.25
+Electronics,Credit Card,Tablet,Trial,Barisal,0.3333333333333333
+Electronics,Credit Card,Tablet,Trial,Chittagong,1.0
+Electronics,Credit Card,Tablet,Trial,Dhaka,0.3333333333333333
+Electronics,Credit Card,Tablet,Trial,Khulna,0.4
+Electronics,Credit Card,Tablet,Trial,Mymensingh,0.3333333333333333
+Electronics,Credit Card,Tablet,Trial,Rajshahi,0.6
+Electronics,Credit Card,Tablet,Trial,Rangpur,0.5
+Electronics,Credit Card,Tablet,Trial,Sylhet,0.0
+Electronics,Debit Card,Desktop,Free,Barisal,0.0
+Electronics,Debit Card,Desktop,Free,Chittagong,0.4
+Electronics,Debit Card,Desktop,Free,Dhaka,0.5
+Electronics,Debit Card,Desktop,Free,Khulna,0.5
+Electronics,Debit Card,Desktop,Free,Mymensingh,0.5
+Electronics,Debit Card,Desktop,Free,Rajshahi,0.0
+Electronics,Debit Card,Desktop,Free,Rangpur,0.4444444444444444
+Electronics,Debit Card,Desktop,Free,Sylhet,0.42857142857142855
+Electronics,Debit Card,Desktop,Premium,Barisal,0.25
+Electronics,Debit Card,Desktop,Premium,Chittagong,0.6
+Electronics,Debit Card,Desktop,Premium,Dhaka,0.0
+Electronics,Debit Card,Desktop,Premium,Khulna,0.6
+Electronics,Debit Card,Desktop,Premium,Mymensingh,0.5
+Electronics,Debit Card,Desktop,Premium,Rajshahi,1.0
+Electronics,Debit Card,Desktop,Premium,Rangpur,0.5
+Electronics,Debit Card,Desktop,Premium,Sylhet,0.3333333333333333
+Electronics,Debit Card,Desktop,Trial,Barisal,0.6666666666666666
+Electronics,Debit Card,Desktop,Trial,Chittagong,0.3333333333333333
+Electronics,Debit Card,Desktop,Trial,Dhaka,0.6666666666666666
+Electronics,Debit Card,Desktop,Trial,Khulna,0.5
+Electronics,Debit Card,Desktop,Trial,Mymensingh,0.5
+Electronics,Debit Card,Desktop,Trial,Rajshahi,0.0
+Electronics,Debit Card,Desktop,Trial,Rangpur,0.3333333333333333
+Electronics,Debit Card,Desktop,Trial,Sylhet,0.42857142857142855
+Electronics,Debit Card,Mobile,Free,Barisal,0.6666666666666666
+Electronics,Debit Card,Mobile,Free,Chittagong,0.0
+Electronics,Debit Card,Mobile,Free,Dhaka,0.5
+Electronics,Debit Card,Mobile,Free,Khulna,1.0
+Electronics,Debit Card,Mobile,Free,Rajshahi,0.75
+Electronics,Debit Card,Mobile,Free,Rangpur,0.0
+Electronics,Debit Card,Mobile,Free,Sylhet,0.6666666666666666
+Electronics,Debit Card,Mobile,Premium,Chittagong,1.0
+Electronics,Debit Card,Mobile,Premium,Dhaka,1.0
+Electronics,Debit Card,Mobile,Premium,Khulna,0.4
+Electronics,Debit Card,Mobile,Premium,Mymensingh,0.8333333333333334
+Electronics,Debit Card,Mobile,Premium,Rajshahi,0.3333333333333333
+Electronics,Debit Card,Mobile,Premium,Rangpur,0.5714285714285714
+Electronics,Debit Card,Mobile,Premium,Sylhet,0.0
+Electronics,Debit Card,Mobile,Trial,Barisal,0.4
+Electronics,Debit Card,Mobile,Trial,Chittagong,1.0
+Electronics,Debit Card,Mobile,Trial,Dhaka,0.0
+Electronics,Debit Card,Mobile,Trial,Khulna,0.5
+Electronics,Debit Card,Mobile,Trial,Mymensingh,0.0
+Electronics,Debit Card,Mobile,Trial,Rangpur,0.6
+Electronics,Debit Card,Mobile,Trial,Sylhet,0.0
+Electronics,Debit Card,Tablet,Free,Barisal,0.25
+Electronics,Debit Card,Tablet,Free,Chittagong,0.0
+Electronics,Debit Card,Tablet,Free,Dhaka,0.0
+Electronics,Debit Card,Tablet,Free,Khulna,0.6666666666666666
+Electronics,Debit Card,Tablet,Free,Rajshahi,0.25
+Electronics,Debit Card,Tablet,Free,Sylhet,0.5
+Electronics,Debit Card,Tablet,Premium,Barisal,1.0
+Electronics,Debit Card,Tablet,Premium,Dhaka,1.0
+Electronics,Debit Card,Tablet,Premium,Mymensingh,0.6666666666666666
+Electronics,Debit Card,Tablet,Premium,Rajshahi,0.42857142857142855
+Electronics,Debit Card,Tablet,Premium,Rangpur,0.16666666666666666
+Electronics,Debit Card,Tablet,Premium,Sylhet,0.6666666666666666
+Electronics,Debit Card,Tablet,Trial,Barisal,0.3333333333333333
+Electronics,Debit Card,Tablet,Trial,Chittagong,1.0
+Electronics,Debit Card,Tablet,Trial,Dhaka,1.0
+Electronics,Debit Card,Tablet,Trial,Khulna,0.5
+Electronics,Debit Card,Tablet,Trial,Mymensingh,0.5
+Electronics,Debit Card,Tablet,Trial,Rajshahi,0.6666666666666666
+Electronics,Debit Card,Tablet,Trial,Rangpur,1.0
+Electronics,Debit Card,Tablet,Trial,Sylhet,1.0
+Electronics,PayPal,Desktop,Free,Barisal,0.5
+Electronics,PayPal,Desktop,Free,Chittagong,0.6666666666666666
+Electronics,PayPal,Desktop,Free,Dhaka,0.3333333333333333
+Electronics,PayPal,Desktop,Free,Khulna,0.6
+Electronics,PayPal,Desktop,Free,Mymensingh,0.5
+Electronics,PayPal,Desktop,Free,Rajshahi,0.0
+Electronics,PayPal,Desktop,Free,Rangpur,0.6666666666666666
+Electronics,PayPal,Desktop,Free,Sylhet,0.0
+Electronics,PayPal,Desktop,Premium,Chittagong,0.75
+Electronics,PayPal,Desktop,Premium,Dhaka,0.8333333333333334
+Electronics,PayPal,Desktop,Premium,Khulna,0.0
+Electronics,PayPal,Desktop,Premium,Mymensingh,0.0
+Electronics,PayPal,Desktop,Premium,Rajshahi,1.0
+Electronics,PayPal,Desktop,Premium,Rangpur,0.3333333333333333
+Electronics,PayPal,Desktop,Premium,Sylhet,0.4
+Electronics,PayPal,Desktop,Trial,Barisal,0.5
+Electronics,PayPal,Desktop,Trial,Chittagong,1.0
+Electronics,PayPal,Desktop,Trial,Dhaka,0.25
+Electronics,PayPal,Desktop,Trial,Khulna,0.42857142857142855
+Electronics,PayPal,Desktop,Trial,Mymensingh,0.6666666666666666
+Electronics,PayPal,Desktop,Trial,Rajshahi,0.6666666666666666
+Electronics,PayPal,Desktop,Trial,Rangpur,0.5
+Electronics,PayPal,Desktop,Trial,Sylhet,0.25
+Electronics,PayPal,Mobile,Free,Barisal,0.75
+Electronics,PayPal,Mobile,Free,Chittagong,0.0
+Electronics,PayPal,Mobile,Free,Dhaka,0.3333333333333333
+Electronics,PayPal,Mobile,Free,Khulna,0.3333333333333333
+Electronics,PayPal,Mobile,Free,Mymensingh,0.0
+Electronics,PayPal,Mobile,Free,Rajshahi,0.4
+Electronics,PayPal,Mobile,Free,Rangpur,0.2
+Electronics,PayPal,Mobile,Free,Sylhet,0.6666666666666666
+Electronics,PayPal,Mobile,Premium,Chittagong,0.5
+Electronics,PayPal,Mobile,Premium,Dhaka,0.6666666666666666
+Electronics,PayPal,Mobile,Premium,Khulna,0.8
+Electronics,PayPal,Mobile,Premium,Mymensingh,0.0
+Electronics,PayPal,Mobile,Premium,Rajshahi,0.5
+Electronics,PayPal,Mobile,Premium,Rangpur,0.5
+Electronics,PayPal,Mobile,Premium,Sylhet,0.4
+Electronics,PayPal,Mobile,Trial,Barisal,0.2857142857142857
+Electronics,PayPal,Mobile,Trial,Chittagong,0.0
+Electronics,PayPal,Mobile,Trial,Dhaka,0.25
+Electronics,PayPal,Mobile,Trial,Khulna,0.5
+Electronics,PayPal,Mobile,Trial,Mymensingh,0.0
+Electronics,PayPal,Mobile,Trial,Rajshahi,1.0
+Electronics,PayPal,Mobile,Trial,Rangpur,0.5
+Electronics,PayPal,Mobile,Trial,Sylhet,1.0
+Electronics,PayPal,Tablet,Free,Barisal,0.5
+Electronics,PayPal,Tablet,Free,Chittagong,0.5
+Electronics,PayPal,Tablet,Free,Dhaka,0.5
+Electronics,PayPal,Tablet,Free,Khulna,0.75
+Electronics,PayPal,Tablet,Free,Mymensingh,0.5
+Electronics,PayPal,Tablet,Free,Rangpur,0.25
+Electronics,PayPal,Tablet,Free,Sylhet,0.6666666666666666
+Electronics,PayPal,Tablet,Premium,Barisal,0.5714285714285714
+Electronics,PayPal,Tablet,Premium,Chittagong,1.0
+Electronics,PayPal,Tablet,Premium,Dhaka,0.5
+Electronics,PayPal,Tablet,Premium,Khulna,0.6
+Electronics,PayPal,Tablet,Premium,Mymensingh,0.0
+Electronics,PayPal,Tablet,Premium,Rajshahi,0.0
+Electronics,PayPal,Tablet,Premium,Rangpur,0.5
+Electronics,PayPal,Tablet,Premium,Sylhet,1.0
+Electronics,PayPal,Tablet,Trial,Barisal,0.16666666666666666
+Electronics,PayPal,Tablet,Trial,Chittagong,0.8
+Electronics,PayPal,Tablet,Trial,Dhaka,0.0
+Electronics,PayPal,Tablet,Trial,Khulna,1.0
+Electronics,PayPal,Tablet,Trial,Mymensingh,0.2
+Electronics,PayPal,Tablet,Trial,Rajshahi,0.6
+Electronics,PayPal,Tablet,Trial,Rangpur,0.5
+Electronics,PayPal,Tablet,Trial,Sylhet,0.25
+Groceries,Bank Transfer,Desktop,Free,Barisal,1.0
+Groceries,Bank Transfer,Desktop,Free,Chittagong,0.0
+Groceries,Bank Transfer,Desktop,Free,Dhaka,0.5
+Groceries,Bank Transfer,Desktop,Free,Khulna,1.0
+Groceries,Bank Transfer,Desktop,Free,Mymensingh,0.3333333333333333
+Groceries,Bank Transfer,Desktop,Free,Rangpur,0.0
+Groceries,Bank Transfer,Desktop,Free,Sylhet,0.4
+Groceries,Bank Transfer,Desktop,Premium,Barisal,0.0
+Groceries,Bank Transfer,Desktop,Premium,Chittagong,0.25
+Groceries,Bank Transfer,Desktop,Premium,Dhaka,0.25
+Groceries,Bank Transfer,Desktop,Premium,Mymensingh,1.0
+Groceries,Bank Transfer,Desktop,Premium,Rajshahi,0.6666666666666666
+Groceries,Bank Transfer,Desktop,Premium,Rangpur,0.3333333333333333
+Groceries,Bank Transfer,Desktop,Premium,Sylhet,0.6666666666666666
+Groceries,Bank Transfer,Desktop,Trial,Barisal,0.6666666666666666
+Groceries,Bank Transfer,Desktop,Trial,Chittagong,0.5
+Groceries,Bank Transfer,Desktop,Trial,Dhaka,1.0
+Groceries,Bank Transfer,Desktop,Trial,Khulna,0.375
+Groceries,Bank Transfer,Desktop,Trial,Mymensingh,0.5
+Groceries,Bank Transfer,Desktop,Trial,Rajshahi,0.5
+Groceries,Bank Transfer,Desktop,Trial,Rangpur,0.2
+Groceries,Bank Transfer,Desktop,Trial,Sylhet,0.4
+Groceries,Bank Transfer,Mobile,Free,Barisal,0.25
+Groceries,Bank Transfer,Mobile,Free,Chittagong,0.8571428571428571
+Groceries,Bank Transfer,Mobile,Free,Dhaka,0.25
+Groceries,Bank Transfer,Mobile,Free,Khulna,0.3333333333333333
+Groceries,Bank Transfer,Mobile,Free,Mymensingh,0.5
+Groceries,Bank Transfer,Mobile,Free,Rajshahi,1.0
+Groceries,Bank Transfer,Mobile,Free,Rangpur,0.75
+Groceries,Bank Transfer,Mobile,Free,Sylhet,0.4
+Groceries,Bank Transfer,Mobile,Premium,Barisal,1.0
+Groceries,Bank Transfer,Mobile,Premium,Chittagong,0.6
+Groceries,Bank Transfer,Mobile,Premium,Dhaka,1.0
+Groceries,Bank Transfer,Mobile,Premium,Khulna,0.5
+Groceries,Bank Transfer,Mobile,Premium,Mymensingh,0.4
+Groceries,Bank Transfer,Mobile,Premium,Rajshahi,0.0
+Groceries,Bank Transfer,Mobile,Premium,Rangpur,0.0
+Groceries,Bank Transfer,Mobile,Premium,Sylhet,0.5
+Groceries,Bank Transfer,Mobile,Trial,Barisal,0.5
+Groceries,Bank Transfer,Mobile,Trial,Chittagong,0.0
+Groceries,Bank Transfer,Mobile,Trial,Dhaka,0.75
+Groceries,Bank Transfer,Mobile,Trial,Khulna,1.0
+Groceries,Bank Transfer,Mobile,Trial,Mymensingh,1.0
+Groceries,Bank Transfer,Mobile,Trial,Rajshahi,0.3333333333333333
+Groceries,Bank Transfer,Mobile,Trial,Rangpur,0.0
+Groceries,Bank Transfer,Mobile,Trial,Sylhet,0.3333333333333333
+Groceries,Bank Transfer,Tablet,Free,Barisal,0.0
+Groceries,Bank Transfer,Tablet,Free,Chittagong,1.0
+Groceries,Bank Transfer,Tablet,Free,Dhaka,1.0
+Groceries,Bank Transfer,Tablet,Free,Khulna,0.0
+Groceries,Bank Transfer,Tablet,Free,Mymensingh,0.0
+Groceries,Bank Transfer,Tablet,Free,Rajshahi,0.6666666666666666
+Groceries,Bank Transfer,Tablet,Free,Rangpur,0.4
+Groceries,Bank Transfer,Tablet,Free,Sylhet,0.0
+Groceries,Bank Transfer,Tablet,Premium,Barisal,0.0
+Groceries,Bank Transfer,Tablet,Premium,Chittagong,0.4444444444444444
+Groceries,Bank Transfer,Tablet,Premium,Dhaka,0.5
+Groceries,Bank Transfer,Tablet,Premium,Khulna,1.0
+Groceries,Bank Transfer,Tablet,Premium,Mymensingh,0.3333333333333333
+Groceries,Bank Transfer,Tablet,Premium,Rajshahi,0.5
+Groceries,Bank Transfer,Tablet,Premium,Rangpur,0.0
+Groceries,Bank Transfer,Tablet,Premium,Sylhet,0.75
+Groceries,Bank Transfer,Tablet,Trial,Barisal,0.75
+Groceries,Bank Transfer,Tablet,Trial,Chittagong,0.0
+Groceries,Bank Transfer,Tablet,Trial,Dhaka,0.0
+Groceries,Bank Transfer,Tablet,Trial,Khulna,0.14285714285714285
+Groceries,Bank Transfer,Tablet,Trial,Mymensingh,0.5
+Groceries,Bank Transfer,Tablet,Trial,Rajshahi,0.6666666666666666
+Groceries,Bank Transfer,Tablet,Trial,Rangpur,0.5
+Groceries,Bank Transfer,Tablet,Trial,Sylhet,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Free,Barisal,0.5
+Groceries,Cash on Delivery,Desktop,Free,Chittagong,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Free,Dhaka,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Free,Khulna,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Free,Mymensingh,0.375
+Groceries,Cash on Delivery,Desktop,Free,Rajshahi,0.0
+Groceries,Cash on Delivery,Desktop,Free,Rangpur,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Free,Sylhet,0.5714285714285714
+Groceries,Cash on Delivery,Desktop,Premium,Barisal,0.4
+Groceries,Cash on Delivery,Desktop,Premium,Chittagong,0.0
+Groceries,Cash on Delivery,Desktop,Premium,Dhaka,1.0
+Groceries,Cash on Delivery,Desktop,Premium,Khulna,0.3333333333333333
+Groceries,Cash on Delivery,Desktop,Premium,Mymensingh,1.0
+Groceries,Cash on Delivery,Desktop,Premium,Rajshahi,0.25
+Groceries,Cash on Delivery,Desktop,Premium,Rangpur,0.5
+Groceries,Cash on Delivery,Desktop,Premium,Sylhet,0.5
+Groceries,Cash on Delivery,Desktop,Trial,Barisal,0.0
+Groceries,Cash on Delivery,Desktop,Trial,Chittagong,0.16666666666666666
+Groceries,Cash on Delivery,Desktop,Trial,Dhaka,1.0
+Groceries,Cash on Delivery,Desktop,Trial,Khulna,0.5
+Groceries,Cash on Delivery,Desktop,Trial,Mymensingh,0.5
+Groceries,Cash on Delivery,Desktop,Trial,Rajshahi,1.0
+Groceries,Cash on Delivery,Desktop,Trial,Rangpur,0.5
+Groceries,Cash on Delivery,Desktop,Trial,Sylhet,0.0
+Groceries,Cash on Delivery,Mobile,Free,Barisal,0.6666666666666666
+Groceries,Cash on Delivery,Mobile,Free,Chittagong,0.5
+Groceries,Cash on Delivery,Mobile,Free,Dhaka,0.5
+Groceries,Cash on Delivery,Mobile,Free,Khulna,0.5
+Groceries,Cash on Delivery,Mobile,Free,Mymensingh,0.375
+Groceries,Cash on Delivery,Mobile,Free,Rajshahi,0.5
+Groceries,Cash on Delivery,Mobile,Free,Rangpur,0.3333333333333333
+Groceries,Cash on Delivery,Mobile,Free,Sylhet,0.0
+Groceries,Cash on Delivery,Mobile,Premium,Barisal,0.75
+Groceries,Cash on Delivery,Mobile,Premium,Chittagong,0.25
+Groceries,Cash on Delivery,Mobile,Premium,Dhaka,0.3333333333333333
+Groceries,Cash on Delivery,Mobile,Premium,Khulna,1.0
+Groceries,Cash on Delivery,Mobile,Premium,Mymensingh,0.8333333333333334
+Groceries,Cash on Delivery,Mobile,Premium,Rajshahi,1.0
+Groceries,Cash on Delivery,Mobile,Premium,Rangpur,1.0
+Groceries,Cash on Delivery,Mobile,Premium,Sylhet,1.0
+Groceries,Cash on Delivery,Mobile,Trial,Barisal,1.0
+Groceries,Cash on Delivery,Mobile,Trial,Chittagong,0.75
+Groceries,Cash on Delivery,Mobile,Trial,Dhaka,0.3333333333333333
+Groceries,Cash on Delivery,Mobile,Trial,Khulna,0.0
+Groceries,Cash on Delivery,Mobile,Trial,Mymensingh,0.3333333333333333
+Groceries,Cash on Delivery,Mobile,Trial,Rajshahi,1.0
+Groceries,Cash on Delivery,Mobile,Trial,Rangpur,0.3333333333333333
+Groceries,Cash on Delivery,Mobile,Trial,Sylhet,0.6666666666666666
+Groceries,Cash on Delivery,Tablet,Free,Barisal,0.8333333333333334
+Groceries,Cash on Delivery,Tablet,Free,Chittagong,0.6666666666666666
+Groceries,Cash on Delivery,Tablet,Free,Dhaka,0.5
+Groceries,Cash on Delivery,Tablet,Free,Khulna,0.4
+Groceries,Cash on Delivery,Tablet,Free,Mymensingh,0.8
+Groceries,Cash on Delivery,Tablet,Free,Rajshahi,0.5
+Groceries,Cash on Delivery,Tablet,Free,Rangpur,1.0
+Groceries,Cash on Delivery,Tablet,Free,Sylhet,0.0
+Groceries,Cash on Delivery,Tablet,Premium,Barisal,0.8
+Groceries,Cash on Delivery,Tablet,Premium,Chittagong,0.2
+Groceries,Cash on Delivery,Tablet,Premium,Dhaka,0.75
+Groceries,Cash on Delivery,Tablet,Premium,Khulna,0.5
+Groceries,Cash on Delivery,Tablet,Premium,Mymensingh,0.5
+Groceries,Cash on Delivery,Tablet,Premium,Rajshahi,0.75
+Groceries,Cash on Delivery,Tablet,Premium,Rangpur,0.5
+Groceries,Cash on Delivery,Tablet,Premium,Sylhet,1.0
+Groceries,Cash on Delivery,Tablet,Trial,Barisal,0.3333333333333333
+Groceries,Cash on Delivery,Tablet,Trial,Chittagong,0.0
+Groceries,Cash on Delivery,Tablet,Trial,Dhaka,0.0
+Groceries,Cash on Delivery,Tablet,Trial,Khulna,1.0
+Groceries,Cash on Delivery,Tablet,Trial,Mymensingh,0.3333333333333333
+Groceries,Cash on Delivery,Tablet,Trial,Rajshahi,1.0
+Groceries,Cash on Delivery,Tablet,Trial,Rangpur,0.0
+Groceries,Cash on Delivery,Tablet,Trial,Sylhet,0.0
+Groceries,Credit Card,Desktop,Free,Barisal,0.3333333333333333
+Groceries,Credit Card,Desktop,Free,Chittagong,0.75
+Groceries,Credit Card,Desktop,Free,Dhaka,0.6666666666666666
+Groceries,Credit Card,Desktop,Free,Khulna,0.0
+Groceries,Credit Card,Desktop,Free,Mymensingh,0.6
+Groceries,Credit Card,Desktop,Free,Rajshahi,1.0
+Groceries,Credit Card,Desktop,Free,Rangpur,1.0
+Groceries,Credit Card,Desktop,Free,Sylhet,0.6666666666666666
+Groceries,Credit Card,Desktop,Premium,Barisal,0.3333333333333333
+Groceries,Credit Card,Desktop,Premium,Chittagong,1.0
+Groceries,Credit Card,Desktop,Premium,Dhaka,0.0
+Groceries,Credit Card,Desktop,Premium,Khulna,0.6666666666666666
+Groceries,Credit Card,Desktop,Premium,Mymensingh,1.0
+Groceries,Credit Card,Desktop,Premium,Rajshahi,0.7
+Groceries,Credit Card,Desktop,Premium,Rangpur,0.0
+Groceries,Credit Card,Desktop,Premium,Sylhet,0.2
+Groceries,Credit Card,Desktop,Trial,Barisal,1.0
+Groceries,Credit Card,Desktop,Trial,Chittagong,0.5
+Groceries,Credit Card,Desktop,Trial,Dhaka,0.5
+Groceries,Credit Card,Desktop,Trial,Khulna,0.6666666666666666
+Groceries,Credit Card,Desktop,Trial,Mymensingh,0.3333333333333333
+Groceries,Credit Card,Desktop,Trial,Rajshahi,0.25
+Groceries,Credit Card,Desktop,Trial,Rangpur,0.0
+Groceries,Credit Card,Desktop,Trial,Sylhet,1.0
+Groceries,Credit Card,Mobile,Free,Barisal,1.0
+Groceries,Credit Card,Mobile,Free,Chittagong,1.0
+Groceries,Credit Card,Mobile,Free,Dhaka,0.0
+Groceries,Credit Card,Mobile,Free,Khulna,0.6666666666666666
+Groceries,Credit Card,Mobile,Free,Mymensingh,0.0
+Groceries,Credit Card,Mobile,Free,Rajshahi,0.2
+Groceries,Credit Card,Mobile,Free,Rangpur,0.0
+Groceries,Credit Card,Mobile,Premium,Chittagong,0.0
+Groceries,Credit Card,Mobile,Premium,Dhaka,0.42857142857142855
+Groceries,Credit Card,Mobile,Premium,Khulna,1.0
+Groceries,Credit Card,Mobile,Premium,Mymensingh,0.25
+Groceries,Credit Card,Mobile,Premium,Rajshahi,0.4
+Groceries,Credit Card,Mobile,Premium,Rangpur,0.6666666666666666
+Groceries,Credit Card,Mobile,Premium,Sylhet,0.0
+Groceries,Credit Card,Mobile,Trial,Barisal,0.25
+Groceries,Credit Card,Mobile,Trial,Chittagong,0.6666666666666666
+Groceries,Credit Card,Mobile,Trial,Dhaka,0.3333333333333333
+Groceries,Credit Card,Mobile,Trial,Khulna,0.42857142857142855
+Groceries,Credit Card,Mobile,Trial,Mymensingh,0.6666666666666666
+Groceries,Credit Card,Mobile,Trial,Rajshahi,0.5
+Groceries,Credit Card,Mobile,Trial,Rangpur,0.6666666666666666
+Groceries,Credit Card,Mobile,Trial,Sylhet,0.5
+Groceries,Credit Card,Tablet,Free,Barisal,0.0
+Groceries,Credit Card,Tablet,Free,Chittagong,0.5
+Groceries,Credit Card,Tablet,Free,Dhaka,0.6
+Groceries,Credit Card,Tablet,Free,Khulna,0.0
+Groceries,Credit Card,Tablet,Free,Mymensingh,0.0
+Groceries,Credit Card,Tablet,Free,Rajshahi,1.0
+Groceries,Credit Card,Tablet,Free,Rangpur,0.5
+Groceries,Credit Card,Tablet,Free,Sylhet,0.6
+Groceries,Credit Card,Tablet,Premium,Barisal,0.3333333333333333
+Groceries,Credit Card,Tablet,Premium,Chittagong,0.25
+Groceries,Credit Card,Tablet,Premium,Dhaka,0.0
+Groceries,Credit Card,Tablet,Premium,Khulna,0.5
+Groceries,Credit Card,Tablet,Premium,Mymensingh,0.75
+Groceries,Credit Card,Tablet,Premium,Rajshahi,0.5
+Groceries,Credit Card,Tablet,Premium,Sylhet,0.6
+Groceries,Credit Card,Tablet,Trial,Barisal,0.75
+Groceries,Credit Card,Tablet,Trial,Chittagong,0.5
+Groceries,Credit Card,Tablet,Trial,Dhaka,0.25
+Groceries,Credit Card,Tablet,Trial,Khulna,0.3333333333333333
+Groceries,Credit Card,Tablet,Trial,Sylhet,0.3333333333333333
+Groceries,Debit Card,Desktop,Free,Barisal,1.0
+Groceries,Debit Card,Desktop,Free,Chittagong,0.5
+Groceries,Debit Card,Desktop,Free,Dhaka,1.0
+Groceries,Debit Card,Desktop,Free,Khulna,0.8
+Groceries,Debit Card,Desktop,Free,Mymensingh,0.5
+Groceries,Debit Card,Desktop,Free,Rajshahi,0.3333333333333333
+Groceries,Debit Card,Desktop,Free,Rangpur,0.5555555555555556
+Groceries,Debit Card,Desktop,Premium,Barisal,0.5
+Groceries,Debit Card,Desktop,Premium,Chittagong,0.4
+Groceries,Debit Card,Desktop,Premium,Dhaka,0.6666666666666666
+Groceries,Debit Card,Desktop,Premium,Khulna,0.5714285714285714
+Groceries,Debit Card,Desktop,Premium,Mymensingh,0.0
+Groceries,Debit Card,Desktop,Premium,Rajshahi,0.3333333333333333
+Groceries,Debit Card,Desktop,Premium,Rangpur,0.3333333333333333
+Groceries,Debit Card,Desktop,Premium,Sylhet,0.5
+Groceries,Debit Card,Desktop,Trial,Barisal,0.25
+Groceries,Debit Card,Desktop,Trial,Chittagong,1.0
+Groceries,Debit Card,Desktop,Trial,Dhaka,1.0
+Groceries,Debit Card,Desktop,Trial,Khulna,0.7142857142857143
+Groceries,Debit Card,Desktop,Trial,Mymensingh,0.4
+Groceries,Debit Card,Desktop,Trial,Rajshahi,1.0
+Groceries,Debit Card,Desktop,Trial,Rangpur,0.3333333333333333
+Groceries,Debit Card,Desktop,Trial,Sylhet,0.5
+Groceries,Debit Card,Mobile,Free,Barisal,0.2
+Groceries,Debit Card,Mobile,Free,Chittagong,0.6
+Groceries,Debit Card,Mobile,Free,Dhaka,0.5
+Groceries,Debit Card,Mobile,Free,Khulna,0.4
+Groceries,Debit Card,Mobile,Free,Rajshahi,0.3333333333333333
+Groceries,Debit Card,Mobile,Free,Rangpur,1.0
+Groceries,Debit Card,Mobile,Free,Sylhet,0.0
+Groceries,Debit Card,Mobile,Premium,Barisal,0.3333333333333333
+Groceries,Debit Card,Mobile,Premium,Chittagong,0.75
+Groceries,Debit Card,Mobile,Premium,Dhaka,0.6
+Groceries,Debit Card,Mobile,Premium,Khulna,0.3333333333333333
+Groceries,Debit Card,Mobile,Premium,Mymensingh,0.0
+Groceries,Debit Card,Mobile,Premium,Rajshahi,0.0
+Groceries,Debit Card,Mobile,Premium,Rangpur,0.75
+Groceries,Debit Card,Mobile,Premium,Sylhet,0.5
+Groceries,Debit Card,Mobile,Trial,Barisal,0.5
+Groceries,Debit Card,Mobile,Trial,Chittagong,0.5
+Groceries,Debit Card,Mobile,Trial,Dhaka,0.3333333333333333
+Groceries,Debit Card,Mobile,Trial,Khulna,0.3333333333333333
+Groceries,Debit Card,Mobile,Trial,Mymensingh,1.0
+Groceries,Debit Card,Mobile,Trial,Rajshahi,0.8
+Groceries,Debit Card,Mobile,Trial,Rangpur,0.3333333333333333
+Groceries,Debit Card,Mobile,Trial,Sylhet,0.5
+Groceries,Debit Card,Tablet,Free,Barisal,0.3333333333333333
+Groceries,Debit Card,Tablet,Free,Chittagong,1.0
+Groceries,Debit Card,Tablet,Free,Dhaka,0.0
+Groceries,Debit Card,Tablet,Free,Khulna,1.0
+Groceries,Debit Card,Tablet,Free,Mymensingh,0.25
+Groceries,Debit Card,Tablet,Free,Rajshahi,0.0
+Groceries,Debit Card,Tablet,Free,Rangpur,0.6666666666666666
+Groceries,Debit Card,Tablet,Free,Sylhet,0.5
+Groceries,Debit Card,Tablet,Premium,Barisal,0.6
+Groceries,Debit Card,Tablet,Premium,Chittagong,0.6666666666666666
+Groceries,Debit Card,Tablet,Premium,Dhaka,0.3333333333333333
+Groceries,Debit Card,Tablet,Premium,Khulna,0.6666666666666666
+Groceries,Debit Card,Tablet,Premium,Rajshahi,0.5
+Groceries,Debit Card,Tablet,Premium,Rangpur,0.5
+Groceries,Debit Card,Tablet,Premium,Sylhet,1.0
+Groceries,Debit Card,Tablet,Trial,Barisal,1.0
+Groceries,Debit Card,Tablet,Trial,Chittagong,0.0
+Groceries,Debit Card,Tablet,Trial,Dhaka,0.5
+Groceries,Debit Card,Tablet,Trial,Khulna,0.2
+Groceries,Debit Card,Tablet,Trial,Mymensingh,0.6
+Groceries,Debit Card,Tablet,Trial,Rajshahi,0.2857142857142857
+Groceries,Debit Card,Tablet,Trial,Rangpur,0.6666666666666666
+Groceries,Debit Card,Tablet,Trial,Sylhet,0.5
+Groceries,PayPal,Desktop,Free,Barisal,1.0
+Groceries,PayPal,Desktop,Free,Chittagong,0.5
+Groceries,PayPal,Desktop,Free,Dhaka,0.5
+Groceries,PayPal,Desktop,Free,Khulna,0.4
+Groceries,PayPal,Desktop,Free,Mymensingh,1.0
+Groceries,PayPal,Desktop,Free,Rajshahi,0.0
+Groceries,PayPal,Desktop,Free,Rangpur,0.0
+Groceries,PayPal,Desktop,Free,Sylhet,0.5
+Groceries,PayPal,Desktop,Premium,Barisal,0.25
+Groceries,PayPal,Desktop,Premium,Chittagong,0.5
+Groceries,PayPal,Desktop,Premium,Dhaka,0.6
+Groceries,PayPal,Desktop,Premium,Khulna,0.0
+Groceries,PayPal,Desktop,Premium,Mymensingh,0.6
+Groceries,PayPal,Desktop,Premium,Rajshahi,0.6
+Groceries,PayPal,Desktop,Premium,Rangpur,0.3333333333333333
+Groceries,PayPal,Desktop,Premium,Sylhet,0.3333333333333333
+Groceries,PayPal,Desktop,Trial,Barisal,0.3333333333333333
+Groceries,PayPal,Desktop,Trial,Chittagong,0.0
+Groceries,PayPal,Desktop,Trial,Dhaka,1.0
+Groceries,PayPal,Desktop,Trial,Khulna,0.6666666666666666
+Groceries,PayPal,Desktop,Trial,Mymensingh,0.3333333333333333
+Groceries,PayPal,Desktop,Trial,Rajshahi,0.8
+Groceries,PayPal,Desktop,Trial,Rangpur,0.5
+Groceries,PayPal,Desktop,Trial,Sylhet,0.6666666666666666
+Groceries,PayPal,Mobile,Free,Barisal,0.0
+Groceries,PayPal,Mobile,Free,Chittagong,0.6666666666666666
+Groceries,PayPal,Mobile,Free,Dhaka,0.4
+Groceries,PayPal,Mobile,Free,Khulna,0.0
+Groceries,PayPal,Mobile,Free,Mymensingh,0.0
+Groceries,PayPal,Mobile,Free,Rajshahi,0.0
+Groceries,PayPal,Mobile,Free,Rangpur,1.0
+Groceries,PayPal,Mobile,Free,Sylhet,0.5
+Groceries,PayPal,Mobile,Premium,Barisal,0.8571428571428571
+Groceries,PayPal,Mobile,Premium,Chittagong,0.8
+Groceries,PayPal,Mobile,Premium,Dhaka,0.3333333333333333
+Groceries,PayPal,Mobile,Premium,Khulna,0.5
+Groceries,PayPal,Mobile,Premium,Mymensingh,1.0
+Groceries,PayPal,Mobile,Premium,Rajshahi,0.5
+Groceries,PayPal,Mobile,Premium,Rangpur,0.42857142857142855
+Groceries,PayPal,Mobile,Premium,Sylhet,0.3333333333333333
+Groceries,PayPal,Mobile,Trial,Barisal,0.25
+Groceries,PayPal,Mobile,Trial,Chittagong,1.0
+Groceries,PayPal,Mobile,Trial,Dhaka,1.0
+Groceries,PayPal,Mobile,Trial,Khulna,0.6666666666666666
+Groceries,PayPal,Mobile,Trial,Mymensingh,1.0
+Groceries,PayPal,Mobile,Trial,Rajshahi,0.0
+Groceries,PayPal,Mobile,Trial,Rangpur,0.4
+Groceries,PayPal,Mobile,Trial,Sylhet,1.0
+Groceries,PayPal,Tablet,Free,Barisal,0.0
+Groceries,PayPal,Tablet,Free,Chittagong,0.4
+Groceries,PayPal,Tablet,Free,Dhaka,0.0
+Groceries,PayPal,Tablet,Free,Khulna,0.5
+Groceries,PayPal,Tablet,Free,Mymensingh,0.5
+Groceries,PayPal,Tablet,Free,Rajshahi,0.75
+Groceries,PayPal,Tablet,Free,Rangpur,0.3333333333333333
+Groceries,PayPal,Tablet,Free,Sylhet,0.8
+Groceries,PayPal,Tablet,Premium,Barisal,0.6666666666666666
+Groceries,PayPal,Tablet,Premium,Chittagong,0.5
+Groceries,PayPal,Tablet,Premium,Dhaka,1.0
+Groceries,PayPal,Tablet,Premium,Khulna,0.0
+Groceries,PayPal,Tablet,Premium,Mymensingh,0.4
+Groceries,PayPal,Tablet,Premium,Rajshahi,0.5
+Groceries,PayPal,Tablet,Premium,Rangpur,0.6666666666666666
+Groceries,PayPal,Tablet,Premium,Sylhet,0.5
+Groceries,PayPal,Tablet,Trial,Barisal,0.5
+Groceries,PayPal,Tablet,Trial,Chittagong,0.5
+Groceries,PayPal,Tablet,Trial,Dhaka,0.6666666666666666
+Groceries,PayPal,Tablet,Trial,Khulna,1.0
+Groceries,PayPal,Tablet,Trial,Mymensingh,0.8
+Groceries,PayPal,Tablet,Trial,Rajshahi,0.5
+Groceries,PayPal,Tablet,Trial,Rangpur,0.0
+Groceries,PayPal,Tablet,Trial,Sylhet,1.0
+Home,Bank Transfer,Desktop,Free,Barisal,0.5714285714285714
+Home,Bank Transfer,Desktop,Free,Chittagong,0.6666666666666666
+Home,Bank Transfer,Desktop,Free,Dhaka,0.0
+Home,Bank Transfer,Desktop,Free,Khulna,1.0
+Home,Bank Transfer,Desktop,Free,Mymensingh,0.3
+Home,Bank Transfer,Desktop,Free,Rajshahi,0.6666666666666666
+Home,Bank Transfer,Desktop,Free,Rangpur,0.5
+Home,Bank Transfer,Desktop,Free,Sylhet,0.75
+Home,Bank Transfer,Desktop,Premium,Barisal,0.0
+Home,Bank Transfer,Desktop,Premium,Chittagong,0.25
+Home,Bank Transfer,Desktop,Premium,Dhaka,0.6
+Home,Bank Transfer,Desktop,Premium,Khulna,0.8333333333333334
+Home,Bank Transfer,Desktop,Premium,Mymensingh,0.5
+Home,Bank Transfer,Desktop,Premium,Rajshahi,0.5
+Home,Bank Transfer,Desktop,Premium,Rangpur,0.75
+Home,Bank Transfer,Desktop,Premium,Sylhet,1.0
+Home,Bank Transfer,Desktop,Trial,Barisal,0.16666666666666666
+Home,Bank Transfer,Desktop,Trial,Chittagong,0.0
+Home,Bank Transfer,Desktop,Trial,Dhaka,0.6
+Home,Bank Transfer,Desktop,Trial,Khulna,0.3333333333333333
+Home,Bank Transfer,Desktop,Trial,Mymensingh,0.5
+Home,Bank Transfer,Desktop,Trial,Rajshahi,0.0
+Home,Bank Transfer,Desktop,Trial,Rangpur,0.2222222222222222
+Home,Bank Transfer,Desktop,Trial,Sylhet,0.5
+Home,Bank Transfer,Mobile,Free,Barisal,0.6666666666666666
+Home,Bank Transfer,Mobile,Free,Chittagong,0.0
+Home,Bank Transfer,Mobile,Free,Dhaka,0.4
+Home,Bank Transfer,Mobile,Free,Khulna,0.75
+Home,Bank Transfer,Mobile,Free,Mymensingh,0.5
+Home,Bank Transfer,Mobile,Free,Rajshahi,0.5
+Home,Bank Transfer,Mobile,Free,Rangpur,0.0
+Home,Bank Transfer,Mobile,Free,Sylhet,0.5
+Home,Bank Transfer,Mobile,Premium,Barisal,0.0
+Home,Bank Transfer,Mobile,Premium,Chittagong,0.4
+Home,Bank Transfer,Mobile,Premium,Dhaka,0.5
+Home,Bank Transfer,Mobile,Premium,Khulna,0.6666666666666666
+Home,Bank Transfer,Mobile,Premium,Mymensingh,0.5
+Home,Bank Transfer,Mobile,Premium,Rajshahi,0.5
+Home,Bank Transfer,Mobile,Premium,Rangpur,0.6666666666666666
+Home,Bank Transfer,Mobile,Premium,Sylhet,0.6666666666666666
+Home,Bank Transfer,Mobile,Trial,Barisal,0.75
+Home,Bank Transfer,Mobile,Trial,Chittagong,0.25
+Home,Bank Transfer,Mobile,Trial,Dhaka,0.0
+Home,Bank Transfer,Mobile,Trial,Khulna,0.5
+Home,Bank Transfer,Mobile,Trial,Mymensingh,0.8
+Home,Bank Transfer,Mobile,Trial,Rajshahi,1.0
+Home,Bank Transfer,Mobile,Trial,Rangpur,0.5
+Home,Bank Transfer,Mobile,Trial,Sylhet,0.5
+Home,Bank Transfer,Tablet,Free,Chittagong,0.8333333333333334
+Home,Bank Transfer,Tablet,Free,Dhaka,0.6666666666666666
+Home,Bank Transfer,Tablet,Free,Khulna,0.0
+Home,Bank Transfer,Tablet,Free,Mymensingh,0.5
+Home,Bank Transfer,Tablet,Free,Rajshahi,0.0
+Home,Bank Transfer,Tablet,Free,Rangpur,0.5
+Home,Bank Transfer,Tablet,Free,Sylhet,0.5
+Home,Bank Transfer,Tablet,Premium,Barisal,1.0
+Home,Bank Transfer,Tablet,Premium,Chittagong,0.8
+Home,Bank Transfer,Tablet,Premium,Dhaka,0.0
+Home,Bank Transfer,Tablet,Premium,Khulna,0.6
+Home,Bank Transfer,Tablet,Premium,Mymensingh,0.6666666666666666
+Home,Bank Transfer,Tablet,Premium,Rangpur,0.75
+Home,Bank Transfer,Tablet,Premium,Sylhet,0.3333333333333333
+Home,Bank Transfer,Tablet,Trial,Barisal,0.8
+Home,Bank Transfer,Tablet,Trial,Chittagong,0.0
+Home,Bank Transfer,Tablet,Trial,Dhaka,0.0
+Home,Bank Transfer,Tablet,Trial,Khulna,0.4
+Home,Bank Transfer,Tablet,Trial,Mymensingh,0.8
+Home,Bank Transfer,Tablet,Trial,Rajshahi,0.5714285714285714
+Home,Bank Transfer,Tablet,Trial,Rangpur,0.6666666666666666
+Home,Bank Transfer,Tablet,Trial,Sylhet,1.0
+Home,Cash on Delivery,Desktop,Free,Barisal,0.0
+Home,Cash on Delivery,Desktop,Free,Chittagong,0.0
+Home,Cash on Delivery,Desktop,Free,Dhaka,0.0
+Home,Cash on Delivery,Desktop,Free,Khulna,1.0
+Home,Cash on Delivery,Desktop,Free,Mymensingh,0.5
+Home,Cash on Delivery,Desktop,Free,Rangpur,0.6666666666666666
+Home,Cash on Delivery,Desktop,Free,Sylhet,0.4
+Home,Cash on Delivery,Desktop,Premium,Barisal,0.0
+Home,Cash on Delivery,Desktop,Premium,Chittagong,0.16666666666666666
+Home,Cash on Delivery,Desktop,Premium,Dhaka,0.5
+Home,Cash on Delivery,Desktop,Premium,Khulna,0.5
+Home,Cash on Delivery,Desktop,Premium,Mymensingh,0.6666666666666666
+Home,Cash on Delivery,Desktop,Premium,Rajshahi,0.5
+Home,Cash on Delivery,Desktop,Premium,Rangpur,1.0
+Home,Cash on Delivery,Desktop,Premium,Sylhet,1.0
+Home,Cash on Delivery,Desktop,Trial,Barisal,0.25
+Home,Cash on Delivery,Desktop,Trial,Chittagong,0.25
+Home,Cash on Delivery,Desktop,Trial,Dhaka,0.8
+Home,Cash on Delivery,Desktop,Trial,Khulna,0.5
+Home,Cash on Delivery,Desktop,Trial,Mymensingh,1.0
+Home,Cash on Delivery,Desktop,Trial,Rajshahi,0.5
+Home,Cash on Delivery,Desktop,Trial,Rangpur,0.75
+Home,Cash on Delivery,Desktop,Trial,Sylhet,0.25
+Home,Cash on Delivery,Mobile,Free,Barisal,0.0
+Home,Cash on Delivery,Mobile,Free,Chittagong,0.5
+Home,Cash on Delivery,Mobile,Free,Dhaka,0.5
+Home,Cash on Delivery,Mobile,Free,Khulna,0.3333333333333333
+Home,Cash on Delivery,Mobile,Free,Mymensingh,0.5
+Home,Cash on Delivery,Mobile,Free,Rajshahi,0.5
+Home,Cash on Delivery,Mobile,Free,Rangpur,0.4
+Home,Cash on Delivery,Mobile,Free,Sylhet,0.5
+Home,Cash on Delivery,Mobile,Premium,Barisal,0.6666666666666666
+Home,Cash on Delivery,Mobile,Premium,Chittagong,0.5
+Home,Cash on Delivery,Mobile,Premium,Dhaka,0.6666666666666666
+Home,Cash on Delivery,Mobile,Premium,Khulna,0.5
+Home,Cash on Delivery,Mobile,Premium,Mymensingh,0.0
+Home,Cash on Delivery,Mobile,Premium,Rajshahi,0.6666666666666666
+Home,Cash on Delivery,Mobile,Premium,Rangpur,0.3333333333333333
+Home,Cash on Delivery,Mobile,Premium,Sylhet,0.5
+Home,Cash on Delivery,Mobile,Trial,Barisal,0.0
+Home,Cash on Delivery,Mobile,Trial,Chittagong,0.8333333333333334
+Home,Cash on Delivery,Mobile,Trial,Dhaka,0.8
+Home,Cash on Delivery,Mobile,Trial,Khulna,0.8
+Home,Cash on Delivery,Mobile,Trial,Mymensingh,1.0
+Home,Cash on Delivery,Mobile,Trial,Rajshahi,0.5
+Home,Cash on Delivery,Mobile,Trial,Rangpur,0.3333333333333333
+Home,Cash on Delivery,Mobile,Trial,Sylhet,0.0
+Home,Cash on Delivery,Tablet,Free,Barisal,1.0
+Home,Cash on Delivery,Tablet,Free,Chittagong,0.5
+Home,Cash on Delivery,Tablet,Free,Dhaka,0.0
+Home,Cash on Delivery,Tablet,Free,Khulna,0.6666666666666666
+Home,Cash on Delivery,Tablet,Free,Mymensingh,0.8
+Home,Cash on Delivery,Tablet,Free,Rajshahi,0.0
+Home,Cash on Delivery,Tablet,Free,Rangpur,0.6666666666666666
+Home,Cash on Delivery,Tablet,Free,Sylhet,0.3333333333333333
+Home,Cash on Delivery,Tablet,Premium,Barisal,0.2
+Home,Cash on Delivery,Tablet,Premium,Chittagong,0.4
+Home,Cash on Delivery,Tablet,Premium,Dhaka,1.0
+Home,Cash on Delivery,Tablet,Premium,Khulna,0.6666666666666666
+Home,Cash on Delivery,Tablet,Premium,Mymensingh,0.5
+Home,Cash on Delivery,Tablet,Premium,Rajshahi,0.3333333333333333
+Home,Cash on Delivery,Tablet,Premium,Rangpur,1.0
+Home,Cash on Delivery,Tablet,Premium,Sylhet,0.3333333333333333
+Home,Cash on Delivery,Tablet,Trial,Barisal,0.3333333333333333
+Home,Cash on Delivery,Tablet,Trial,Chittagong,0.0
+Home,Cash on Delivery,Tablet,Trial,Dhaka,0.3333333333333333
+Home,Cash on Delivery,Tablet,Trial,Khulna,0.8333333333333334
+Home,Cash on Delivery,Tablet,Trial,Mymensingh,0.0
+Home,Cash on Delivery,Tablet,Trial,Rajshahi,0.5
+Home,Cash on Delivery,Tablet,Trial,Rangpur,1.0
+Home,Cash on Delivery,Tablet,Trial,Sylhet,0.4
+Home,Credit Card,Desktop,Free,Barisal,0.5714285714285714
+Home,Credit Card,Desktop,Free,Chittagong,0.6666666666666666
+Home,Credit Card,Desktop,Free,Dhaka,0.25
+Home,Credit Card,Desktop,Free,Khulna,0.375
+Home,Credit Card,Desktop,Free,Mymensingh,1.0
+Home,Credit Card,Desktop,Free,Rajshahi,0.0
+Home,Credit Card,Desktop,Free,Rangpur,0.5
+Home,Credit Card,Desktop,Free,Sylhet,0.25
+Home,Credit Card,Desktop,Premium,Barisal,0.5
+Home,Credit Card,Desktop,Premium,Chittagong,0.3333333333333333
+Home,Credit Card,Desktop,Premium,Dhaka,0.7142857142857143
+Home,Credit Card,Desktop,Premium,Khulna,0.5
+Home,Credit Card,Desktop,Premium,Mymensingh,0.5
+Home,Credit Card,Desktop,Premium,Rajshahi,0.5
+Home,Credit Card,Desktop,Premium,Rangpur,0.6666666666666666
+Home,Credit Card,Desktop,Premium,Sylhet,0.6
+Home,Credit Card,Desktop,Trial,Barisal,0.75
+Home,Credit Card,Desktop,Trial,Chittagong,0.0
+Home,Credit Card,Desktop,Trial,Dhaka,0.5
+Home,Credit Card,Desktop,Trial,Khulna,0.6666666666666666
+Home,Credit Card,Desktop,Trial,Mymensingh,0.6666666666666666
+Home,Credit Card,Desktop,Trial,Rajshahi,0.5
+Home,Credit Card,Desktop,Trial,Rangpur,0.3333333333333333
+Home,Credit Card,Desktop,Trial,Sylhet,0.0
+Home,Credit Card,Mobile,Free,Barisal,0.3333333333333333
+Home,Credit Card,Mobile,Free,Dhaka,0.5
+Home,Credit Card,Mobile,Free,Khulna,0.3333333333333333
+Home,Credit Card,Mobile,Free,Mymensingh,0.6666666666666666
+Home,Credit Card,Mobile,Free,Rajshahi,0.5714285714285714
+Home,Credit Card,Mobile,Free,Rangpur,0.16666666666666666
+Home,Credit Card,Mobile,Free,Sylhet,0.5714285714285714
+Home,Credit Card,Mobile,Premium,Barisal,0.5
+Home,Credit Card,Mobile,Premium,Chittagong,0.5
+Home,Credit Card,Mobile,Premium,Dhaka,0.3333333333333333
+Home,Credit Card,Mobile,Premium,Khulna,0.5
+Home,Credit Card,Mobile,Premium,Mymensingh,0.5
+Home,Credit Card,Mobile,Premium,Rajshahi,0.5
+Home,Credit Card,Mobile,Premium,Rangpur,0.6666666666666666
+Home,Credit Card,Mobile,Premium,Sylhet,0.5
+Home,Credit Card,Mobile,Trial,Barisal,0.5714285714285714
+Home,Credit Card,Mobile,Trial,Chittagong,0.5
+Home,Credit Card,Mobile,Trial,Dhaka,0.75
+Home,Credit Card,Mobile,Trial,Khulna,0.5
+Home,Credit Card,Mobile,Trial,Mymensingh,0.4
+Home,Credit Card,Mobile,Trial,Rajshahi,1.0
+Home,Credit Card,Mobile,Trial,Rangpur,0.0
+Home,Credit Card,Mobile,Trial,Sylhet,0.6666666666666666
+Home,Credit Card,Tablet,Free,Barisal,0.3333333333333333
+Home,Credit Card,Tablet,Free,Chittagong,0.0
+Home,Credit Card,Tablet,Free,Dhaka,1.0
+Home,Credit Card,Tablet,Free,Khulna,0.25
+Home,Credit Card,Tablet,Free,Mymensingh,0.6666666666666666
+Home,Credit Card,Tablet,Free,Rajshahi,0.5
+Home,Credit Card,Tablet,Free,Rangpur,1.0
+Home,Credit Card,Tablet,Free,Sylhet,0.6666666666666666
+Home,Credit Card,Tablet,Premium,Barisal,0.0
+Home,Credit Card,Tablet,Premium,Chittagong,0.4
+Home,Credit Card,Tablet,Premium,Khulna,0.75
+Home,Credit Card,Tablet,Premium,Mymensingh,0.0
+Home,Credit Card,Tablet,Premium,Rajshahi,0.5
+Home,Credit Card,Tablet,Premium,Rangpur,0.4
+Home,Credit Card,Tablet,Premium,Sylhet,0.5
+Home,Credit Card,Tablet,Trial,Barisal,0.75
+Home,Credit Card,Tablet,Trial,Chittagong,0.0
+Home,Credit Card,Tablet,Trial,Dhaka,0.0
+Home,Credit Card,Tablet,Trial,Khulna,0.5
+Home,Credit Card,Tablet,Trial,Mymensingh,0.2857142857142857
+Home,Credit Card,Tablet,Trial,Rajshahi,0.4
+Home,Credit Card,Tablet,Trial,Rangpur,0.3333333333333333
+Home,Credit Card,Tablet,Trial,Sylhet,0.5
+Home,Debit Card,Desktop,Free,Barisal,0.3333333333333333
+Home,Debit Card,Desktop,Free,Chittagong,0.6
+Home,Debit Card,Desktop,Free,Dhaka,1.0
+Home,Debit Card,Desktop,Free,Khulna,0.3333333333333333
+Home,Debit Card,Desktop,Free,Mymensingh,1.0
+Home,Debit Card,Desktop,Free,Rajshahi,0.5
+Home,Debit Card,Desktop,Free,Rangpur,1.0
+Home,Debit Card,Desktop,Free,Sylhet,0.0
+Home,Debit Card,Desktop,Premium,Barisal,0.6
+Home,Debit Card,Desktop,Premium,Dhaka,0.5
+Home,Debit Card,Desktop,Premium,Khulna,0.3333333333333333
+Home,Debit Card,Desktop,Premium,Mymensingh,0.3333333333333333
+Home,Debit Card,Desktop,Premium,Rajshahi,1.0
+Home,Debit Card,Desktop,Premium,Rangpur,0.4
+Home,Debit Card,Desktop,Premium,Sylhet,0.2857142857142857
+Home,Debit Card,Desktop,Trial,Barisal,1.0
+Home,Debit Card,Desktop,Trial,Chittagong,0.4
+Home,Debit Card,Desktop,Trial,Dhaka,0.3333333333333333
+Home,Debit Card,Desktop,Trial,Khulna,0.5
+Home,Debit Card,Desktop,Trial,Mymensingh,0.25
+Home,Debit Card,Desktop,Trial,Rajshahi,0.5
+Home,Debit Card,Desktop,Trial,Rangpur,1.0
+Home,Debit Card,Desktop,Trial,Sylhet,0.6666666666666666
+Home,Debit Card,Mobile,Free,Barisal,0.25
+Home,Debit Card,Mobile,Free,Chittagong,0.8
+Home,Debit Card,Mobile,Free,Dhaka,0.6666666666666666
+Home,Debit Card,Mobile,Free,Khulna,0.3333333333333333
+Home,Debit Card,Mobile,Free,Mymensingh,0.4
+Home,Debit Card,Mobile,Free,Rajshahi,0.3333333333333333
+Home,Debit Card,Mobile,Free,Rangpur,1.0
+Home,Debit Card,Mobile,Free,Sylhet,1.0
+Home,Debit Card,Mobile,Premium,Barisal,0.75
+Home,Debit Card,Mobile,Premium,Chittagong,0.6666666666666666
+Home,Debit Card,Mobile,Premium,Dhaka,0.5
+Home,Debit Card,Mobile,Premium,Khulna,0.0
+Home,Debit Card,Mobile,Premium,Mymensingh,0.4444444444444444
+Home,Debit Card,Mobile,Premium,Rajshahi,0.6
+Home,Debit Card,Mobile,Premium,Rangpur,0.42857142857142855
+Home,Debit Card,Mobile,Premium,Sylhet,0.0
+Home,Debit Card,Mobile,Trial,Barisal,0.0
+Home,Debit Card,Mobile,Trial,Chittagong,1.0
+Home,Debit Card,Mobile,Trial,Dhaka,1.0
+Home,Debit Card,Mobile,Trial,Khulna,0.0
+Home,Debit Card,Mobile,Trial,Mymensingh,1.0
+Home,Debit Card,Mobile,Trial,Rajshahi,0.75
+Home,Debit Card,Mobile,Trial,Rangpur,1.0
+Home,Debit Card,Mobile,Trial,Sylhet,0.6666666666666666
+Home,Debit Card,Tablet,Free,Barisal,0.5
+Home,Debit Card,Tablet,Free,Chittagong,0.5
+Home,Debit Card,Tablet,Free,Dhaka,0.0
+Home,Debit Card,Tablet,Free,Mymensingh,0.5
+Home,Debit Card,Tablet,Free,Rajshahi,0.6666666666666666
+Home,Debit Card,Tablet,Free,Rangpur,0.4
+Home,Debit Card,Tablet,Free,Sylhet,0.3333333333333333
+Home,Debit Card,Tablet,Premium,Barisal,0.4
+Home,Debit Card,Tablet,Premium,Chittagong,0.5
+Home,Debit Card,Tablet,Premium,Khulna,0.0
+Home,Debit Card,Tablet,Premium,Mymensingh,0.5
+Home,Debit Card,Tablet,Premium,Rajshahi,1.0
+Home,Debit Card,Tablet,Premium,Rangpur,1.0
+Home,Debit Card,Tablet,Premium,Sylhet,0.75
+Home,Debit Card,Tablet,Trial,Barisal,0.6666666666666666
+Home,Debit Card,Tablet,Trial,Chittagong,0.0
+Home,Debit Card,Tablet,Trial,Dhaka,1.0
+Home,Debit Card,Tablet,Trial,Khulna,0.25
+Home,Debit Card,Tablet,Trial,Mymensingh,0.0
+Home,Debit Card,Tablet,Trial,Rajshahi,0.0
+Home,Debit Card,Tablet,Trial,Rangpur,0.3333333333333333
+Home,Debit Card,Tablet,Trial,Sylhet,0.6666666666666666
+Home,PayPal,Desktop,Free,Barisal,0.0
+Home,PayPal,Desktop,Free,Chittagong,1.0
+Home,PayPal,Desktop,Free,Dhaka,0.0
+Home,PayPal,Desktop,Free,Khulna,0.5
+Home,PayPal,Desktop,Free,Mymensingh,0.6666666666666666
+Home,PayPal,Desktop,Free,Rajshahi,0.3333333333333333
+Home,PayPal,Desktop,Free,Rangpur,1.0
+Home,PayPal,Desktop,Free,Sylhet,0.16666666666666666
+Home,PayPal,Desktop,Premium,Barisal,0.5714285714285714
+Home,PayPal,Desktop,Premium,Chittagong,0.5
+Home,PayPal,Desktop,Premium,Dhaka,0.6666666666666666
+Home,PayPal,Desktop,Premium,Khulna,0.3333333333333333
+Home,PayPal,Desktop,Premium,Mymensingh,0.0
+Home,PayPal,Desktop,Premium,Rajshahi,0.4
+Home,PayPal,Desktop,Premium,Sylhet,0.75
+Home,PayPal,Desktop,Trial,Barisal,0.0
+Home,PayPal,Desktop,Trial,Chittagong,0.5
+Home,PayPal,Desktop,Trial,Dhaka,0.16666666666666666
+Home,PayPal,Desktop,Trial,Khulna,0.75
+Home,PayPal,Desktop,Trial,Mymensingh,0.6666666666666666
+Home,PayPal,Desktop,Trial,Rajshahi,1.0
+Home,PayPal,Desktop,Trial,Rangpur,0.0
+Home,PayPal,Desktop,Trial,Sylhet,0.25
+Home,PayPal,Mobile,Free,Barisal,0.6666666666666666
+Home,PayPal,Mobile,Free,Chittagong,0.5
+Home,PayPal,Mobile,Free,Dhaka,0.6
+Home,PayPal,Mobile,Free,Khulna,0.5
+Home,PayPal,Mobile,Free,Mymensingh,0.5
+Home,PayPal,Mobile,Free,Rajshahi,0.3333333333333333
+Home,PayPal,Mobile,Free,Rangpur,0.6666666666666666
+Home,PayPal,Mobile,Free,Sylhet,0.5
+Home,PayPal,Mobile,Premium,Barisal,0.0
+Home,PayPal,Mobile,Premium,Chittagong,1.0
+Home,PayPal,Mobile,Premium,Dhaka,0.6
+Home,PayPal,Mobile,Premium,Khulna,0.3333333333333333
+Home,PayPal,Mobile,Premium,Mymensingh,0.4
+Home,PayPal,Mobile,Premium,Rajshahi,0.6666666666666666
+Home,PayPal,Mobile,Premium,Rangpur,0.0
+Home,PayPal,Mobile,Premium,Sylhet,0.0
+Home,PayPal,Mobile,Trial,Barisal,0.5
+Home,PayPal,Mobile,Trial,Chittagong,0.5714285714285714
+Home,PayPal,Mobile,Trial,Dhaka,0.0
+Home,PayPal,Mobile,Trial,Mymensingh,0.0
+Home,PayPal,Mobile,Trial,Rajshahi,0.5
+Home,PayPal,Mobile,Trial,Rangpur,0.25
+Home,PayPal,Mobile,Trial,Sylhet,0.5
+Home,PayPal,Tablet,Free,Barisal,0.0
+Home,PayPal,Tablet,Free,Chittagong,0.8333333333333334
+Home,PayPal,Tablet,Free,Dhaka,0.3333333333333333
+Home,PayPal,Tablet,Free,Khulna,0.5
+Home,PayPal,Tablet,Free,Mymensingh,0.3333333333333333
+Home,PayPal,Tablet,Free,Rajshahi,0.5
+Home,PayPal,Tablet,Free,Rangpur,0.4
+Home,PayPal,Tablet,Free,Sylhet,0.5
+Home,PayPal,Tablet,Premium,Barisal,0.5
+Home,PayPal,Tablet,Premium,Chittagong,0.0
+Home,PayPal,Tablet,Premium,Khulna,0.5
+Home,PayPal,Tablet,Premium,Mymensingh,0.42857142857142855
+Home,PayPal,Tablet,Premium,Rajshahi,0.3333333333333333
+Home,PayPal,Tablet,Premium,Rangpur,0.3333333333333333
+Home,PayPal,Tablet,Premium,Sylhet,0.75
+Home,PayPal,Tablet,Trial,Barisal,0.6666666666666666
+Home,PayPal,Tablet,Trial,Chittagong,0.5
+Home,PayPal,Tablet,Trial,Dhaka,0.3333333333333333
+Home,PayPal,Tablet,Trial,Khulna,1.0
+Home,PayPal,Tablet,Trial,Mymensingh,0.625
+Home,PayPal,Tablet,Trial,Rajshahi,0.0
+Home,PayPal,Tablet,Trial,Sylhet,1.0
+Sports,Bank Transfer,Desktop,Free,Barisal,0.42857142857142855
+Sports,Bank Transfer,Desktop,Free,Chittagong,0.25
+Sports,Bank Transfer,Desktop,Free,Dhaka,1.0
+Sports,Bank Transfer,Desktop,Free,Khulna,0.5
+Sports,Bank Transfer,Desktop,Free,Mymensingh,0.0
+Sports,Bank Transfer,Desktop,Free,Rajshahi,0.25
+Sports,Bank Transfer,Desktop,Free,Rangpur,0.2
+Sports,Bank Transfer,Desktop,Free,Sylhet,1.0
+Sports,Bank Transfer,Desktop,Premium,Barisal,0.0
+Sports,Bank Transfer,Desktop,Premium,Chittagong,1.0
+Sports,Bank Transfer,Desktop,Premium,Dhaka,0.5
+Sports,Bank Transfer,Desktop,Premium,Khulna,0.5
+Sports,Bank Transfer,Desktop,Premium,Mymensingh,0.2
+Sports,Bank Transfer,Desktop,Premium,Rajshahi,0.2
+Sports,Bank Transfer,Desktop,Premium,Rangpur,0.2
+Sports,Bank Transfer,Desktop,Premium,Sylhet,0.5
+Sports,Bank Transfer,Desktop,Trial,Barisal,0.0
+Sports,Bank Transfer,Desktop,Trial,Chittagong,0.0
+Sports,Bank Transfer,Desktop,Trial,Dhaka,1.0
+Sports,Bank Transfer,Desktop,Trial,Khulna,0.6
+Sports,Bank Transfer,Desktop,Trial,Mymensingh,0.5
+Sports,Bank Transfer,Desktop,Trial,Rajshahi,0.6666666666666666
+Sports,Bank Transfer,Desktop,Trial,Rangpur,0.5
+Sports,Bank Transfer,Desktop,Trial,Sylhet,0.6666666666666666
+Sports,Bank Transfer,Mobile,Free,Barisal,0.0
+Sports,Bank Transfer,Mobile,Free,Chittagong,0.6
+Sports,Bank Transfer,Mobile,Free,Dhaka,1.0
+Sports,Bank Transfer,Mobile,Free,Khulna,0.3333333333333333
+Sports,Bank Transfer,Mobile,Free,Mymensingh,1.0
+Sports,Bank Transfer,Mobile,Free,Rajshahi,1.0
+Sports,Bank Transfer,Mobile,Free,Rangpur,0.25
+Sports,Bank Transfer,Mobile,Free,Sylhet,0.4
+Sports,Bank Transfer,Mobile,Premium,Barisal,0.0
+Sports,Bank Transfer,Mobile,Premium,Chittagong,0.3333333333333333
+Sports,Bank Transfer,Mobile,Premium,Dhaka,0.5
+Sports,Bank Transfer,Mobile,Premium,Khulna,0.5
+Sports,Bank Transfer,Mobile,Premium,Mymensingh,0.5
+Sports,Bank Transfer,Mobile,Premium,Rajshahi,0.4
+Sports,Bank Transfer,Mobile,Premium,Rangpur,1.0
+Sports,Bank Transfer,Mobile,Premium,Sylhet,0.75
+Sports,Bank Transfer,Mobile,Trial,Barisal,1.0
+Sports,Bank Transfer,Mobile,Trial,Chittagong,0.42857142857142855
+Sports,Bank Transfer,Mobile,Trial,Dhaka,1.0
+Sports,Bank Transfer,Mobile,Trial,Khulna,0.0
+Sports,Bank Transfer,Mobile,Trial,Mymensingh,1.0
+Sports,Bank Transfer,Mobile,Trial,Rajshahi,0.5
+Sports,Bank Transfer,Mobile,Trial,Rangpur,0.8
+Sports,Bank Transfer,Mobile,Trial,Sylhet,0.6666666666666666
+Sports,Bank Transfer,Tablet,Free,Barisal,0.0
+Sports,Bank Transfer,Tablet,Free,Chittagong,0.3333333333333333
+Sports,Bank Transfer,Tablet,Free,Dhaka,0.25
+Sports,Bank Transfer,Tablet,Free,Khulna,0.4
+Sports,Bank Transfer,Tablet,Free,Mymensingh,0.4
+Sports,Bank Transfer,Tablet,Free,Rajshahi,0.5
+Sports,Bank Transfer,Tablet,Free,Rangpur,1.0
+Sports,Bank Transfer,Tablet,Free,Sylhet,0.3333333333333333
+Sports,Bank Transfer,Tablet,Premium,Barisal,1.0
+Sports,Bank Transfer,Tablet,Premium,Chittagong,0.16666666666666666
+Sports,Bank Transfer,Tablet,Premium,Dhaka,0.3333333333333333
+Sports,Bank Transfer,Tablet,Premium,Khulna,0.6666666666666666
+Sports,Bank Transfer,Tablet,Premium,Mymensingh,0.0
+Sports,Bank Transfer,Tablet,Premium,Rajshahi,0.0
+Sports,Bank Transfer,Tablet,Premium,Rangpur,0.75
+Sports,Bank Transfer,Tablet,Premium,Sylhet,0.6666666666666666
+Sports,Bank Transfer,Tablet,Trial,Barisal,1.0
+Sports,Bank Transfer,Tablet,Trial,Chittagong,1.0
+Sports,Bank Transfer,Tablet,Trial,Dhaka,0.5
+Sports,Bank Transfer,Tablet,Trial,Khulna,0.0
+Sports,Bank Transfer,Tablet,Trial,Mymensingh,0.5
+Sports,Bank Transfer,Tablet,Trial,Rajshahi,0.75
+Sports,Bank Transfer,Tablet,Trial,Rangpur,1.0
+Sports,Bank Transfer,Tablet,Trial,Sylhet,0.0
+Sports,Cash on Delivery,Desktop,Free,Barisal,0.4
+Sports,Cash on Delivery,Desktop,Free,Chittagong,0.0
+Sports,Cash on Delivery,Desktop,Free,Dhaka,0.16666666666666666
+Sports,Cash on Delivery,Desktop,Free,Khulna,0.5
+Sports,Cash on Delivery,Desktop,Free,Mymensingh,0.0
+Sports,Cash on Delivery,Desktop,Free,Rajshahi,0.6666666666666666
+Sports,Cash on Delivery,Desktop,Free,Rangpur,1.0
+Sports,Cash on Delivery,Desktop,Free,Sylhet,0.3333333333333333
+Sports,Cash on Delivery,Desktop,Premium,Barisal,0.42857142857142855
+Sports,Cash on Delivery,Desktop,Premium,Chittagong,0.75
+Sports,Cash on Delivery,Desktop,Premium,Khulna,0.7142857142857143
+Sports,Cash on Delivery,Desktop,Premium,Mymensingh,0.4
+Sports,Cash on Delivery,Desktop,Premium,Rajshahi,1.0
+Sports,Cash on Delivery,Desktop,Premium,Rangpur,0.4
+Sports,Cash on Delivery,Desktop,Premium,Sylhet,0.3333333333333333
+Sports,Cash on Delivery,Desktop,Trial,Barisal,0.6
+Sports,Cash on Delivery,Desktop,Trial,Chittagong,0.3333333333333333
+Sports,Cash on Delivery,Desktop,Trial,Dhaka,0.3333333333333333
+Sports,Cash on Delivery,Desktop,Trial,Khulna,0.0
+Sports,Cash on Delivery,Desktop,Trial,Mymensingh,0.0
+Sports,Cash on Delivery,Desktop,Trial,Rajshahi,0.5
+Sports,Cash on Delivery,Desktop,Trial,Rangpur,1.0
+Sports,Cash on Delivery,Desktop,Trial,Sylhet,0.5
+Sports,Cash on Delivery,Mobile,Free,Barisal,0.0
+Sports,Cash on Delivery,Mobile,Free,Chittagong,0.0
+Sports,Cash on Delivery,Mobile,Free,Dhaka,0.4
+Sports,Cash on Delivery,Mobile,Free,Khulna,0.6
+Sports,Cash on Delivery,Mobile,Free,Mymensingh,0.8
+Sports,Cash on Delivery,Mobile,Free,Rajshahi,1.0
+Sports,Cash on Delivery,Mobile,Free,Rangpur,1.0
+Sports,Cash on Delivery,Mobile,Free,Sylhet,1.0
+Sports,Cash on Delivery,Mobile,Premium,Barisal,1.0
+Sports,Cash on Delivery,Mobile,Premium,Chittagong,0.6666666666666666
+Sports,Cash on Delivery,Mobile,Premium,Dhaka,0.75
+Sports,Cash on Delivery,Mobile,Premium,Khulna,0.5
+Sports,Cash on Delivery,Mobile,Premium,Mymensingh,1.0
+Sports,Cash on Delivery,Mobile,Premium,Rajshahi,0.5
+Sports,Cash on Delivery,Mobile,Premium,Rangpur,0.6666666666666666
+Sports,Cash on Delivery,Mobile,Premium,Sylhet,0.6666666666666666
+Sports,Cash on Delivery,Mobile,Trial,Barisal,0.3333333333333333
+Sports,Cash on Delivery,Mobile,Trial,Chittagong,1.0
+Sports,Cash on Delivery,Mobile,Trial,Dhaka,1.0
+Sports,Cash on Delivery,Mobile,Trial,Mymensingh,0.5
+Sports,Cash on Delivery,Mobile,Trial,Rajshahi,1.0
+Sports,Cash on Delivery,Mobile,Trial,Rangpur,0.3333333333333333
+Sports,Cash on Delivery,Mobile,Trial,Sylhet,0.0
+Sports,Cash on Delivery,Tablet,Free,Barisal,0.5
+Sports,Cash on Delivery,Tablet,Free,Chittagong,0.0
+Sports,Cash on Delivery,Tablet,Free,Dhaka,0.5
+Sports,Cash on Delivery,Tablet,Free,Khulna,1.0
+Sports,Cash on Delivery,Tablet,Free,Mymensingh,0.0
+Sports,Cash on Delivery,Tablet,Free,Rajshahi,0.6666666666666666
+Sports,Cash on Delivery,Tablet,Free,Rangpur,0.4
+Sports,Cash on Delivery,Tablet,Free,Sylhet,0.5
+Sports,Cash on Delivery,Tablet,Premium,Barisal,0.5
+Sports,Cash on Delivery,Tablet,Premium,Chittagong,0.8
+Sports,Cash on Delivery,Tablet,Premium,Khulna,0.5
+Sports,Cash on Delivery,Tablet,Premium,Mymensingh,0.0
+Sports,Cash on Delivery,Tablet,Premium,Rajshahi,0.14285714285714285
+Sports,Cash on Delivery,Tablet,Premium,Rangpur,0.5
+Sports,Cash on Delivery,Tablet,Premium,Sylhet,1.0
+Sports,Cash on Delivery,Tablet,Trial,Barisal,0.8
+Sports,Cash on Delivery,Tablet,Trial,Chittagong,0.75
+Sports,Cash on Delivery,Tablet,Trial,Dhaka,1.0
+Sports,Cash on Delivery,Tablet,Trial,Khulna,0.5
+Sports,Cash on Delivery,Tablet,Trial,Mymensingh,0.75
+Sports,Cash on Delivery,Tablet,Trial,Rajshahi,0.4
+Sports,Cash on Delivery,Tablet,Trial,Rangpur,0.3333333333333333
+Sports,Cash on Delivery,Tablet,Trial,Sylhet,1.0
+Sports,Credit Card,Desktop,Free,Barisal,1.0
+Sports,Credit Card,Desktop,Free,Dhaka,0.5
+Sports,Credit Card,Desktop,Free,Khulna,1.0
+Sports,Credit Card,Desktop,Free,Mymensingh,0.4
+Sports,Credit Card,Desktop,Free,Rajshahi,0.6666666666666666
+Sports,Credit Card,Desktop,Free,Rangpur,0.0
+Sports,Credit Card,Desktop,Free,Sylhet,0.0
+Sports,Credit Card,Desktop,Premium,Barisal,0.75
+Sports,Credit Card,Desktop,Premium,Chittagong,0.6666666666666666
+Sports,Credit Card,Desktop,Premium,Dhaka,0.2
+Sports,Credit Card,Desktop,Premium,Khulna,0.4
+Sports,Credit Card,Desktop,Premium,Mymensingh,0.5
+Sports,Credit Card,Desktop,Premium,Rajshahi,0.5
+Sports,Credit Card,Desktop,Premium,Rangpur,0.0
+Sports,Credit Card,Desktop,Premium,Sylhet,0.5
+Sports,Credit Card,Desktop,Trial,Barisal,1.0
+Sports,Credit Card,Desktop,Trial,Chittagong,0.0
+Sports,Credit Card,Desktop,Trial,Dhaka,0.6
+Sports,Credit Card,Desktop,Trial,Khulna,0.8
+Sports,Credit Card,Desktop,Trial,Mymensingh,0.3333333333333333
+Sports,Credit Card,Desktop,Trial,Rajshahi,0.25
+Sports,Credit Card,Desktop,Trial,Rangpur,0.6
+Sports,Credit Card,Desktop,Trial,Sylhet,0.5
+Sports,Credit Card,Mobile,Free,Barisal,0.6
+Sports,Credit Card,Mobile,Free,Chittagong,0.5
+Sports,Credit Card,Mobile,Free,Dhaka,0.3333333333333333
+Sports,Credit Card,Mobile,Free,Khulna,0.5
+Sports,Credit Card,Mobile,Free,Mymensingh,1.0
+Sports,Credit Card,Mobile,Free,Rajshahi,0.0
+Sports,Credit Card,Mobile,Free,Rangpur,0.5
+Sports,Credit Card,Mobile,Free,Sylhet,0.5
+Sports,Credit Card,Mobile,Premium,Barisal,0.16666666666666666
+Sports,Credit Card,Mobile,Premium,Chittagong,0.5
+Sports,Credit Card,Mobile,Premium,Dhaka,0.3333333333333333
+Sports,Credit Card,Mobile,Premium,Khulna,0.5
+Sports,Credit Card,Mobile,Premium,Mymensingh,0.6666666666666666
+Sports,Credit Card,Mobile,Premium,Rajshahi,0.5
+Sports,Credit Card,Mobile,Premium,Rangpur,1.0
+Sports,Credit Card,Mobile,Premium,Sylhet,0.5
+Sports,Credit Card,Mobile,Trial,Barisal,1.0
+Sports,Credit Card,Mobile,Trial,Chittagong,0.6666666666666666
+Sports,Credit Card,Mobile,Trial,Dhaka,1.0
+Sports,Credit Card,Mobile,Trial,Khulna,0.3333333333333333
+Sports,Credit Card,Mobile,Trial,Mymensingh,0.5
+Sports,Credit Card,Mobile,Trial,Rajshahi,1.0
+Sports,Credit Card,Mobile,Trial,Rangpur,0.5
+Sports,Credit Card,Mobile,Trial,Sylhet,0.6
+Sports,Credit Card,Tablet,Free,Barisal,0.5
+Sports,Credit Card,Tablet,Free,Chittagong,0.3333333333333333
+Sports,Credit Card,Tablet,Free,Dhaka,0.6666666666666666
+Sports,Credit Card,Tablet,Free,Khulna,0.5
+Sports,Credit Card,Tablet,Free,Mymensingh,0.3333333333333333
+Sports,Credit Card,Tablet,Free,Rajshahi,0.8
+Sports,Credit Card,Tablet,Free,Rangpur,0.5
+Sports,Credit Card,Tablet,Free,Sylhet,0.6666666666666666
+Sports,Credit Card,Tablet,Premium,Barisal,0.5
+Sports,Credit Card,Tablet,Premium,Chittagong,0.5
+Sports,Credit Card,Tablet,Premium,Dhaka,0.0
+Sports,Credit Card,Tablet,Premium,Khulna,0.0
+Sports,Credit Card,Tablet,Premium,Mymensingh,0.6666666666666666
+Sports,Credit Card,Tablet,Premium,Rajshahi,0.3333333333333333
+Sports,Credit Card,Tablet,Premium,Rangpur,0.6
+Sports,Credit Card,Tablet,Premium,Sylhet,0.5
+Sports,Credit Card,Tablet,Trial,Barisal,0.3333333333333333
+Sports,Credit Card,Tablet,Trial,Chittagong,0.5
+Sports,Credit Card,Tablet,Trial,Khulna,0.0
+Sports,Credit Card,Tablet,Trial,Mymensingh,0.5
+Sports,Credit Card,Tablet,Trial,Rajshahi,0.5
+Sports,Credit Card,Tablet,Trial,Rangpur,0.5
+Sports,Credit Card,Tablet,Trial,Sylhet,0.5
+Sports,Debit Card,Desktop,Free,Barisal,0.16666666666666666
+Sports,Debit Card,Desktop,Free,Chittagong,1.0
+Sports,Debit Card,Desktop,Free,Dhaka,0.0
+Sports,Debit Card,Desktop,Free,Khulna,0.5
+Sports,Debit Card,Desktop,Free,Mymensingh,0.5
+Sports,Debit Card,Desktop,Free,Rajshahi,0.5
+Sports,Debit Card,Desktop,Free,Rangpur,0.0
+Sports,Debit Card,Desktop,Free,Sylhet,0.0
+Sports,Debit Card,Desktop,Premium,Barisal,0.0
+Sports,Debit Card,Desktop,Premium,Chittagong,0.0
+Sports,Debit Card,Desktop,Premium,Dhaka,0.3333333333333333
+Sports,Debit Card,Desktop,Premium,Khulna,0.3333333333333333
+Sports,Debit Card,Desktop,Premium,Mymensingh,1.0
+Sports,Debit Card,Desktop,Premium,Rajshahi,0.6666666666666666
+Sports,Debit Card,Desktop,Premium,Rangpur,0.0
+Sports,Debit Card,Desktop,Premium,Sylhet,0.3333333333333333
+Sports,Debit Card,Desktop,Trial,Barisal,0.5
+Sports,Debit Card,Desktop,Trial,Chittagong,0.6666666666666666
+Sports,Debit Card,Desktop,Trial,Dhaka,0.8
+Sports,Debit Card,Desktop,Trial,Khulna,0.0
+Sports,Debit Card,Desktop,Trial,Mymensingh,0.75
+Sports,Debit Card,Desktop,Trial,Rajshahi,0.25
+Sports,Debit Card,Desktop,Trial,Rangpur,0.5
+Sports,Debit Card,Desktop,Trial,Sylhet,0.5
+Sports,Debit Card,Mobile,Free,Barisal,0.3333333333333333
+Sports,Debit Card,Mobile,Free,Chittagong,0.5
+Sports,Debit Card,Mobile,Free,Dhaka,0.5
+Sports,Debit Card,Mobile,Free,Khulna,0.6
+Sports,Debit Card,Mobile,Free,Mymensingh,0.3333333333333333
+Sports,Debit Card,Mobile,Free,Rangpur,0.5
+Sports,Debit Card,Mobile,Free,Sylhet,0.0
+Sports,Debit Card,Mobile,Premium,Barisal,0.16666666666666666
+Sports,Debit Card,Mobile,Premium,Chittagong,0.4
+Sports,Debit Card,Mobile,Premium,Dhaka,0.6
+Sports,Debit Card,Mobile,Premium,Khulna,1.0
+Sports,Debit Card,Mobile,Premium,Mymensingh,0.5
+Sports,Debit Card,Mobile,Premium,Rajshahi,0.0
+Sports,Debit Card,Mobile,Premium,Rangpur,0.5
+Sports,Debit Card,Mobile,Premium,Sylhet,1.0
+Sports,Debit Card,Mobile,Trial,Barisal,0.5714285714285714
+Sports,Debit Card,Mobile,Trial,Chittagong,1.0
+Sports,Debit Card,Mobile,Trial,Dhaka,0.42857142857142855
+Sports,Debit Card,Mobile,Trial,Khulna,0.5
+Sports,Debit Card,Mobile,Trial,Mymensingh,0.2857142857142857
+Sports,Debit Card,Mobile,Trial,Rajshahi,0.7142857142857143
+Sports,Debit Card,Mobile,Trial,Rangpur,0.3333333333333333
+Sports,Debit Card,Mobile,Trial,Sylhet,0.2
+Sports,Debit Card,Tablet,Free,Barisal,0.3333333333333333
+Sports,Debit Card,Tablet,Free,Chittagong,1.0
+Sports,Debit Card,Tablet,Free,Dhaka,0.3333333333333333
+Sports,Debit Card,Tablet,Free,Khulna,0.0
+Sports,Debit Card,Tablet,Free,Mymensingh,0.2
+Sports,Debit Card,Tablet,Free,Rajshahi,0.5
+Sports,Debit Card,Tablet,Free,Rangpur,0.3333333333333333
+Sports,Debit Card,Tablet,Free,Sylhet,0.5
+Sports,Debit Card,Tablet,Premium,Barisal,1.0
+Sports,Debit Card,Tablet,Premium,Chittagong,0.3333333333333333
+Sports,Debit Card,Tablet,Premium,Dhaka,0.0
+Sports,Debit Card,Tablet,Premium,Khulna,0.0
+Sports,Debit Card,Tablet,Premium,Mymensingh,0.3333333333333333
+Sports,Debit Card,Tablet,Premium,Rajshahi,0.0
+Sports,Debit Card,Tablet,Premium,Rangpur,0.75
+Sports,Debit Card,Tablet,Premium,Sylhet,0.6
+Sports,Debit Card,Tablet,Trial,Barisal,0.5
+Sports,Debit Card,Tablet,Trial,Chittagong,1.0
+Sports,Debit Card,Tablet,Trial,Dhaka,0.3333333333333333
+Sports,Debit Card,Tablet,Trial,Mymensingh,0.6666666666666666
+Sports,Debit Card,Tablet,Trial,Rajshahi,1.0
+Sports,Debit Card,Tablet,Trial,Rangpur,1.0
+Sports,Debit Card,Tablet,Trial,Sylhet,0.0
+Sports,PayPal,Desktop,Free,Barisal,1.0
+Sports,PayPal,Desktop,Free,Chittagong,0.0
+Sports,PayPal,Desktop,Free,Dhaka,1.0
+Sports,PayPal,Desktop,Free,Khulna,0.3333333333333333
+Sports,PayPal,Desktop,Free,Mymensingh,1.0
+Sports,PayPal,Desktop,Free,Rajshahi,0.0
+Sports,PayPal,Desktop,Free,Rangpur,1.0
+Sports,PayPal,Desktop,Free,Sylhet,0.2
+Sports,PayPal,Desktop,Premium,Barisal,0.5
+Sports,PayPal,Desktop,Premium,Dhaka,0.0
+Sports,PayPal,Desktop,Premium,Khulna,0.4
+Sports,PayPal,Desktop,Premium,Mymensingh,0.0
+Sports,PayPal,Desktop,Premium,Rajshahi,1.0
+Sports,PayPal,Desktop,Premium,Rangpur,0.25
+Sports,PayPal,Desktop,Premium,Sylhet,1.0
+Sports,PayPal,Desktop,Trial,Barisal,0.6666666666666666
+Sports,PayPal,Desktop,Trial,Chittagong,0.8
+Sports,PayPal,Desktop,Trial,Dhaka,0.16666666666666666
+Sports,PayPal,Desktop,Trial,Khulna,0.6666666666666666
+Sports,PayPal,Desktop,Trial,Mymensingh,1.0
+Sports,PayPal,Desktop,Trial,Rajshahi,0.6666666666666666
+Sports,PayPal,Desktop,Trial,Rangpur,0.6666666666666666
+Sports,PayPal,Desktop,Trial,Sylhet,1.0
+Sports,PayPal,Mobile,Free,Barisal,0.5
+Sports,PayPal,Mobile,Free,Chittagong,1.0
+Sports,PayPal,Mobile,Free,Dhaka,0.0
+Sports,PayPal,Mobile,Free,Khulna,1.0
+Sports,PayPal,Mobile,Free,Mymensingh,0.6666666666666666
+Sports,PayPal,Mobile,Free,Rajshahi,0.6666666666666666
+Sports,PayPal,Mobile,Free,Rangpur,0.4
+Sports,PayPal,Mobile,Premium,Barisal,0.5
+Sports,PayPal,Mobile,Premium,Chittagong,0.4
+Sports,PayPal,Mobile,Premium,Dhaka,0.6666666666666666
+Sports,PayPal,Mobile,Premium,Khulna,0.6666666666666666
+Sports,PayPal,Mobile,Premium,Mymensingh,0.5
+Sports,PayPal,Mobile,Premium,Rangpur,1.0
+Sports,PayPal,Mobile,Premium,Sylhet,0.0
+Sports,PayPal,Mobile,Trial,Barisal,0.0
+Sports,PayPal,Mobile,Trial,Chittagong,0.3333333333333333
+Sports,PayPal,Mobile,Trial,Dhaka,0.3333333333333333
+Sports,PayPal,Mobile,Trial,Khulna,0.6666666666666666
+Sports,PayPal,Mobile,Trial,Mymensingh,0.5
+Sports,PayPal,Mobile,Trial,Rajshahi,0.5
+Sports,PayPal,Mobile,Trial,Rangpur,0.5
+Sports,PayPal,Mobile,Trial,Sylhet,0.6666666666666666
+Sports,PayPal,Tablet,Free,Barisal,0.6666666666666666
+Sports,PayPal,Tablet,Free,Chittagong,1.0
+Sports,PayPal,Tablet,Free,Dhaka,0.5
+Sports,PayPal,Tablet,Free,Khulna,0.6666666666666666
+Sports,PayPal,Tablet,Free,Mymensingh,0.5
+Sports,PayPal,Tablet,Free,Rajshahi,0.5714285714285714
+Sports,PayPal,Tablet,Free,Rangpur,0.6666666666666666
+Sports,PayPal,Tablet,Free,Sylhet,0.2
+Sports,PayPal,Tablet,Premium,Barisal,0.25
+Sports,PayPal,Tablet,Premium,Chittagong,0.5
+Sports,PayPal,Tablet,Premium,Dhaka,0.8
+Sports,PayPal,Tablet,Premium,Khulna,0.16666666666666666
+Sports,PayPal,Tablet,Premium,Mymensingh,0.25
+Sports,PayPal,Tablet,Premium,Rajshahi,0.5
+Sports,PayPal,Tablet,Premium,Rangpur,0.5
+Sports,PayPal,Tablet,Premium,Sylhet,1.0
+Sports,PayPal,Tablet,Trial,Barisal,0.8
+Sports,PayPal,Tablet,Trial,Chittagong,0.6666666666666666
+Sports,PayPal,Tablet,Trial,Dhaka,1.0
+Sports,PayPal,Tablet,Trial,Khulna,0.75
+Sports,PayPal,Tablet,Trial,Mymensingh,0.0
+Sports,PayPal,Tablet,Trial,Rajshahi,0.4
+Sports,PayPal,Tablet,Trial,Rangpur,0.0
+Sports,PayPal,Tablet,Trial,Sylhet,0.5
+Toys,Bank Transfer,Desktop,Free,Barisal,0.4
+Toys,Bank Transfer,Desktop,Free,Chittagong,1.0
+Toys,Bank Transfer,Desktop,Free,Dhaka,0.0
+Toys,Bank Transfer,Desktop,Free,Khulna,1.0
+Toys,Bank Transfer,Desktop,Free,Mymensingh,0.42857142857142855
+Toys,Bank Transfer,Desktop,Free,Rajshahi,0.0
+Toys,Bank Transfer,Desktop,Free,Rangpur,0.5
+Toys,Bank Transfer,Desktop,Free,Sylhet,0.4
+Toys,Bank Transfer,Desktop,Premium,Barisal,0.4
+Toys,Bank Transfer,Desktop,Premium,Chittagong,1.0
+Toys,Bank Transfer,Desktop,Premium,Khulna,0.3333333333333333
+Toys,Bank Transfer,Desktop,Premium,Mymensingh,0.5714285714285714
+Toys,Bank Transfer,Desktop,Premium,Rajshahi,0.3333333333333333
+Toys,Bank Transfer,Desktop,Premium,Rangpur,0.0
+Toys,Bank Transfer,Desktop,Premium,Sylhet,1.0
+Toys,Bank Transfer,Desktop,Trial,Barisal,0.3333333333333333
+Toys,Bank Transfer,Desktop,Trial,Chittagong,0.25
+Toys,Bank Transfer,Desktop,Trial,Dhaka,0.0
+Toys,Bank Transfer,Desktop,Trial,Khulna,0.42857142857142855
+Toys,Bank Transfer,Desktop,Trial,Mymensingh,0.5
+Toys,Bank Transfer,Desktop,Trial,Rajshahi,0.6666666666666666
+Toys,Bank Transfer,Desktop,Trial,Rangpur,1.0
+Toys,Bank Transfer,Desktop,Trial,Sylhet,0.0
+Toys,Bank Transfer,Mobile,Free,Barisal,0.5
+Toys,Bank Transfer,Mobile,Free,Chittagong,0.3333333333333333
+Toys,Bank Transfer,Mobile,Free,Dhaka,0.6
+Toys,Bank Transfer,Mobile,Free,Khulna,0.0
+Toys,Bank Transfer,Mobile,Free,Mymensingh,0.5
+Toys,Bank Transfer,Mobile,Free,Rajshahi,0.5714285714285714
+Toys,Bank Transfer,Mobile,Free,Rangpur,0.5714285714285714
+Toys,Bank Transfer,Mobile,Free,Sylhet,1.0
+Toys,Bank Transfer,Mobile,Premium,Chittagong,0.0
+Toys,Bank Transfer,Mobile,Premium,Dhaka,0.0
+Toys,Bank Transfer,Mobile,Premium,Mymensingh,0.375
+Toys,Bank Transfer,Mobile,Premium,Rajshahi,0.3333333333333333
+Toys,Bank Transfer,Mobile,Premium,Rangpur,0.3333333333333333
+Toys,Bank Transfer,Mobile,Premium,Sylhet,1.0
+Toys,Bank Transfer,Mobile,Trial,Barisal,0.4
+Toys,Bank Transfer,Mobile,Trial,Chittagong,0.0
+Toys,Bank Transfer,Mobile,Trial,Dhaka,0.6
+Toys,Bank Transfer,Mobile,Trial,Khulna,0.4
+Toys,Bank Transfer,Mobile,Trial,Mymensingh,0.3333333333333333
+Toys,Bank Transfer,Mobile,Trial,Rajshahi,0.6666666666666666
+Toys,Bank Transfer,Mobile,Trial,Rangpur,0.8
+Toys,Bank Transfer,Mobile,Trial,Sylhet,0.0
+Toys,Bank Transfer,Tablet,Free,Barisal,0.5
+Toys,Bank Transfer,Tablet,Free,Chittagong,0.0
+Toys,Bank Transfer,Tablet,Free,Dhaka,0.0
+Toys,Bank Transfer,Tablet,Free,Khulna,0.3333333333333333
+Toys,Bank Transfer,Tablet,Free,Rajshahi,0.6666666666666666
+Toys,Bank Transfer,Tablet,Free,Rangpur,0.0
+Toys,Bank Transfer,Tablet,Free,Sylhet,0.5
+Toys,Bank Transfer,Tablet,Premium,Barisal,0.3333333333333333
+Toys,Bank Transfer,Tablet,Premium,Chittagong,1.0
+Toys,Bank Transfer,Tablet,Premium,Dhaka,0.5
+Toys,Bank Transfer,Tablet,Premium,Khulna,1.0
+Toys,Bank Transfer,Tablet,Premium,Mymensingh,0.3333333333333333
+Toys,Bank Transfer,Tablet,Premium,Rajshahi,0.75
+Toys,Bank Transfer,Tablet,Premium,Rangpur,0.3333333333333333
+Toys,Bank Transfer,Tablet,Premium,Sylhet,0.6
+Toys,Bank Transfer,Tablet,Trial,Barisal,0.75
+Toys,Bank Transfer,Tablet,Trial,Chittagong,0.0
+Toys,Bank Transfer,Tablet,Trial,Dhaka,1.0
+Toys,Bank Transfer,Tablet,Trial,Khulna,0.8333333333333334
+Toys,Bank Transfer,Tablet,Trial,Mymensingh,0.25
+Toys,Bank Transfer,Tablet,Trial,Rajshahi,0.0
+Toys,Bank Transfer,Tablet,Trial,Rangpur,0.14285714285714285
+Toys,Bank Transfer,Tablet,Trial,Sylhet,0.0
+Toys,Cash on Delivery,Desktop,Free,Barisal,0.5
+Toys,Cash on Delivery,Desktop,Free,Chittagong,0.3333333333333333
+Toys,Cash on Delivery,Desktop,Free,Dhaka,1.0
+Toys,Cash on Delivery,Desktop,Free,Khulna,0.6666666666666666
+Toys,Cash on Delivery,Desktop,Free,Mymensingh,0.75
+Toys,Cash on Delivery,Desktop,Free,Rajshahi,0.5
+Toys,Cash on Delivery,Desktop,Free,Rangpur,1.0
+Toys,Cash on Delivery,Desktop,Free,Sylhet,0.7142857142857143
+Toys,Cash on Delivery,Desktop,Premium,Barisal,0.0
+Toys,Cash on Delivery,Desktop,Premium,Chittagong,0.25
+Toys,Cash on Delivery,Desktop,Premium,Dhaka,1.0
+Toys,Cash on Delivery,Desktop,Premium,Khulna,0.6666666666666666
+Toys,Cash on Delivery,Desktop,Premium,Mymensingh,0.42857142857142855
+Toys,Cash on Delivery,Desktop,Premium,Rajshahi,0.5
+Toys,Cash on Delivery,Desktop,Premium,Rangpur,0.6666666666666666
+Toys,Cash on Delivery,Desktop,Premium,Sylhet,0.0
+Toys,Cash on Delivery,Desktop,Trial,Barisal,1.0
+Toys,Cash on Delivery,Desktop,Trial,Chittagong,0.6666666666666666
+Toys,Cash on Delivery,Desktop,Trial,Dhaka,0.0
+Toys,Cash on Delivery,Desktop,Trial,Khulna,0.5
+Toys,Cash on Delivery,Desktop,Trial,Mymensingh,0.6666666666666666
+Toys,Cash on Delivery,Desktop,Trial,Rajshahi,0.75
+Toys,Cash on Delivery,Desktop,Trial,Rangpur,1.0
+Toys,Cash on Delivery,Desktop,Trial,Sylhet,0.5
+Toys,Cash on Delivery,Mobile,Free,Barisal,0.2
+Toys,Cash on Delivery,Mobile,Free,Chittagong,0.2
+Toys,Cash on Delivery,Mobile,Free,Dhaka,0.42857142857142855
+Toys,Cash on Delivery,Mobile,Free,Khulna,1.0
+Toys,Cash on Delivery,Mobile,Free,Mymensingh,0.0
+Toys,Cash on Delivery,Mobile,Free,Rajshahi,0.0
+Toys,Cash on Delivery,Mobile,Free,Rangpur,1.0
+Toys,Cash on Delivery,Mobile,Free,Sylhet,0.8
+Toys,Cash on Delivery,Mobile,Premium,Barisal,1.0
+Toys,Cash on Delivery,Mobile,Premium,Chittagong,0.5
+Toys,Cash on Delivery,Mobile,Premium,Dhaka,0.3333333333333333
+Toys,Cash on Delivery,Mobile,Premium,Khulna,1.0
+Toys,Cash on Delivery,Mobile,Premium,Mymensingh,0.8
+Toys,Cash on Delivery,Mobile,Premium,Rajshahi,0.5
+Toys,Cash on Delivery,Mobile,Premium,Rangpur,1.0
+Toys,Cash on Delivery,Mobile,Premium,Sylhet,0.25
+Toys,Cash on Delivery,Mobile,Trial,Barisal,0.6666666666666666
+Toys,Cash on Delivery,Mobile,Trial,Chittagong,0.6
+Toys,Cash on Delivery,Mobile,Trial,Dhaka,0.5
+Toys,Cash on Delivery,Mobile,Trial,Khulna,0.6666666666666666
+Toys,Cash on Delivery,Mobile,Trial,Mymensingh,0.2
+Toys,Cash on Delivery,Mobile,Trial,Rajshahi,0.0
+Toys,Cash on Delivery,Mobile,Trial,Rangpur,0.6666666666666666
+Toys,Cash on Delivery,Mobile,Trial,Sylhet,0.6666666666666666
+Toys,Cash on Delivery,Tablet,Free,Barisal,1.0
+Toys,Cash on Delivery,Tablet,Free,Chittagong,0.6666666666666666
+Toys,Cash on Delivery,Tablet,Free,Dhaka,0.5714285714285714
+Toys,Cash on Delivery,Tablet,Free,Khulna,0.2857142857142857
+Toys,Cash on Delivery,Tablet,Free,Mymensingh,0.75
+Toys,Cash on Delivery,Tablet,Free,Rajshahi,0.5
+Toys,Cash on Delivery,Tablet,Free,Rangpur,0.8333333333333334
+Toys,Cash on Delivery,Tablet,Free,Sylhet,0.75
+Toys,Cash on Delivery,Tablet,Premium,Barisal,0.0
+Toys,Cash on Delivery,Tablet,Premium,Chittagong,1.0
+Toys,Cash on Delivery,Tablet,Premium,Dhaka,0.0
+Toys,Cash on Delivery,Tablet,Premium,Khulna,0.4
+Toys,Cash on Delivery,Tablet,Premium,Mymensingh,0.0
+Toys,Cash on Delivery,Tablet,Premium,Rajshahi,0.3333333333333333
+Toys,Cash on Delivery,Tablet,Premium,Rangpur,1.0
+Toys,Cash on Delivery,Tablet,Premium,Sylhet,0.25
+Toys,Cash on Delivery,Tablet,Trial,Barisal,0.4
+Toys,Cash on Delivery,Tablet,Trial,Chittagong,0.4
+Toys,Cash on Delivery,Tablet,Trial,Dhaka,0.6666666666666666
+Toys,Cash on Delivery,Tablet,Trial,Khulna,0.16666666666666666
+Toys,Cash on Delivery,Tablet,Trial,Mymensingh,0.0
+Toys,Cash on Delivery,Tablet,Trial,Rajshahi,0.6
+Toys,Cash on Delivery,Tablet,Trial,Rangpur,0.25
+Toys,Cash on Delivery,Tablet,Trial,Sylhet,0.0
+Toys,Credit Card,Desktop,Free,Barisal,0.8
+Toys,Credit Card,Desktop,Free,Chittagong,0.6666666666666666
+Toys,Credit Card,Desktop,Free,Dhaka,0.6666666666666666
+Toys,Credit Card,Desktop,Free,Khulna,0.6666666666666666
+Toys,Credit Card,Desktop,Free,Mymensingh,1.0
+Toys,Credit Card,Desktop,Free,Rajshahi,0.0
+Toys,Credit Card,Desktop,Free,Rangpur,0.3333333333333333
+Toys,Credit Card,Desktop,Free,Sylhet,0.6
+Toys,Credit Card,Desktop,Premium,Barisal,0.6666666666666666
+Toys,Credit Card,Desktop,Premium,Chittagong,0.0
+Toys,Credit Card,Desktop,Premium,Dhaka,1.0
+Toys,Credit Card,Desktop,Premium,Khulna,0.4
+Toys,Credit Card,Desktop,Premium,Rajshahi,0.5
+Toys,Credit Card,Desktop,Premium,Rangpur,0.3333333333333333
+Toys,Credit Card,Desktop,Premium,Sylhet,0.5
+Toys,Credit Card,Desktop,Trial,Barisal,0.75
+Toys,Credit Card,Desktop,Trial,Chittagong,0.6666666666666666
+Toys,Credit Card,Desktop,Trial,Dhaka,1.0
+Toys,Credit Card,Desktop,Trial,Khulna,0.75
+Toys,Credit Card,Desktop,Trial,Mymensingh,0.4
+Toys,Credit Card,Desktop,Trial,Rajshahi,0.3333333333333333
+Toys,Credit Card,Desktop,Trial,Rangpur,1.0
+Toys,Credit Card,Desktop,Trial,Sylhet,0.0
+Toys,Credit Card,Mobile,Free,Barisal,0.6
+Toys,Credit Card,Mobile,Free,Chittagong,0.42857142857142855
+Toys,Credit Card,Mobile,Free,Dhaka,1.0
+Toys,Credit Card,Mobile,Free,Khulna,0.3333333333333333
+Toys,Credit Card,Mobile,Free,Mymensingh,0.5
+Toys,Credit Card,Mobile,Free,Rajshahi,0.3333333333333333
+Toys,Credit Card,Mobile,Free,Rangpur,0.75
+Toys,Credit Card,Mobile,Free,Sylhet,0.4
+Toys,Credit Card,Mobile,Premium,Barisal,0.6666666666666666
+Toys,Credit Card,Mobile,Premium,Chittagong,0.3333333333333333
+Toys,Credit Card,Mobile,Premium,Dhaka,0.6666666666666666
+Toys,Credit Card,Mobile,Premium,Khulna,0.6
+Toys,Credit Card,Mobile,Premium,Mymensingh,1.0
+Toys,Credit Card,Mobile,Premium,Rajshahi,0.8333333333333334
+Toys,Credit Card,Mobile,Premium,Rangpur,1.0
+Toys,Credit Card,Mobile,Premium,Sylhet,1.0
+Toys,Credit Card,Mobile,Trial,Barisal,0.75
+Toys,Credit Card,Mobile,Trial,Dhaka,1.0
+Toys,Credit Card,Mobile,Trial,Khulna,0.5
+Toys,Credit Card,Mobile,Trial,Mymensingh,1.0
+Toys,Credit Card,Mobile,Trial,Rajshahi,0.0
+Toys,Credit Card,Mobile,Trial,Rangpur,0.5
+Toys,Credit Card,Mobile,Trial,Sylhet,1.0
+Toys,Credit Card,Tablet,Free,Barisal,0.6666666666666666
+Toys,Credit Card,Tablet,Free,Chittagong,0.5
+Toys,Credit Card,Tablet,Free,Dhaka,1.0
+Toys,Credit Card,Tablet,Free,Khulna,0.5
+Toys,Credit Card,Tablet,Free,Mymensingh,0.0
+Toys,Credit Card,Tablet,Free,Rajshahi,0.3333333333333333
+Toys,Credit Card,Tablet,Free,Rangpur,0.6666666666666666
+Toys,Credit Card,Tablet,Free,Sylhet,0.25
+Toys,Credit Card,Tablet,Premium,Barisal,0.0
+Toys,Credit Card,Tablet,Premium,Chittagong,0.5
+Toys,Credit Card,Tablet,Premium,Khulna,0.0
+Toys,Credit Card,Tablet,Premium,Mymensingh,0.3333333333333333
+Toys,Credit Card,Tablet,Premium,Rajshahi,0.5
+Toys,Credit Card,Tablet,Premium,Rangpur,0.25
+Toys,Credit Card,Tablet,Premium,Sylhet,0.0
+Toys,Credit Card,Tablet,Trial,Chittagong,1.0
+Toys,Credit Card,Tablet,Trial,Dhaka,0.5714285714285714
+Toys,Credit Card,Tablet,Trial,Khulna,0.5
+Toys,Credit Card,Tablet,Trial,Mymensingh,0.3333333333333333
+Toys,Credit Card,Tablet,Trial,Rajshahi,0.6
+Toys,Credit Card,Tablet,Trial,Rangpur,0.7142857142857143
+Toys,Credit Card,Tablet,Trial,Sylhet,0.6
+Toys,Debit Card,Desktop,Free,Barisal,0.75
+Toys,Debit Card,Desktop,Free,Chittagong,0.5
+Toys,Debit Card,Desktop,Free,Dhaka,1.0
+Toys,Debit Card,Desktop,Free,Khulna,1.0
+Toys,Debit Card,Desktop,Free,Mymensingh,0.6666666666666666
+Toys,Debit Card,Desktop,Free,Rajshahi,0.25
+Toys,Debit Card,Desktop,Free,Rangpur,1.0
+Toys,Debit Card,Desktop,Free,Sylhet,0.3333333333333333
+Toys,Debit Card,Desktop,Premium,Barisal,0.6
+Toys,Debit Card,Desktop,Premium,Chittagong,0.0
+Toys,Debit Card,Desktop,Premium,Dhaka,0.2
+Toys,Debit Card,Desktop,Premium,Khulna,0.4444444444444444
+Toys,Debit Card,Desktop,Premium,Mymensingh,1.0
+Toys,Debit Card,Desktop,Premium,Rangpur,0.5
+Toys,Debit Card,Desktop,Premium,Sylhet,0.6666666666666666
+Toys,Debit Card,Desktop,Trial,Barisal,0.5714285714285714
+Toys,Debit Card,Desktop,Trial,Chittagong,0.5
+Toys,Debit Card,Desktop,Trial,Dhaka,1.0
+Toys,Debit Card,Desktop,Trial,Khulna,0.25
+Toys,Debit Card,Desktop,Trial,Mymensingh,0.5
+Toys,Debit Card,Desktop,Trial,Rajshahi,0.75
+Toys,Debit Card,Desktop,Trial,Rangpur,0.5
+Toys,Debit Card,Desktop,Trial,Sylhet,0.5
+Toys,Debit Card,Mobile,Free,Barisal,0.6666666666666666
+Toys,Debit Card,Mobile,Free,Chittagong,0.0
+Toys,Debit Card,Mobile,Free,Dhaka,0.2
+Toys,Debit Card,Mobile,Free,Khulna,0.3333333333333333
+Toys,Debit Card,Mobile,Free,Mymensingh,0.5
+Toys,Debit Card,Mobile,Free,Rajshahi,1.0
+Toys,Debit Card,Mobile,Free,Rangpur,0.42857142857142855
+Toys,Debit Card,Mobile,Free,Sylhet,0.6666666666666666
+Toys,Debit Card,Mobile,Premium,Barisal,0.0
+Toys,Debit Card,Mobile,Premium,Chittagong,0.14285714285714285
+Toys,Debit Card,Mobile,Premium,Dhaka,0.5
+Toys,Debit Card,Mobile,Premium,Khulna,0.25
+Toys,Debit Card,Mobile,Premium,Mymensingh,0.8
+Toys,Debit Card,Mobile,Premium,Rajshahi,1.0
+Toys,Debit Card,Mobile,Premium,Rangpur,0.6666666666666666
+Toys,Debit Card,Mobile,Premium,Sylhet,0.5
+Toys,Debit Card,Mobile,Trial,Barisal,0.5714285714285714
+Toys,Debit Card,Mobile,Trial,Chittagong,0.5
+Toys,Debit Card,Mobile,Trial,Dhaka,0.6666666666666666
+Toys,Debit Card,Mobile,Trial,Khulna,0.625
+Toys,Debit Card,Mobile,Trial,Mymensingh,0.3333333333333333
+Toys,Debit Card,Mobile,Trial,Rajshahi,0.0
+Toys,Debit Card,Mobile,Trial,Rangpur,1.0
+Toys,Debit Card,Mobile,Trial,Sylhet,0.18181818181818182
+Toys,Debit Card,Tablet,Free,Barisal,0.5
+Toys,Debit Card,Tablet,Free,Chittagong,0.0
+Toys,Debit Card,Tablet,Free,Dhaka,0.8
+Toys,Debit Card,Tablet,Free,Khulna,0.0
+Toys,Debit Card,Tablet,Free,Mymensingh,0.3333333333333333
+Toys,Debit Card,Tablet,Free,Rajshahi,0.6
+Toys,Debit Card,Tablet,Free,Rangpur,0.2
+Toys,Debit Card,Tablet,Free,Sylhet,0.8333333333333334
+Toys,Debit Card,Tablet,Premium,Barisal,0.3333333333333333
+Toys,Debit Card,Tablet,Premium,Chittagong,0.6666666666666666
+Toys,Debit Card,Tablet,Premium,Dhaka,0.0
+Toys,Debit Card,Tablet,Premium,Khulna,0.3333333333333333
+Toys,Debit Card,Tablet,Premium,Mymensingh,0.5
+Toys,Debit Card,Tablet,Premium,Rajshahi,0.6
+Toys,Debit Card,Tablet,Premium,Rangpur,0.5
+Toys,Debit Card,Tablet,Premium,Sylhet,0.3333333333333333
+Toys,Debit Card,Tablet,Trial,Barisal,0.5
+Toys,Debit Card,Tablet,Trial,Chittagong,0.5
+Toys,Debit Card,Tablet,Trial,Dhaka,0.3333333333333333
+Toys,Debit Card,Tablet,Trial,Khulna,0.6666666666666666
+Toys,Debit Card,Tablet,Trial,Mymensingh,0.5
+Toys,Debit Card,Tablet,Trial,Rajshahi,0.6
+Toys,Debit Card,Tablet,Trial,Rangpur,1.0
+Toys,Debit Card,Tablet,Trial,Sylhet,1.0
+Toys,PayPal,Desktop,Free,Barisal,0.0
+Toys,PayPal,Desktop,Free,Chittagong,0.6666666666666666
+Toys,PayPal,Desktop,Free,Dhaka,1.0
+Toys,PayPal,Desktop,Free,Khulna,1.0
+Toys,PayPal,Desktop,Free,Mymensingh,0.5
+Toys,PayPal,Desktop,Free,Rajshahi,0.2
+Toys,PayPal,Desktop,Free,Rangpur,0.3333333333333333
+Toys,PayPal,Desktop,Free,Sylhet,0.6
+Toys,PayPal,Desktop,Premium,Barisal,1.0
+Toys,PayPal,Desktop,Premium,Chittagong,0.25
+Toys,PayPal,Desktop,Premium,Dhaka,0.5
+Toys,PayPal,Desktop,Premium,Khulna,0.3333333333333333
+Toys,PayPal,Desktop,Premium,Mymensingh,0.0
+Toys,PayPal,Desktop,Premium,Rajshahi,0.8
+Toys,PayPal,Desktop,Premium,Rangpur,0.2
+Toys,PayPal,Desktop,Premium,Sylhet,0.5
+Toys,PayPal,Desktop,Trial,Barisal,1.0
+Toys,PayPal,Desktop,Trial,Chittagong,0.0
+Toys,PayPal,Desktop,Trial,Dhaka,1.0
+Toys,PayPal,Desktop,Trial,Khulna,1.0
+Toys,PayPal,Desktop,Trial,Mymensingh,1.0
+Toys,PayPal,Desktop,Trial,Rajshahi,0.3333333333333333
+Toys,PayPal,Desktop,Trial,Rangpur,0.6
+Toys,PayPal,Mobile,Free,Barisal,1.0
+Toys,PayPal,Mobile,Free,Chittagong,0.75
+Toys,PayPal,Mobile,Free,Dhaka,1.0
+Toys,PayPal,Mobile,Free,Khulna,0.5
+Toys,PayPal,Mobile,Free,Mymensingh,1.0
+Toys,PayPal,Mobile,Free,Rajshahi,0.6666666666666666
+Toys,PayPal,Mobile,Free,Rangpur,0.5
+Toys,PayPal,Mobile,Free,Sylhet,1.0
+Toys,PayPal,Mobile,Premium,Barisal,0.5
+Toys,PayPal,Mobile,Premium,Chittagong,0.3333333333333333
+Toys,PayPal,Mobile,Premium,Dhaka,0.16666666666666666
+Toys,PayPal,Mobile,Premium,Khulna,0.6666666666666666
+Toys,PayPal,Mobile,Premium,Mymensingh,0.4
+Toys,PayPal,Mobile,Premium,Rajshahi,0.25
+Toys,PayPal,Mobile,Premium,Rangpur,0.5714285714285714
+Toys,PayPal,Mobile,Premium,Sylhet,0.4
+Toys,PayPal,Mobile,Trial,Chittagong,0.0
+Toys,PayPal,Mobile,Trial,Dhaka,0.0
+Toys,PayPal,Mobile,Trial,Khulna,0.3333333333333333
+Toys,PayPal,Mobile,Trial,Mymensingh,0.5
+Toys,PayPal,Mobile,Trial,Rajshahi,0.5
+Toys,PayPal,Mobile,Trial,Sylhet,0.0
+Toys,PayPal,Tablet,Free,Barisal,0.75
+Toys,PayPal,Tablet,Free,Dhaka,0.5
+Toys,PayPal,Tablet,Free,Khulna,1.0
+Toys,PayPal,Tablet,Free,Mymensingh,0.0
+Toys,PayPal,Tablet,Free,Rajshahi,1.0
+Toys,PayPal,Tablet,Free,Rangpur,0.4
+Toys,PayPal,Tablet,Free,Sylhet,0.75
+Toys,PayPal,Tablet,Premium,Barisal,0.0
+Toys,PayPal,Tablet,Premium,Chittagong,0.0
+Toys,PayPal,Tablet,Premium,Dhaka,0.6666666666666666
+Toys,PayPal,Tablet,Premium,Khulna,0.6
+Toys,PayPal,Tablet,Premium,Mymensingh,0.25
+Toys,PayPal,Tablet,Premium,Rajshahi,0.0
+Toys,PayPal,Tablet,Premium,Rangpur,0.3333333333333333
+Toys,PayPal,Tablet,Premium,Sylhet,0.6666666666666666
+Toys,PayPal,Tablet,Trial,Barisal,0.0
+Toys,PayPal,Tablet,Trial,Chittagong,0.5
+Toys,PayPal,Tablet,Trial,Dhaka,0.75
+Toys,PayPal,Tablet,Trial,Khulna,0.0
+Toys,PayPal,Tablet,Trial,Mymensingh,0.3333333333333333
+Toys,PayPal,Tablet,Trial,Rajshahi,1.0
+Toys,PayPal,Tablet,Trial,Rangpur,0.8
+Toys,PayPal,Tablet,Trial,Sylhet,0.4
