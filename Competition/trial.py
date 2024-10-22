@@ -615,8 +615,9 @@ if insight_level == "Basic Insights":
     payment_options = df['Payment Method'].unique().tolist()
     selected_payment = st.multiselect("Select Payment Methods to View:", payment_options, default=payment_options)
 
+    # Check if 'Payment Method' exists in DataFrame
     if 'Payment Method' in df.columns:
-        # Filter the DataFrame based on the selected gender and payment method
+        # Filter the DataFrame based on the selected gender
         filtered_df = df.copy()
 
         # Apply gender filter if selected
@@ -674,6 +675,7 @@ if insight_level == "Basic Insights":
         st.plotly_chart(payment_fig)
     else:
         st.error("The uploaded dataset does not contain the required column: 'Payment Method'.")
+
 
         
 # Intermediate Insights - Q1
