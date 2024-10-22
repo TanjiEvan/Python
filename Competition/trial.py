@@ -8,160 +8,252 @@ from plotly.subplots import make_subplots
 # Set page configuration
 st.set_page_config(page_title="E-commerce Dashboard", layout="wide")
 
-# Home Page Title and Description
-st.title("E-commerce Customer Behavior Dashboard")
-st.subheader("Explore insights into customer behavior, purchasing patterns, and satisfaction.")
+# Custom CSS for better metric visualization 
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #2C3E50; /* Dark background color */
+    }
+    .metric-container {
+        background-color: #34495E; /* Dark blue card for dark mode */
+        color: white; /* White text for contrast */
+        border-left: 5px solid #1ABC9C;
+        padding: 15px; /* Increased padding for better spacing */
+        border-radius: 10px;
+        margin-bottom: 20px; /* Increased margin for spacing between metrics */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+        text-align: center; /* Center text in metrics */
+        min-width: 200px; /* Minimum width for better uniformity */
+    }
+    .metric-header {
+        font-size: 24px; /* Slightly larger header */
+        text-align: center;
+        color: #E74C3C; /* Red header for emphasis */
+        margin: 20px 0; /* Margins for spacing */
+    }
+    .metric-container p {
+        font-size: 18px; /* Increased font size for better visibility */
+        margin: 0;
+    }
+    .metric-container h2 {
+        font-size: 24px; /* Larger size for the main metric */
+        margin: 5px 0; /* Reduced margin for closer display */
+    }
+    .icon {
+        font-size: 28px; /* Increased icon size for better visibility */
+        margin-right: 8px;
+        color: #1ABC9C; /* Lighter green for better visibility */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-# Introduction Text
-st.write("""
-Welcome to the interactive dashboard that provides insights into e-commerce customer behavior. 
-This dashboard is divided into three levels of insights:
-- **Basic Insights**: Get an overview of basic customer metrics and patterns.
-- **Intermediate Insights**: Dive deeper into customer correlations and behaviors.
-- **Critical Thinking Insights**: Explore more complex analyses, uncovering deeper business insights.
-""")
+# Home Page Title and Description
+st.markdown("<h1 style='text-align: center; color: #1ABC9C;'>E-commerce Customer Behavior Dashboard</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #E74C3C;'>Gain deep insights into customer behavior, purchasing patterns, and satisfaction metrics.</h4>", unsafe_allow_html=True)
+
+@st.cache_data
+def load_data():
+    return pd.read_csv('1st DIC/ecommerce_customer_behavior_dataset.csv')
+
+df = load_data()
+
 
 # Navigation Section
-st.sidebar.title("Navigation")
+st.sidebar.title("Insights Navigation")
 insight_level = st.sidebar.radio("Choose Insight Level", ["Basic Insights", "Intermediate Insights", "Critical Thinking Insights", "Own Findings"])
 
-# Load DataFrame
-df = pd.read_csv('1st DIC/ecommerce_customer_behavior_dataset.csv')
+# Showing dataset overview only when 'Basic Insights' is selected
+if insight_level == "Basic Insights":
+    if 'first_time' not in st.session_state:
+        st.session_state.first_time = True
 
-# Display DataFrame
-st.header("Dataset Overview")
-st.dataframe(df)  # Display the loaded DataFrame
+    if st.session_state.first_time:
+        st.header("Detailed Dataset Overview")
+        st.dataframe(df)
+        st.write("This dataset provides a comprehensive view of customer behavior metrics, including details on purchases, demographics, and return rates.")
+        st.session_state.first_time = False
 
-if st.sidebar.button("Load Data"):
-    st.success("Data loaded successfully!")
+   
+    st.markdown("---")  # Horizontal line separator
 
+    # Adding Dataset Overview at a Glance Section
+    st.markdown("<h2 class='metric-header'>Dataset Overview at a Glance</h2>", unsafe_allow_html=True)
+
+    # Organizing the layout with compact columns
+    with st.container():
+        total_customers = df['Customer ID'].nunique()
+        total_purchases = df['Number of Items Purchased'].sum()
+        avg_order_value = df['Purchase Amount ($)'].mean()
+        total_revenue = df['Purchase Amount ($)'].sum()
+        avg_review_score = df['Review Score (1-5)'].mean()
+
+      
+        col1, col2, col3 = st.columns(3)  # Three equal columns for main metrics
+        with col1:
+            st.markdown("<div class='metric-container'><span class='icon'>👥</span><p>Total Customers</p><h2>{}</h2></div>".format(total_customers), unsafe_allow_html=True)
+        with col2:
+            st.markdown("<div class='metric-container'><span class='icon'>🛒</span><p>Total Purchases</p><h2>{}</h2></div>".format(total_purchases), unsafe_allow_html=True)
+        with col3:
+            st.markdown("<div class='metric-container'><span class='icon'>💵</span><p>Avg. Order Value</p><h2>${:.2f}</h2></div>".format(avg_order_value), unsafe_allow_html=True)
+
+        col4, col5 = st.columns(2)  # Two columns for the remaining metrics
+        with col4:
+            st.markdown("<div class='metric-container'><span class='icon'>💰</span><p>Total Revenue</p><h2>${:.2f}</h2></div>".format(total_revenue), unsafe_allow_html=True)
+        with col5:
+            st.markdown("<div class='metric-container'><span class='icon'>⭐</span><p>Avg. Review Score</p><h2>{:.2f}/5</h2></div>".format(avg_review_score), unsafe_allow_html=True)
+
+    st.write("Explore key customer metrics such as total customers, total purchases, and revenue to gain a quick understanding of the dataset.")
+
+
+
+# Streamlit separator before Question 1
+st.markdown("---")  # Separator
 
 # Basic Insights - Q1
 if insight_level == "Basic Insights":
-    st.markdown("### Q1: Find Mean, Median, and Mode (Age)")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Exploring Age Distribution: Mean, Median, and Mode</h2>", unsafe_allow_html=True)
 
-    # Calculate statistics for the entire dataset
-    age_mean = df['Age'].mean()
-    age_median = df['Age'].median()
-    age_mode = df['Age'].mode()[0]
+    if 'Age' in df.columns:
+        # Calculate statistics for the entire dataset
+        age_mean = df['Age'].mean()
+        age_median = df['Age'].median()
+        age_mode = df['Age'].mode()[0]
 
-    # Display the statistics for the entire dataset
-    st.write(f"**Mean Age (All Data):** {age_mean:.2f}")
-    st.write(f"**Median Age (All Data):** {age_median:.2f}")
-    st.write(f"**Mode Age (All Data):** {age_mode}")
+        # Add a slider to filter age range
+        age_range = st.slider("Select Age Range", 
+                              int(df['Age'].min()), 
+                              int(df['Age'].max()), 
+                              (int(df['Age'].min()), int(df['Age'].max())))
 
-    # Add a slider to filter age range
-    age_range = st.slider("Select Age Range", 
-                           int(df['Age'].min()), 
-                           int(df['Age'].max()), 
-                           (int(df['Age'].min()), int(df['Age'].max())))
+        # Filter DataFrame based on selected age range
+        filtered_df = df[(df['Age'] >= age_range[0]) & (df['Age'] <= age_range[1])]
 
-    # Filter DataFrame based on selected age range
-    filtered_df = df[(df['Age'] >= age_range[0]) & (df['Age'] <= age_range[1])]
+        # Calculate statistics for the filtered data
+        filtered_age_mean = filtered_df['Age'].mean()
+        filtered_age_median = filtered_df['Age'].median()
+        filtered_age_mode = filtered_df['Age'].mode()[0] if not filtered_df['Age'].mode().empty else None
 
-    # Calculate statistics for the filtered data
-    filtered_age_mean = filtered_df['Age'].mean()
-    filtered_age_median = filtered_df['Age'].median()
-    filtered_age_mode = filtered_df['Age'].mode()[0] if not filtered_df['Age'].mode().empty else None
+        # Creating a single figure
+        fig = go.Figure()
 
-    # Update displayed statistics for the filtered data
-    st.write(f"**Mean Age (Filtered Data):** {filtered_age_mean:.2f}")
-    st.write(f"**Median Age (Filtered Data):** {filtered_age_median:.2f}")
-    if filtered_age_mode is not None:
-        st.write(f"**Mode Age (Filtered Data):** {filtered_age_mode}")
-    else:
-        st.write("**Mode Age (Filtered Data):** No mode available in this range.")
+        # Adding histogram for filtered data
+        fig.add_trace(go.Histogram(x=filtered_df['Age'], name="Age Distribution", opacity=0.7))
 
-    # Creating a single figure
-    fig = go.Figure()
+        # Adding vertical lines for mean, median, and mode (filtered data)
+        fig.add_vline(x=filtered_age_mean, line_dash="dash", line_color="red")
+        fig.add_vline(x=filtered_age_median, line_dash="dash", line_color="green")
+        if filtered_age_mode is not None:
+            fig.add_vline(x=filtered_age_mode, line_dash="dash", line_color="blue")
 
-    # Adding histogram for filtered data
-    fig.add_trace(go.Histogram(x=filtered_df['Age'], name="Age Distribution", opacity=0.7))
-
-    # Adding vertical lines for mean, median, and mode (filtered data)
-    fig.add_vline(x=filtered_age_mean, line_dash="dash", line_color="red")
-    fig.add_vline(x=filtered_age_median, line_dash="dash", line_color="green")
-    if filtered_age_mode is not None:
-        fig.add_vline(x=filtered_age_mode, line_dash="dash", line_color="blue")
-
-    # Add annotations for filtered data
-    fig.add_annotation(
-        x=filtered_age_mean, y=filtered_df['Age'].value_counts().max() * 0.9,
-        text=f"Mean: {filtered_age_mean:.2f}",
-        arrowhead=2,
-        bgcolor="red",
-        font=dict(color="white"),
-        bordercolor="red",
-        borderwidth=2,
-        borderpad=2,
-        arrowcolor="red",
-        ax=-80, ay=-20  
-    )
-
-    fig.add_annotation(
-        x=filtered_age_median, y=filtered_df['Age'].value_counts().max() * 0.9,
-        text=f"Median: {filtered_age_median:.2f}",
-        arrowhead=2,
-        bgcolor="green",
-        font=dict(color="white"),
-        bordercolor="green",
-        borderwidth=2,
-        borderpad=2,
-        arrowcolor="green",
-        ax=60, ay=-20  
-    )
-
-    if filtered_age_mode is not None:
+        # Adding annotations for filtered data
         fig.add_annotation(
-            x=filtered_age_mode, y=filtered_df['Age'].value_counts().max() * 0.9,
-            text=f"Mode: {filtered_age_mode}",
+            x=filtered_age_mean, y=filtered_df['Age'].value_counts().max() * 0.9,
+            text=f"Mean: {filtered_age_mean:.2f}",
             arrowhead=2,
-            bgcolor="blue",
+            bgcolor="red",
             font=dict(color="white"),
-            bordercolor="blue",
+            bordercolor="red",
             borderwidth=2,
             borderpad=2,
-            arrowcolor="blue",
-            ax=-55, ay=25
+            arrowcolor="red",
+            ax=-80, ay=-20  
         )
 
-    # Update layout
-    fig.update_layout(
-        title_text="Age Distribution with Mean, Median, and Mode",
-        xaxis_title_text="Age",
-        yaxis_title_text="Count",
-        bargap=0.2,
-        showlegend=False
-    )
+        fig.add_annotation(
+            x=filtered_age_median, y=filtered_df['Age'].value_counts().max() * 0.9,
+            text=f"Median: {filtered_age_median:.2f}",
+            arrowhead=2,
+            bgcolor="green",
+            font=dict(color="white"),
+            bordercolor="green",
+            borderwidth=2,
+            borderpad=2,
+            arrowcolor="green",
+            ax=60, ay=-20  
+        )
 
-    # Show the plot
-    st.plotly_chart(fig)
-else:
-    st.error("The uploaded dataset does not contain an 'Age' column.")
+        if filtered_age_mode is not None:
+            fig.add_annotation(
+                x=filtered_age_mode, y=filtered_df['Age'].value_counts().max() * 0.9,
+                text=f"Mode: {filtered_age_mode}",
+                arrowhead=2,
+                bgcolor="blue",
+                font=dict(color="white"),
+                bordercolor="blue",
+                borderwidth=2,
+                borderpad=2,
+                arrowcolor="blue",
+                ax=-55, ay=25
+            )
 
-## Basic Que 2
+        # Update layout
+        fig.update_layout(
+            title_text="Age Distribution with Mean, Median, and Mode",
+            xaxis_title_text="Age",
+            yaxis_title_text="Count",
+            bargap=0.2,
+            showlegend=False
+        )
+
+        # Show the plot
+        st.plotly_chart(fig)
+    else:
+        st.error("The dataset does not contain an 'Age' column.")
+
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
+## Question 2
+# Custom CSS for better metric visualization
+st.markdown(
+    """
+    <style>
+    .dashboard-title {
+        font-size: 24px;
+        color: #1ABC9C; /* Bright color for the title */
+        text-align: center;
+        margin: 20px 0;
+    }
+    .metric-header {
+        font-size: 20px;
+        color: #E74C3C; /* Emphasize headers with a bright color */
+        text-align: center;
+        margin: 10px 0;
+    }
+    .metric-container {
+        background-color: #34495E; /* Dark blue card for dark mode */
+        color: white; /* White text for contrast */
+        border-left: 5px solid #1ABC9C;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+## BASIC QUE: 2
 if insight_level == "Basic Insights":
-    st.markdown("### Q2: Find variance, standard deviation, and z-score (Purchase Amount)")
-
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Key Metrics for Purchase Amount</h2>", unsafe_allow_html=True)
+    
     # Calculate variance and standard deviation
     variance = df['Purchase Amount ($)'].var()
     standard_deviation = df['Purchase Amount ($)'].std()
     mean_purchase_amount = df['Purchase Amount ($)'].mean()
 
-    # Display variance and standard deviation using Streamlit metrics for clear visibility
     col1, col2 = st.columns(2)
-    col1.metric(label="Variance of Purchase Amount", value=f"{variance:.2f}")
-    col2.metric(label="Standard Deviation of Purchase Amount", value=f"{standard_deviation:.2f}")
+    with col1:
+        st.markdown("<div class='metric-container'><p><strong>Variance of Purchase Amount:</strong></p><h2>{:.2f}</h2></div>".format(variance), unsafe_allow_html=True)
+    with col2:
+        st.markdown("<div class='metric-container'><p><strong>Standard Deviation of Purchase Amount:</strong></p><h2>{:.2f}</h2></div>".format(standard_deviation), unsafe_allow_html=True)
 
     # Calculate Z-scores
     df['Z-Score'] = (df['Purchase Amount ($)'] - mean_purchase_amount) / standard_deviation
-
-    # Z-score range filter using Streamlit slider
-    min_z, max_z = df['Z-Score'].min(), df['Z-Score'].max()
-    z_range = st.slider("Select Z-score Range", min_value=float(min_z), max_value=float(max_z), value=(min_z, max_z))
-
-    # Filter the data based on the selected Z-score range
-    filtered_df = df[(df['Z-Score'] >= z_range[0]) & (df['Z-Score'] <= z_range[1])]
 
     # Plot Z-Scores distribution in a histogram using Set1 color palette
     fig = go.Figure()
@@ -170,33 +262,35 @@ if insight_level == "Basic Insights":
     set1_colors = px.colors.qualitative.Set1
 
     # Z-Scores distribution
-    fig.add_trace(go.Histogram(x=filtered_df['Z-Score'], name='Z-Scores', 
+    fig.add_trace(go.Histogram(x=df['Z-Score'], name='Z-Scores', 
                                marker_color=set1_colors[0], opacity=0.75))
 
-    # Update layout for the figure
+    # Update layout for the figure with fixed height and width
     fig.update_layout(
         title='Z-Score Distribution of Purchase Amount',
         xaxis_title='Z-Score',
         yaxis_title='Count',
         template='plotly_white',
-        height=600,
-        width=900,
+        height=600,  # Fixed height
+        width=900,   # Fixed width
         bargap=0.2,  # Adjusts the gap between bars for better visibility
     )
 
     # Show plot in Streamlit
     st.plotly_chart(fig)
 
-    # Display selected Z-score range
-    st.write(f"**Selected Z-Score Range:** {z_range[0]:.2f} to {z_range[1]:.2f}")
+    # Display Z-score range
+    z_min, z_max = df['Z-Score'].min(), df['Z-Score'].max()
+    st.markdown("<h3 class='metric-header'>Z-Score Summary</h3>", unsafe_allow_html=True)
+    st.markdown(f"**Z-score range:** {z_min:.2f} to {z_max:.2f}")
 
-    # Summary statistics
-    st.write(f"**Z-score range:** {df['Z-Score'].min():.2f} to {df['Z-Score'].max():.2f}")
+    # Streamlit separator
+    st.markdown("---")  # Separator
 
 
 # Basic Insights - Q3
 if insight_level == "Basic Insights":
-    st.markdown("### Q3: What are the Top Product Categories Based on the Number of Purchases?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Top Product Categories Based on Purchases</h2>", unsafe_allow_html=True)
 
     if 'Product Category' in df.columns and 'Number of Items Purchased' in df.columns:
         # Create a slider for the number of top categories to display
@@ -212,27 +306,26 @@ if insight_level == "Basic Insights":
             labels={'x': 'Product Category', 'y': 'Count'},
             title=f'Top {num_top_categories} Product Categories',
             color=top_categories.index,
-            color_discrete_sequence=px.colors.qualitative.Set1  # Color scheme
+            color_discrete_sequence=px.colors.qualitative.Set1
         )
 
         # Annotations for the top categories
         annotations = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th']
 
-        # Ensure we only add annotations for the number of bars available
-        for i in range(len(top_categories)):  # Iterate only for the number of available bars
+        for i in range(len(top_categories)):
             fig.add_annotation(
-                x=top_categories.index[i],  # Category label
-                y=top_categories.values[i],  # Value of the bar
-                text=f'{annotations[i]} Place',  # Add custom ranking labels
-                showarrow=True,  # Show an arrow pointing to the bar
+                x=top_categories.index[i],
+                y=top_categories.values[i],
+                text=f'{annotations[i]} Place',
+                showarrow=True,
                 arrowhead=2,
-                ax=0, ay=-40,  # Adjust arrow positioning
-                font=dict(size=14, color="white"),  # Font size and color
-                bgcolor="red",  # Background color of the annotation box
-                bordercolor="red",  # Border color for visibility
-                borderwidth=2,  # Border width
-                borderpad=4,  # Padding within the annotation box
-                arrowcolor="red"  # Arrow color matching the box
+                ax=0, ay=-40,
+                font=dict(size=14, color="white"),
+                bgcolor="red",
+                bordercolor="red",
+                borderwidth=2,
+                borderpad=4,
+                arrowcolor="red"
             )
 
         # Show the plot
@@ -240,16 +333,17 @@ if insight_level == "Basic Insights":
     else:
         st.error("The uploaded dataset does not contain the required columns for product categories and item counts.")
 
+    st.markdown("---")  # Separator
 
 # Basic Insights - Q4
 if insight_level == "Basic Insights":
-    st.markdown("### Q4: How Many Customers are Classified as Return Customers?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Analysis of Return Customers</h2>", unsafe_allow_html=True)
 
     if 'Return Customer' in df.columns and 'Gender' in df.columns:
-        # First chart: Count of Return Customers vs. Non-Return Customers
+        # Count of Return Customers vs. Non-Return Customers
         return_customer_counts = df['Return Customer'].value_counts()
         total_customers = return_customer_counts.sum()
-        return_customer_percentages = (return_customer_counts / total_customers * 100).round(2)  # Calculate percentages to 2 decimal places
+        return_customer_percentages = (return_customer_counts / total_customers * 100).round(2)
 
         # Gender selection dropdown
         gender_selection = st.selectbox("Select Gender:", ["All", "Male", "Female", "Other"])
@@ -269,24 +363,16 @@ if insight_level == "Basic Insights":
             x=return_customer_counts.index.map({True: 'Return Customers', False: 'Non-Return Customers'}),
             y=return_customer_counts.values,
             marker_color=px.colors.qualitative.Set1,
-            text=[f'{count} ({percent:.2f}%)' for count, percent in zip(return_customer_counts.values, return_customer_percentages)],  # Add count and percentage (2 decimal points)
-            showlegend=True,
-            name="Return vs Non-Return"
+            text=[f'{count} ({percent:.2f}%)' for count, percent in zip(return_customer_counts.values, return_customer_percentages)]
+            
         ))
 
         # Update layout and customize aesthetics
         fig.update_layout(
             height=500,
-            title_text="Return Customer Analysis",  # Overall title
-            title_x=0.5,  # Center title
-            title_font=dict(size=24, family='Arial, bold'),  # Make the main title bigger
-            showlegend=True,  # Show legend
-            legend=dict(title_text="Customer Status"),  # Add legend title
-            #plot_bgcolor='white',  # Background color
-            xaxis=dict(showgrid=False),  # No vertical gridlines
-            yaxis=dict(showgrid=False),  # No horizontal gridlines
-            margin=dict(l=50, r=50, t=100, b=50),  # Margins for clarity
-            font=dict(family="Arial", size=14)  # General font for text
+           
+            margin=dict(l=50, r=50, t=100, b=50),
+            font=dict(family="Arial", size=14)
         )
 
         # Improve the look of the bars with lines
@@ -297,84 +383,88 @@ if insight_level == "Basic Insights":
     else:
         st.error("The uploaded dataset does not contain the required columns for return customers and gender.")
 
+    st.markdown("---")  # Separator
 
 
-
-    # Basic Insights - Q5
-    if insight_level == "Basic Insights":
-        st.markdown("### Q5: What is the Average Review Score Given by Customers?")
-
-        if 'Review Score (1-5)' in df.columns:
-            # Calculate mean for Review Score
-            review_mean = df['Review Score (1-5)'].mean()
-
-            # Creating a single figure
-            fig = go.Figure()
-
-            # Adding histogram for Review Scores
-            fig.add_trace(go.Histogram(x=df['Review Score (1-5)'], name="Review Score Distribution", opacity=0.7))
-
-            # Adding vertical line for mean
-            fig.add_vline(x=review_mean, line_dash="dash", line_color="red")
-
-            # Add annotation for mean
-            fig.add_annotation(
-                x=review_mean, 
-                y=df['Review Score (1-5)'].value_counts().max(), 
-                text=f"Average Review Score: {review_mean:.2f}",
-                arrowhead=2,
-                bgcolor="red",
-                font=dict(color="white"),
-                bordercolor="red",
-                borderwidth=2,
-                borderpad=2,
-                arrowcolor="red",
-                ax=-60, 
-                ay=-20  
-            )
-
-            # Update layout
-            fig.update_layout(
-                title_text="Average Review Score Distribution",
-                xaxis_title_text="Review Score (1-5)",
-                yaxis_title_text="Count",
-                bargap=0.2,
-                showlegend=False
-            )
-
-            # Show the plot
-            st.plotly_chart(fig)
-        else:
-            st.error("The uploaded dataset does not contain a 'Review Score (1-5)' column.")
-
-    # Basic Insights - Q6
-    if insight_level == "Basic Insights":
-        st.markdown("### Q6: How Does the Average Delivery Time Vary Between Subscription Statuses?")
-
-        if 'Subscription Status' in df.columns and 'Delivery Time (days)' in df.columns:
-            # Create a DataFrame for visualization
-            avg_delivery_time = df.groupby("Subscription Status")["Delivery Time (days)"].mean().reset_index()
-
-            # Create a vertical bar chart
-            bar_fig = px.bar(
-                avg_delivery_time,
-                x='Delivery Time (days)',
-                y='Subscription Status',
-                title='Average Delivery Time by Subscription Status',
-                labels={'Delivery Time (days)': 'Average Delivery Time (days)', 'Subscription Status': 'Subscription Status'},
-                color='Subscription Status',
-                color_discrete_sequence=px.colors.qualitative.Set1,  # Use a color sequence
-                orientation='h'  # Horizontal bar chart
-            )
-
-            # Show the vertical bar chart
-            st.plotly_chart(bar_fig)
-        else:
-            st.error("The uploaded dataset does not contain the required columns for subscription status and delivery time.")
-
-# Basic Insights - Q7
+# Basic Insights - Q5: Average Review Score Distribution
 if insight_level == "Basic Insights":
-    st.markdown("### Q7: How Many Customers are Subscribed to the Service?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Review Score Distribution</h2>", unsafe_allow_html=True)
+
+    if 'Review Score (1-5)' in df.columns:
+        # Calculate mean for Review Score
+        review_mean = df['Review Score (1-5)'].mean()
+
+        # Creating a single figure
+        fig = go.Figure()
+
+        # Adding histogram for Review Scores
+        fig.add_trace(go.Histogram(x=df['Review Score (1-5)'], name="Review Score Distribution", opacity=0.7))
+
+        # Adding vertical line for mean
+        fig.add_vline(x=review_mean, line_dash="dash", line_color="red")
+
+        # Add annotation for mean
+        fig.add_annotation(
+            x=review_mean, 
+            y=df['Review Score (1-5)'].value_counts().max(), 
+            text=f"Average Review Score: {review_mean:.2f}",
+            arrowhead=2,
+            bgcolor="red",
+            font=dict(color="white"),
+            bordercolor="red",
+            borderwidth=2,
+            borderpad=2,
+            arrowcolor="red",
+            ax=-60, 
+            ay=-20  
+        )
+
+        # Update layout
+        fig.update_layout(
+            #title_text="Average Review Score Distribution",
+            xaxis_title_text="Review Score (1-5)",
+            yaxis_title_text="Count",
+            bargap=0.2,
+            showlegend=False
+        )
+
+        # Show the plot
+        st.plotly_chart(fig)
+    else:
+        st.error("The uploaded dataset does not contain a 'Review Score (1-5)' column.")
+
+    st.markdown("---")  # Separator
+
+# Basic Insights - Q6: Average Delivery Time by Subscription Status
+if insight_level == "Basic Insights":
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Delivery Time by Subscription Status</h2>", unsafe_allow_html=True)
+
+    if 'Subscription Status' in df.columns and 'Delivery Time (days)' in df.columns:
+        # Create a DataFrame for visualization
+        avg_delivery_time = df.groupby("Subscription Status")["Delivery Time (days)"].mean().reset_index()
+
+        # Create a vertical bar chart
+        bar_fig = px.bar(
+            avg_delivery_time,
+            x='Delivery Time (days)',
+            y='Subscription Status',
+            #title='Average Delivery Time by Subscription Status',
+            labels={'Delivery Time (days)': 'Average Delivery Time (days)', 'Subscription Status': 'Subscription Status'},
+            color='Subscription Status',
+            color_discrete_sequence=px.colors.qualitative.Set1,  # Use a color sequence
+            orientation='h'  # Horizontal bar chart
+        )
+
+        # Show the vertical bar chart
+        st.plotly_chart(bar_fig)
+    else:
+        st.error("The uploaded dataset does not contain the required columns for subscription status and delivery time.")
+
+    st.markdown("---")  # Separator
+
+# Basic Insights - Q7: Number of Customers by Subscription Status
+if insight_level == "Basic Insights":
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Number of Customers by Subscription Status</h2>", unsafe_allow_html=True)
 
     if 'Subscription Status' in df.columns:
         # Prepare the data for visualization
@@ -386,7 +476,7 @@ if insight_level == "Basic Insights":
             subscription_counts,
             x='Subscription Status',
             y='Count',
-            title='Number of Customers by Subscription Status',
+            #title='Number of Customers by Subscription Status',
             labels={'Count': 'Number of Customers'},
             color='Subscription Status',
             color_discrete_sequence=px.colors.qualitative.Set1,
@@ -395,20 +485,14 @@ if insight_level == "Basic Insights":
         # Show the bar chart
         st.plotly_chart(bar_fig)
         
-        # Add a button to download the data
-        st.download_button(
-            label="Download Subscription Data",
-            data=subscription_counts.to_csv(index=False),
-            file_name='subscription_status_counts.csv',
-            mime='text/csv',
-        )
     else:
         st.error("The uploaded dataset does not contain a 'Subscription Status' column.")
 
-            
-# Basic Insights - Q8
+    st.markdown("---")  # Separator
+
+# Basic Insights - Q8: Percentage of Customers by Device Type
 if insight_level == "Basic Insights":
-    st.markdown("### Q8: What Percentage of Customers Used Devices to Make Purchases? (Mobile, Desktop, Tablet)")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Percentage of Customers by Device Type</h2>", unsafe_allow_html=True)
 
     if 'Device Type' in df.columns:
         # Count occurrences of each device type
@@ -422,14 +506,12 @@ if insight_level == "Basic Insights":
             'Percentage': device_percentages.values
         })
 
-    
-
         # Create a pie chart to visualize the percentages
         pie_fig = px.pie(
             device_percentage_df,
             values='Percentage',
             names='Device Type',
-            title='Percentage of Customers by Device Type',
+            #title='Percentage of Customers by Device Type',
             color='Device Type',
             color_discrete_sequence=px.colors.qualitative.Set1,
             hole=0.3  # To make it a donut chart
@@ -440,33 +522,23 @@ if insight_level == "Basic Insights":
 
         # Update layout for better aesthetics
         pie_fig.update_layout(
-            title_font_size=20,
+            #title_font_size=20,
             legend_title_text='Device Type',
             margin=dict(l=40, r=40, t=60, b=40),  # Adjust margins for clarity
-            #annotations=[dict(text='Total Purchases', x=0.5, y=0.5, font_size=20, showarrow=False)]  # Center label
         )
 
         # Show the pie chart
         st.plotly_chart(pie_fig)
-
-        # Streamlit component for additional information
-        st.info("This chart represents the distribution of purchase devices among customers, helping to understand which platforms are most popular for transactions.")
-
-        # Download button for device usage data
-        csv = device_percentage_df.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            label="Download Device Usage Data as CSV",
-            data=csv,
-            file_name='device_usage_data.csv',
-            mime='text/csv'
-        )
-        
+    
     else:
         st.error("The uploaded dataset does not contain a 'Device Type' column.")
+        
+    st.markdown("---")  # Separator
 
-# Basic Insights - Q9
+
+# Basic Insights - Q9: Average Purchase Amount Based on Discount Status
 if insight_level == "Basic Insights":
-    st.markdown("### Q9: What is the Average Purchase Amount for Customers Who Availed Discounts Compared to Those Who Didn’t?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Purchase Amount Based on Discount Status</h2>", unsafe_allow_html=True)
 
     if 'Discount Availed' in df.columns and 'Purchase Amount ($)' in df.columns and 'Gender' in df.columns and 'Age' in df.columns:
         # Create dropdown for gender selection
@@ -495,7 +567,7 @@ if insight_level == "Basic Insights":
             avg_purchase,
             x='Discount Availed',
             y='Purchase Amount ($)',
-            title='Average Purchase Amount Based on Discount Availed',
+            title='Average Purchase Amount for Customers Who Availed Discounts',
             labels={'Discount Availed': 'Discount Status', 'Purchase Amount ($)': 'Average Amount'},
             color='Discount Availed',
             color_discrete_sequence=px.colors.qualitative.Set1,
@@ -506,43 +578,33 @@ if insight_level == "Basic Insights":
             texttemplate='%{y:.2f}', 
             textposition='outside',
             marker=dict(line=dict(width=1, color='black')),
-            textfont_size=12  # Adjust text size for labels
+            textfont_size=12
         )
 
         # Update layout for better aesthetics
         bar_fig.update_layout(
-            title_font_size=20,  # Title font size
-            xaxis_title_font_size=14,  # X-axis title font size
-            yaxis_title_font_size=14,  # Y-axis title font size
-            font=dict(size=12),  # General font size
-            xaxis=dict(title=dict(standoff=10)),  # Space between x-axis title and labels
-            yaxis=dict(title=dict(standoff=10)),  # Space between y-axis title and labels
-            showlegend=False,  # Hide the legend since it's not needed
-            height=500  # Adjust height for better visibility
+            title_font_size=20,
+            xaxis_title_font_size=14,
+            yaxis_title_font_size=14,
+            font=dict(size=12),
+            xaxis=dict(title=dict(standoff=10)),
+            yaxis=dict(title=dict(standoff=10)),
+            showlegend=False,
+            height=500
         )
 
         # Show the bar chart
         st.plotly_chart(bar_fig)
 
-        # Additional Streamlit components
-        st.info("This bar chart illustrates the difference in average purchase amounts between customers who used discounts and those who did not, filtered by gender and age range.")
-
-        # Download button for average purchase data
-        csv = avg_purchase.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            label="Download Average Purchase Amount Data as CSV",
-            data=csv,
-            file_name='average_purchase_data.csv',
-            mime='text/csv'
-        )
         
     else:
         st.error("The uploaded dataset does not contain the required columns: 'Discount Availed', 'Purchase Amount ($)', 'Gender', or 'Age'.")
+        
+    st.markdown("---")  # Separator
 
-
-# Basic Insights - Q10
+# Basic Insights - Q10: Most Common Payment Method Used by Customers
 if insight_level == "Basic Insights":
-    st.markdown("### Q10: What is the Most Common Payment Method Used by Customers?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Most Common Payment Method Used by Customers</h2>", unsafe_allow_html=True)
 
     # Create a dropdown for gender selection with an 'All' option set as default
     gender_options = df['Gender'].unique().tolist()
@@ -577,7 +639,7 @@ if insight_level == "Basic Insights":
             title='Most Common Payment Methods Used by Customers',
             labels={'Payment Method': 'Payment Method', 'Count': 'Number of Customers'},
             color='Payment Method',
-            color_discrete_sequence=px.colors.qualitative.Set1,  # Set a qualitative color palette
+            color_discrete_sequence=px.colors.qualitative.Set1,
         )
 
         # Adding annotation for the most common payment method
@@ -594,18 +656,18 @@ if insight_level == "Basic Insights":
                 borderwidth=2,
                 borderpad=2,
                 arrowcolor="red",
-                ax=0,  # Adjust position as needed
-                ay=-40  # Adjust position as needed
+                ax=0,
+                ay=-40
             )
 
         # Update layout for better aesthetics
         payment_fig.update_layout(
-            title_font_size=20,  # Title font size
-            xaxis_title_font_size=14,  # X-axis title font size
-            yaxis_title_font_size=14,  # Y-axis title font size
-            font=dict(size=12),  # General font size
-            showlegend=False,  # Hide the legend since it's not needed
-            height=400  # Adjust height for better visibility
+            title_font_size=20,
+            xaxis_title_font_size=14,
+            yaxis_title_font_size=14,
+            font=dict(size=12),
+            showlegend=False,
+            height=400
         )
 
         # Show the bar chart
@@ -613,31 +675,22 @@ if insight_level == "Basic Insights":
     else:
         st.error("The uploaded dataset does not contain the required column: 'Payment Method'.")
 
-
-
         
 # Intermediate Insights - Q1
 if insight_level == "Intermediate Insights":
-    st.markdown("### Q1: What are the average review scores of users of the most common payment method?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Review Scores by Payment Method</h2>", unsafe_allow_html=True)
 
     # Create a dropdown for gender selection
     gender_options = df['Gender'].unique().tolist()
     gender_options.append('All')  # Add option for all genders
     selected_gender = st.selectbox("Select Gender:", gender_options, index=len(gender_options) - 1)  # Default to 'All'
 
-    # Create a slider for age selection
-    age_range = (df['Age'].min(), df['Age'].max())
-    selected_age = st.slider("Select Age Range:", min_value=int(age_range[0]), max_value=int(age_range[1]), value=(int(age_range[0]), int(age_range[1])))
-
-    # Filter the DataFrame based on the selected gender and age
+    # Filter the DataFrame based on the selected gender
     filtered_df = df.copy()
 
     # Apply gender filter if selected
     if selected_gender != 'All':
         filtered_df = filtered_df[filtered_df['Gender'] == selected_gender]
-
-    # Apply age filter
-    filtered_df = filtered_df[(filtered_df['Age'] >= selected_age[0]) & (filtered_df['Age'] <= selected_age[1])]
 
     # Calculate the average review score for each payment method
     average_review_scores = filtered_df.groupby("Payment Method")["Review Score (1-5)"].mean().reset_index()
@@ -689,11 +742,14 @@ if insight_level == "Intermediate Insights":
 
     # Show the bar chart
     st.plotly_chart(average_review_fig)
-  
-    
+
+# Separator
+st.markdown("---")
+
+
 # Intermediate Insights - Q2
 if insight_level == "Intermediate Insights":
-    st.markdown("### Q2: What is the correlation between time spent on the website and purchase amount? Do customers who spend more time on the website purchase more items?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Time Spent vs. Purchase Amount</h2>", unsafe_allow_html=True)
 
     # Create scatter plot for correlation
     fig = px.scatter(
@@ -718,12 +774,13 @@ if insight_level == "Intermediate Insights":
     )
 
     # Show the plot
-    st.plotly_chart(fig)  # Use st.plotly_chart to display the figure in Streamlit
+    st.plotly_chart(fig)
+
 
 
 # Intermediate Insights - Q3
 if insight_level == "Intermediate Insights":
-    st.markdown("### Q3: What percentage of customers are satisfied (rating of 4 or 5) and are also return customers?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Customer Satisfaction Among Return Customers</h2>", unsafe_allow_html=True)
 
     # Calculate satisfied return customers
     satisfied_return_customers = df[(df["Review Score (1-5)"] >= 4) & (df["Return Customer"] == True)]
@@ -779,15 +836,16 @@ if insight_level == "Intermediate Insights":
         fig.update_layout(title_text='Overall Customer Satisfaction', height=400)
 
     # Show the figure in Streamlit
-    st.plotly_chart(fig)  # Use st.plotly_chart to display the figure in Streamlit
+    st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
 
+# -------------------------------------------
 
-    
 # Intermediate Insights - Q4
 if insight_level == "Intermediate Insights":
-    st.markdown("### Q4: What is the relationship between the number of items purchased and customer satisfaction?")
-
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Items Purchased vs. Customer Satisfaction</h2>", unsafe_allow_html=True)
 
     fig = px.scatter(
         df,
@@ -809,9 +867,14 @@ if insight_level == "Intermediate Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
+# -------------------------------------------
+
 # Intermediate Insights - Q5
 if insight_level == "Intermediate Insights":
-    st.markdown("### Q5: Which location has the 2nd highest average purchase amount?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Highest Average Purchase By Location</h2>", unsafe_allow_html=True)
 
     # Corrected coordinates for cities in Bangladesh
     location_coordinates = {
@@ -882,13 +945,10 @@ if insight_level == "Intermediate Insights":
     st.plotly_chart(fig)
 
 
-
     
 # Critical Thinking Insights - Q1
 if insight_level == "Critical Thinking Insights":
-    st.markdown("### Q1: What factors contribute most to a customer being classified as a return customer?")
-
-    
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Factors Influencing Return Customer Classification</h2>", unsafe_allow_html=True)
 
     # New DataFrame for visualization  
     visualization_df = df.copy()
@@ -947,10 +1007,13 @@ if insight_level == "Critical Thinking Insights":
 
     # Show the plot in Streamlit
     st.plotly_chart(fig)
-    
+
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
 # Critical Thinking Insights - Q2
 if insight_level == "Critical Thinking Insights":
-    st.markdown("### Q2: How do payment methods influence customer satisfaction and return rates?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Impact of Payment Methods on Customer Satisfaction and Return Rates</h2>", unsafe_allow_html=True)
 
     # Calculate the percentage of each satisfaction level for each payment method
     satisfaction_distribution = df.groupby(['Payment Method', 'Customer Satisfaction']).size().unstack(fill_value=0)
@@ -1007,10 +1070,12 @@ if insight_level == "Critical Thinking Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
 
 # Critical Thinking Insights - Q3
 if insight_level == "Critical Thinking Insights":
-    st.markdown("### Q3: How does the location influence both purchase amount and delivery time?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Location's Influence on Purchase Amount and Delivery Time</h2>", unsafe_allow_html=True)
 
     # Group by location and calculate metrics
     location_analysis = df.groupby('Location').agg({
@@ -1053,9 +1118,14 @@ if insight_level == "Critical Thinking Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
+
+
 # Own Findings - Q1
 if insight_level == "Own Findings":
-    st.markdown("### Q1: What are the spending habits of different age groups, and how does this influence their return rates?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Spending Habits and Return Rates by Age Group</h2>", unsafe_allow_html=True)
 
     # Create age groups
     df['Age_Group'] = pd.cut(df['Age'], bins=[0, 20, 30, 40, 50, 60, 100], labels=['0-20', '21-30', '31-40', '41-50', '51-60', '60+'])
@@ -1097,7 +1167,7 @@ if insight_level == "Own Findings":
 
     # Update the layout
     fig.update_layout(
-        title='Spending Habits and Return Rates by Age Group',
+        #title='Spending Habits and Return Rates by Age Group',
         xaxis=dict(title='Age Group'),
         yaxis=dict(title='Average Purchase Amount ($)', side='left', showgrid=False),
         yaxis2=dict(title='Return Rate (%)', side='right', overlaying='y', showgrid=False),
@@ -1110,9 +1180,12 @@ if insight_level == "Own Findings":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
 # Own Findings - Q2
 if insight_level == "Own Findings":
-    st.markdown("### Q2: How do product preferences vary across different locations?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Product Category Preferences by Location</h2>", unsafe_allow_html=True)
 
     # Get unique locations and product categories
     locations = df['Location'].unique()
@@ -1132,7 +1205,7 @@ if insight_level == "Own Findings":
                     color_continuous_scale="Viridis",
                     text_auto=True)  # Add annotations
 
-    fig.update_layout(title="Product Category Preferences by Location",
+    fig.update_layout(#title="Product Category Preferences by Location",
                       xaxis_title="Product Category",
                       yaxis_title="Location",
                       height=1000, 
@@ -1141,9 +1214,12 @@ if insight_level == "Own Findings":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Streamlit separator
+    st.markdown("---")  # Separator
+
 # Own Findings - Q3
 if insight_level == "Own Findings":
-    st.markdown("### Q3: How do purchasing patterns differ between genders in terms of product categories and average spend?")
+    st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Spending by Product Category and Gender</h2>", unsafe_allow_html=True)
 
     # Group the data by Product Category and Gender, then calculate the average purchase amount
     product_gender_stats = df.groupby(['Product Category', 'Gender'])['Purchase Amount ($)'].mean().unstack()
@@ -1155,7 +1231,7 @@ if insight_level == "Own Findings":
 
     # Create a bar plot using Set1 colors
     fig = px.bar(sorted_product_gender_stats, 
-                 title='Average Spending by Product Category and Gender',
+                 #title='Average Spending by Product Category and Gender',
                  labels={'value': 'Average Purchase Amount ($)', 'Product Category': 'Product Category'},
                  barmode='group',
                  color_discrete_sequence=set1_colors  # Set color palette to Set1
@@ -1174,7 +1250,8 @@ if insight_level == "Own Findings":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
-
+    # Streamlit separator
+    st.markdown("---")  # Separator
 
   
 
