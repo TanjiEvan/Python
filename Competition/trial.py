@@ -56,7 +56,7 @@ st.markdown("<h4 style='text-align: center; color: #E74C3C;'>Gain deep insights 
 
 @st.cache_data
 def load_data():
-    return pd.read_csv('1st DIC/ecommerce_customer_behavior_dataset.csv')
+    return pd.read_csv('ecommerce_customer_behavior_dataset.csv')
 
 df = load_data()
 
