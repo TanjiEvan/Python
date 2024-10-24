@@ -1,2 +1,19 @@
 
 Numpy&Pandas/~$Movies_merged.xlsx
+
+# Ignore virtual environment folder
+venv/
+.venv/
+
+# Ignore system files
+*.DS_Store
+*.pyc
+__pycache__/
+
+# Ignore hidden files
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
