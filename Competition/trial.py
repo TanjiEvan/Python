@@ -1257,6 +1257,8 @@ if insight_level == "Own Findings":
 
   
 
+st.markdown(
+    "<footer style='text-align: center; padding: 10px;'><p>Created by Tanjib Ul Islam | <a href='https://github.com/TanjiEvan' target='_blank'>🔗 GitHub</a> | <a href='https://www.linkedin.com/in/tanjib-ul-islam-aba9b5310/' target='_blank'>🔗 LinkedIn</a></p></footer>",
+    unsafe_allow_html=True
+)
 
-else:
-    st.info("Please upload a CSV file to get started.")
