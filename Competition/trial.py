@@ -203,11 +203,49 @@ if insight_level == "Basic Insights":
     else:
         st.error("The dataset does not contain an 'Age' column.")
 
-    # Streamlit separator
-    st.markdown("---")  # Separator
+    # Button to show/hide interpretation
+    if 'show_interpretation' not in st.session_state:
+        st.session_state.show_interpretation = False  # Initialize state variable
+
+    # Create a toggle button
+    if st.button("🔍 Click here to interpret the result"):
+        st.session_state.show_interpretation = not st.session_state.show_interpretation  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation:
+        # Determine skew based on mean and median
+        if abs(filtered_age_mean - filtered_age_median) < 1:
+            skew_text = "The alignment of the mean and median indicates a relatively balanced distribution of ages."
+        elif filtered_age_mean > filtered_age_median:
+            skew_text = "The mean being higher than the median suggests a right-skewed distribution, with more older individuals in this range."
+        else:
+            skew_text = "The mean being lower than the median suggests a left-skewed distribution, with more younger individuals in this range."
+        
+        # Highlight mode if it exists
+        mode_text = f"The mode of {filtered_age_mode} indicates a concentration of individuals at this specific age." if filtered_age_mode else "No mode found in the selected age range."
+        
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The age distribution analysis for the selected age range reveals that the <b>mean age</b> is <b>{filtered_age_mean:.2f}</b>, the <b>median</b> is <b>{filtered_age_median:.2f}</b>, and the <b>mode</b> is <b>{filtered_age_mode}</b>.
+                </p>
+                <ul style="color: #ECF0F1;">
+                    <li>{skew_text}</li>
+                    <li>{mode_text}</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    <b>Business Insight:</b> The insights gathered from this specific age range can inform targeted marketing strategies, identifying segments that may benefit from tailored offerings or specialized marketing efforts.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+        
+        # Separator
+        st.markdown("---")
+
+
 
 ## Question 2
-# Custom CSS for better metric visualization
 st.markdown(
     """
     <style>
@@ -284,8 +322,38 @@ if insight_level == "Basic Insights":
     st.markdown("<h3 class='metric-header'>Z-Score Summary</h3>", unsafe_allow_html=True)
     st.markdown(f"**Z-score range:** {z_min:.2f} to {z_max:.2f}")
 
-    # Streamlit separator
-    st.markdown("---")  # Separator
+    # Button to show/hide interpretation
+    if 'show_interpretation_2' not in st.session_state:
+        st.session_state.show_interpretation_2 = False  # Initialize state variable
+
+    # Create a toggle button for interpretation
+    if st.button("🔍 Click here to interpret the result "):
+        st.session_state.show_interpretation_2 = not st.session_state.show_interpretation_2  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation_2:
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation </h3>
+                <p style="color: #ECF0F1;">
+                    The analysis of purchase amount data reveals the following insights:
+                </p>
+                <ul style="color: #ECF0F1;">
+                    <li>The variance of <strong>${variance:.2f}</strong> indicates significant variability in spending behavior among customers.</li>
+                    <li>The standard deviation of <strong>${standard_deviation:.2f}</strong> suggests that while many purchase amounts are close to the mean, there are also considerable outliers.</li>
+                    <li>The Z-score distribution appears relatively uniform, implying that most purchase amounts are concentrated around the mean, with fewer extreme values.</li>
+                    <li>The Z-score range from approximately <strong>{z_min:.2f} to {z_max:.2f}</strong> confirms a normal distribution, indicating that the majority of purchase amounts fall within one standard deviation from the mean.</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    <strong>Business Insight:</strong> These metrics highlight consistent spending patterns, which can guide targeted pricing strategies and help optimize inventory management based on expected customer behavior.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+
+        # Streamlit separator
+        st.markdown("---")  # Separator
 
 
 # Basic Insights - Q3
@@ -333,7 +401,33 @@ if insight_level == "Basic Insights":
     else:
         st.error("The uploaded dataset does not contain the required columns for product categories and item counts.")
 
-    st.markdown("---")  # Separator
+    # Button to show/hide interpretation
+    if 'show_interpretation' not in st.session_state:
+        st.session_state.show_interpretation = False  # Initialize state variable
+
+    # Create a toggle button with a unique key
+    if st.button("🔍 Click here to interpret the result", key="interpretation_button"):
+        st.session_state.show_interpretation = not st.session_state.show_interpretation  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation:
+        interpretation = f"The analysis of product categories reveals that the top {num_top_categories} categories based on purchases are "
+        interpretation += ', '.join([f"<b>{cat}</b>" for cat in top_categories.index])
+        interpretation += ". This insight suggests that these categories are the most popular among consumers, indicating a need to maintain and enhance inventory, marketing, and promotions for these products. Additionally, exploring customer preferences within these categories could yield further opportunities for upselling or cross-selling to boost sales."
+
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    {interpretation}
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+        st.markdown("---")  # Separator
+
+
 
 # Basic Insights - Q4
 if insight_level == "Basic Insights":
@@ -354,6 +448,8 @@ if insight_level == "Basic Insights":
 
         # Re-calculate return customer counts after filtering
         return_customer_counts = df['Return Customer'].value_counts()
+        total_customers = return_customer_counts.sum()
+        return_customer_percentages = (return_customer_counts / total_customers * 100).round(2)
 
         # Create a bar chart
         fig = go.Figure()
@@ -370,7 +466,6 @@ if insight_level == "Basic Insights":
         # Update layout and customize aesthetics
         fig.update_layout(
             height=500,
-           
             margin=dict(l=50, r=50, t=100, b=50),
             font=dict(family="Arial", size=14)
         )
@@ -383,7 +478,40 @@ if insight_level == "Basic Insights":
     else:
         st.error("The uploaded dataset does not contain the required columns for return customers and gender.")
 
+    # Button to show/hide interpretation
+    if 'show_interpretation' not in st.session_state:
+        st.session_state.show_interpretation = False  # Initialize state variable
+
+    # Create a toggle button
+    if st.button("🔍 Click here to interpret the result", key="interpretation_button_4"):
+        st.session_state.show_interpretation = not st.session_state.show_interpretation  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation:
+        # Dynamic interpretation based on selected gender
+        if gender_selection == "All":
+            interpretation = (f"The analysis shows that <b>{return_customer_counts[True]}</b> customers (<b>{return_customer_percentages[True]:.2f}%</b>) are classified as return customers, "
+                              f"while <b>{return_customer_counts[False]}</b> (<b>{return_customer_percentages[False]:.2f}%</b>) are non-return customers, indicating an almost even split between the two groups. "
+                              "This balanced representation suggests that retention strategies should be inclusive across all gender segments, as no single group dominates the return customer base.")
+        else:
+            interpretation = (f"For the selected gender <b>'{gender_selection}'</b>, <b>{return_customer_counts[True]}</b> customers (<b>{return_customer_percentages[True]:.2f}%</b>) are classified as return customers, "
+                              f"while <b>{return_customer_counts[False]}</b> (<b>{return_customer_percentages[False]:.2f}%</b>) are non-return customers. "
+                              "This analysis suggests that retention strategies should be tailored to cater to the specific preferences and needs of the selected gender group.")
+
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    {interpretation}
+                </p>
+                <p style="color: #ECF0F1;">
+                    <b>Business Insight:</b> The insights gathered from return customers can inform targeted retention strategies, ensuring engagement with all customer segments.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
     st.markdown("---")  # Separator
+
 
 
 # Basic Insights - Q5: Average Review Score Distribution
@@ -421,7 +549,6 @@ if insight_level == "Basic Insights":
 
         # Update layout
         fig.update_layout(
-            #title_text="Average Review Score Distribution",
             xaxis_title_text="Review Score (1-5)",
             yaxis_title_text="Count",
             bargap=0.2,
@@ -430,10 +557,38 @@ if insight_level == "Basic Insights":
 
         # Show the plot
         st.plotly_chart(fig)
+
+        # Button to show/hide interpretation
+        if 'show_interpretation' not in st.session_state:
+            st.session_state.show_interpretation = False  # Initialize state variable
+
+        # Create a toggle button
+        if st.button("🔍 Click here to interpret the result", key="interpretation_button_5"):
+            st.session_state.show_interpretation = not st.session_state.show_interpretation  # Toggle visibility
+
+        # Show interpretation based on the toggle state
+        if st.session_state.show_interpretation:
+            interpretation = (f"The analysis reveals that the average customer review score is approximately <b>{review_mean:.2f}</b>. "
+                              "This indicates a neutral to slightly positive sentiment among customers regarding the product or service. "
+                              "To improve this metric, the company should consider identifying and addressing common customer pain points, enhancing product features, "
+                              "or elevating service quality. Such measures could lead to higher ratings and a more favorable customer perception.")
+            
+            st.markdown(f"""
+                <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                    <h3 style="color: #1ABC9C;">Interpretation</h3>
+                    <p style="color: #ECF0F1;">
+                        {interpretation}
+                    </p>
+                    <p style="color: #ECF0F1;">
+                        <b>Business Insight:</b> Addressing customer concerns and enhancing product features can significantly improve review scores.
+                    </p>
+                </div>
+            """, unsafe_allow_html=True)
     else:
         st.error("The uploaded dataset does not contain a 'Review Score (1-5)' column.")
 
     st.markdown("---")  # Separator
+
 
 # Basic Insights - Q6: Average Delivery Time by Subscription Status
 if insight_level == "Basic Insights":
@@ -448,7 +603,6 @@ if insight_level == "Basic Insights":
             avg_delivery_time,
             x='Delivery Time (days)',
             y='Subscription Status',
-            #title='Average Delivery Time by Subscription Status',
             labels={'Delivery Time (days)': 'Average Delivery Time (days)', 'Subscription Status': 'Subscription Status'},
             color='Subscription Status',
             color_discrete_sequence=px.colors.qualitative.Set1,  # Use a color sequence
@@ -459,6 +613,36 @@ if insight_level == "Basic Insights":
         st.plotly_chart(bar_fig)
     else:
         st.error("The uploaded dataset does not contain the required columns for subscription status and delivery time.")
+
+
+    # Button to show/hide interpretation
+    if 'show_interpretation_q6' not in st.session_state:
+        st.session_state.show_interpretation_q6 = False  # Initialize state variable for Q6
+
+    # Create a toggle button with a unique key
+    if st.button("🔍 Click here to interpret the result", key="interpretation_button_q6"):
+        st.session_state.show_interpretation_q6 = not st.session_state.show_interpretation_q6  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation_q6:
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The analysis of delivery times by subscription status reveals the following insights:
+                </p>
+                <ul style="color: #ECF0F1;">
+                    <li>Free and Premium users experience similar average delivery times, both around 7 days.</li>
+                    <li>There is no significant advantage in delivery speed for Premium subscribers.</li>
+                    <li>This could impact the perceived value of the Premium subscription.</li>
+                    <li>To enhance the Premium service's attractiveness, optimizing delivery logistics could provide faster delivery times.</li>
+                    <li>Improving delivery speed may increase customer satisfaction and perceived value for Premium subscribers.</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    <b>Business Insight:</b> By addressing delivery times for Premium subscribers, the company can enhance their overall service offering and potentially retain more Premium customers.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
 
     st.markdown("---")  # Separator
 
@@ -484,11 +668,46 @@ if insight_level == "Basic Insights":
 
         # Show the bar chart
         st.plotly_chart(bar_fig)
-        
+
     else:
         st.error("The uploaded dataset does not contain a 'Subscription Status' column.")
 
+
+
+    # Button to show/hide interpretation
+    if 'show_interpretation_q7' not in st.session_state:
+        st.session_state.show_interpretation_q7 = False  # Initialize state variable
+
+    # Create a toggle button with a unique key
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q7'):
+        st.session_state.show_interpretation_q7 = not st.session_state.show_interpretation_q7  # Toggle visibility
+
+    # Show interpretation based on the toggle state
+    if st.session_state.show_interpretation_q7:
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <ul style="color: #ECF0F1;">
+                    <li>The analysis indicates that the customer base is evenly distributed across the three subscription statuses: Premium, Free, and Trial, with each category having approximately 3,000 customers.</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    This balanced distribution suggests a strong interest in all subscription levels. To capitalize on this, the company might explore strategies to:
+                </p>
+                <ul style="color: #ECF0F1;">
+                    <li>Convert Free and Trial users into Premium subscribers.</li>
+                    <li>Highlight exclusive benefits of the Premium service.</li>
+                    <li>Enhance the perceived value of Premium offerings.</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+        
     st.markdown("---")  # Separator
+
+
+
+# Initialize session state variable for interpretation button if it doesn't exist
+if 'show_interpretation_q8' not in st.session_state:
+    st.session_state.show_interpretation_q8 = False
 
 # Basic Insights - Q8: Percentage of Customers by Device Type
 if insight_level == "Basic Insights":
@@ -511,7 +730,6 @@ if insight_level == "Basic Insights":
             device_percentage_df,
             values='Percentage',
             names='Device Type',
-            #title='Percentage of Customers by Device Type',
             color='Device Type',
             color_discrete_sequence=px.colors.qualitative.Set1,
             hole=0.3  # To make it a donut chart
@@ -522,7 +740,6 @@ if insight_level == "Basic Insights":
 
         # Update layout for better aesthetics
         pie_fig.update_layout(
-            #title_font_size=20,
             legend_title_text='Device Type',
             margin=dict(l=40, r=40, t=60, b=40),  # Adjust margins for clarity
         )
@@ -532,9 +749,36 @@ if insight_level == "Basic Insights":
     
     else:
         st.error("The uploaded dataset does not contain a 'Device Type' column.")
-        
+
+    # Button to show/hide interpretation
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q8'):
+        st.session_state.show_interpretation_q8 = not st.session_state.show_interpretation_q8
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q8:
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <ul style="color: #ECF0F1;">
+                    <li>The pie chart reveals that customers use Mobile (33.7%), Desktop (33.5%), and Tablet (32.8%) almost equally for purchases.</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    This balanced distribution highlights the importance of maintaining an optimized shopping experience across all device types. To enhance customer satisfaction and potentially increase sales, the company should consider the following strategies:
+                </p>
+                <ul style="color: #ECF0F1;">
+                    <li>Ensure seamless functionality across mobile, desktop, and tablet platforms.</li>
+                    <li>Focus on user-friendly interfaces tailored to each device type.</li>
+                    <li>Regularly test and update the website or application to improve performance on all devices.</li>
+                </ul>
+            </div>
+        """, unsafe_allow_html=True)
+
     st.markdown("---")  # Separator
 
+
+# Initialize session state variable for interpretation button if it doesn't exist
+if 'show_interpretation_q9' not in st.session_state:
+    st.session_state.show_interpretation_q9 = False
 
 # Basic Insights - Q9: Average Purchase Amount Based on Discount Status
 if insight_level == "Basic Insights":
@@ -596,11 +840,35 @@ if insight_level == "Basic Insights":
         # Show the bar chart
         st.plotly_chart(bar_fig)
 
-        
     else:
         st.error("The uploaded dataset does not contain the required columns: 'Discount Availed', 'Purchase Amount ($)', 'Gender', or 'Age'.")
-        
+
+    # Button to show/hide interpretation
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q9'):
+        st.session_state.show_interpretation_q9 = not st.session_state.show_interpretation_q9
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q9:
+        # Interpretation dynamically based on user selections
+        avg_discount_purchase = avg_purchase[avg_purchase['Discount Availed'] == 'Discount']['Purchase Amount ($)'].values[0] if 'Discount' in avg_purchase['Discount Availed'].values else 0
+        avg_no_discount_purchase = avg_purchase[avg_purchase['Discount Availed'] == 'No Discount']['Purchase Amount ($)'].values[0] if 'No Discount' in avg_purchase['Discount Availed'].values else 0
+
+        # Dynamic interpretation with bold formatting
+        st.markdown(f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <ul style="color: #ECF0F1;">
+                    <li>The average purchase amount for <strong>customers who availed discounts</strong> is <strong>${avg_discount_purchase:.2f}</strong>, while those who <strong>did not use discounts</strong> average <strong>${avg_no_discount_purchase:.2f}</strong>.</li>
+                    <li>The analysis is based on the selected <strong>gender</strong>: <strong>{selected_gender}</strong> and <strong>age range</strong>: <strong>{age_range[0]} - {age_range[1]}</strong> years.</li>
+                </ul>
+                <p style="color: #ECF0F1;">
+                    This marginal difference suggests that discounts may not significantly impact the purchase amount across the selected gender and age range. To maximize the effectiveness of discounts in driving sales, the company should consider targeted promotions that encourage higher spending or bundling offers to increase the perceived value.
+                </p>
+            </div>
+        """, unsafe_allow_html=True)
+
     st.markdown("---")  # Separator
+
 
 # Basic Insights - Q10: Most Common Payment Method Used by Customers
 if insight_level == "Basic Insights":
@@ -673,11 +941,42 @@ if insight_level == "Basic Insights":
 
         # Show the bar chart
         st.plotly_chart(payment_fig)
+
+        # Button to show/hide interpretation
+        if 'show_interpretation_q10' not in st.session_state:
+            st.session_state.show_interpretation_q10 = False  # Initialize state variable
+
+        # Use a unique key for the button
+        if st.button("🔍 Click here to interpret the result", key='interpretation_button_q10'):
+            st.session_state.show_interpretation_q10 = not st.session_state.show_interpretation_q10
+
+        # Show interpretation based on the button state
+        if st.session_state.show_interpretation_q10:
+            # Interpretation dynamically based on user selections
+            if not payment_counts.empty:
+                most_common_payment_method = most_common_payment['Payment Method']
+                st.markdown(f"""
+                    <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                        <h3 style="color: #1ABC9C;">Interpretation</h3>
+                        <p style="color: #ECF0F1;">
+                            The analysis indicates that the most common payment method used by 
+                            <strong>{selected_gender}</strong> customers is <strong>{most_common_payment_method}</strong>. 
+                            This preference suggests a need to ensure seamless and secure payment processes. 
+                            To enhance customer satisfaction and potentially increase sales, the company should 
+                            consider promoting this payment method's benefits and ensuring its reliability and security are maintained.
+                        </p>
+                    </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("<p style='color: #ECF0F1;'>No payment data available for the selected filters.</p>", unsafe_allow_html=True)
     else:
         st.error("The uploaded dataset does not contain the required column: 'Payment Method'.")
 
+    
+    st.markdown("---")  # Separator
 
-        
+
+
 # Intermediate Insights - Q1
 if insight_level == "Intermediate Insights":
     st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Average Review Scores by Payment Method</h2>", unsafe_allow_html=True)
@@ -745,8 +1044,37 @@ if insight_level == "Intermediate Insights":
     # Show the bar chart
     st.plotly_chart(average_review_fig)
 
-# Separator
-st.markdown("---")
+    # Button to show/hide interpretation
+    if 'show_interpretation_q1' not in st.session_state:
+        st.session_state.show_interpretation_q1 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q1'):
+        st.session_state.show_interpretation_q1 = not st.session_state.show_interpretation_q1
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q1:
+        if not average_review_scores.empty:
+            interpretation_text = f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The average review score for users who utilize the most common payment method, 
+                    <strong>{most_common_payment_method}</strong>, is <strong>{mean_review_score:.2f}</strong>. 
+                    This score suggests a neutral customer satisfaction level. To enhance the customer experience and improve ratings, 
+                    the company should investigate specific issues related to this payment method and address any identified concerns, 
+                    ensuring a smoother transaction process and potentially increasing overall satisfaction.
+                </p>
+            </div>
+            """
+            st.markdown(interpretation_text, unsafe_allow_html=True)
+        else:
+            st.markdown("<p style='color: #ECF0F1;'>No review score data available for the selected filters.</p>", unsafe_allow_html=True)
+
+    # Separator
+    st.markdown("---")
+
+
 
 
 # Intermediate Insights - Q2
@@ -777,6 +1105,37 @@ if insight_level == "Intermediate Insights":
 
     # Show the plot
     st.plotly_chart(fig)
+
+    # Button to show/hide interpretation
+    if 'show_interpretation_q2' not in st.session_state:
+        st.session_state.show_interpretation_q2 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q2'):
+        st.session_state.show_interpretation_q2 = not st.session_state.show_interpretation_q2
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q2:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <ul style="color: #ECF0F1;">
+                <li>There is no strong positive correlation between time spent on the website and purchase amount.</li>
+                <li>Customers who spend similar amounts of time on the website show highly variable purchase amounts.</li>
+                <li>Time spent on the website is not a reliable predictor of higher purchase amounts.</li>
+            </ul>
+            <h4 style="color: #1ABC9C;">Recommendations:</h4>
+            <ul style="color: #ECF0F1;">
+                <li>Focus on improving product offerings to attract more purchases.</li>
+                <li>Implement personalized marketing strategies to engage customers effectively.</li>
+                <li>Explore other factors that may influence purchasing behavior beyond time spent on the website.</li>
+            </ul>
+        </div>
+        """
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+    # Separator
+    st.markdown("---")
 
 
 
@@ -840,8 +1199,47 @@ if insight_level == "Intermediate Insights":
     # Show the figure in Streamlit
     st.plotly_chart(fig)
 
-    # Streamlit separator
+    # Button to show/hide interpretation
+    if 'show_interpretation_q3' not in st.session_state:
+        st.session_state.show_interpretation_q3 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q3'):
+        st.session_state.show_interpretation_q3 = not st.session_state.show_interpretation_q3
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q3:
+        if chart_type == "Return Customers":
+            interpretation_text = """
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The pie chart illustrates that <strong>40.2%</strong> of returning customers are satisfied, 
+                    while <strong>59.8%</strong> are not. This indicates that while a significant portion of customers 
+                    are repeat buyers, customer satisfaction among them is lacking, highlighting a potential issue 
+                    with the service or product that could lead to lost opportunities if not addressed. 
+                    Enhancing customer satisfaction efforts, particularly among return customers, could lead 
+                    to better retention and loyalty.
+                </p>
+            </div>
+            """
+        else:  # All Customers
+            interpretation_text = """
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The pie chart shows that <strong>20.1%</strong> of all customers are both satisfied and returning, 
+                    whereas <strong>79.9%</strong> fall into other categories, either not satisfied or not returning. 
+                    This indicates that while a significant portion of customers are repeat buyers, customer satisfaction 
+                    overall needs improvement. Addressing these concerns could improve retention rates and customer loyalty.
+                </p>
+            </div>
+            """
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
     st.markdown("---")  # Separator
+
 
 # -------------------------------------------
 
@@ -869,7 +1267,32 @@ if insight_level == "Intermediate Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
-    # Streamlit separator
+    # Button to show/hide interpretation
+    if 'show_interpretation_q4' not in st.session_state:
+        st.session_state.show_interpretation_q4 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q4'):
+        st.session_state.show_interpretation_q4 = not st.session_state.show_interpretation_q4
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q4:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The chart indicates that customers across all satisfaction levels—low, medium, and high—purchase a maximum of <strong>9 products</strong>. 
+                This suggests there is no clear correlation between customer satisfaction and the number of items purchased, 
+                as even low-satisfaction customers are willing to make larger purchases. This could imply that factors beyond 
+                satisfaction, such as product necessity or pricing, are driving purchase decisions. To maximize customer lifetime value, 
+                the business should focus on addressing satisfaction to enhance loyalty, while also considering what motivates 
+                high purchases among less satisfied customers.
+            </p>
+        </div>
+        """
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
     st.markdown("---")  # Separator
 
 # -------------------------------------------
@@ -914,6 +1337,7 @@ if insight_level == "Intermediate Insights":
     # Get the latitude and longitude for the selected location
     lat = selected_location['Latitude']
     lon = selected_location['Longitude']
+    purchase_amount = selected_location['Purchase Amount ($)']
 
     # Create a scatter mapbox using the average purchase amount
     fig = px.scatter_mapbox(
@@ -945,6 +1369,51 @@ if insight_level == "Intermediate Insights":
 
     # Show the map in Streamlit
     st.plotly_chart(fig)
+
+    # Button to show/hide interpretation
+    if 'show_interpretation_q5' not in st.session_state:
+        st.session_state.show_interpretation_q5 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q5'):
+        st.session_state.show_interpretation_q5 = not st.session_state.show_interpretation_q5
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q5:
+        interpretation_text = f"""
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The map visualization highlights that <strong>{selected_location['Location']}</strong> has the 
+                <strong>{selected_rank}</strong> highest average purchase amount in Bangladesh, with an average of 
+                <strong>${purchase_amount:.2f}</strong>. This indicates that while it is noteworthy, 
+                being ranked {selected_rank} suggests it may not be as dominant in terms of customer purchasing behavior 
+                compared to higher-ranked locations. Tailoring marketing strategies based on local insights could help 
+                enhance revenue in this location, especially if there's potential for growth.
+            </p>
+        </div>
+        """
+        
+        # Highlight if it's a top location
+        if selected_index < 3:  # Top 3 locations
+            interpretation_text = f"""
+            <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+                <h3 style="color: #1ABC9C;">Interpretation</h3>
+                <p style="color: #ECF0F1;">
+                    The map visualization highlights that <strong>{selected_location['Location']}</strong> has the 
+                    <strong>{selected_rank}</strong> highest average purchase amount in Bangladesh, with an average of 
+                    <strong>${purchase_amount:.2f}</strong>. This suggests that {selected_location['Location']} is a 
+                    key location where customers tend to make larger purchases on average. Targeted marketing strategies 
+                    or deeper customer engagement efforts in {selected_location['Location']} could further boost revenue 
+                    in this region, given its high purchasing potential.
+                </p>
+            </div>
+            """
+        
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
+    st.markdown("---")  # Separator
 
 
     
@@ -1010,8 +1479,39 @@ if insight_level == "Critical Thinking Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
-    # Streamlit separator
+    # Button to show/hide interpretation and business insights
+    if 'show_interpretation_q1' not in st.session_state:
+        st.session_state.show_interpretation_q1 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q1'):
+        st.session_state.show_interpretation_q1 = not st.session_state.show_interpretation_q1
+
+    # Show interpretation and business insights based on the button state
+    if st.session_state.show_interpretation_q1:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The analysis reveals that several factors significantly contribute to customer returns. Product category, particularly books, electronics, and groceries, plays a crucial role. Payment method, with bank transfers and credit card showing higher return rates, is another influential factor. Additionally, gender and customers availing discounts are associated with increased returns. While demographics, website engagement, and customer satisfaction also impact return rates, their influence is less pronounced compared to these key factors.
+            </p>
+            <h3 style="color: #1ABC9C;">Recommendations</h3>
+            <p style="color: #ECF0F1;">
+                To enhance return customer rates, the business should focus on tailoring marketing strategies around key product categories that drive higher returns. Implementing targeted promotions for books, electronics, and groceries could yield significant returns. 
+                Additionally, offering incentives for customers using preferred payment methods (like credit cards) may encourage repeat purchases. 
+                Gender-based marketing approaches and personalized offers for frequent discount users can also increase customer loyalty. 
+                Finally, increasing engagement through the website can help maintain a high return rate, so initiatives that improve user experience and satisfaction should be prioritized.
+            </p>
+        </div>
+        """
+
+        # Display interpretation and business insights
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
     st.markdown("---")  # Separator
+
+
 
 # Critical Thinking Insights - Q2
 if insight_level == "Critical Thinking Insights":
@@ -1072,7 +1572,38 @@ if insight_level == "Critical Thinking Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
-    # Streamlit separator
+    # Button to show/hide interpretation
+    if 'show_interpretation_q2' not in st.session_state:
+        st.session_state.show_interpretation_q2 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q2'):
+        st.session_state.show_interpretation_q2 = not st.session_state.show_interpretation_q2
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q2:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The analysis of customer satisfaction distribution and return rates by payment method shows that Credit Card and Bank Transfer users exhibit high return rates, indicating strong customer loyalty. 
+                PayPal users also show favorable return rates with balanced satisfaction levels. 
+                However, Debit Card and COD users have lower satisfaction levels and moderate return rates. 
+                Promoting Credit Card and Bank Transfer options could enhance customer retention and satisfaction, driving repeat business and increasing revenue.
+            </p>
+            <h3 style="color: #1ABC9C;">Recommendations</h3>
+            <p style="color: #ECF0F1;">
+                To improve customer satisfaction and retention, focus on enhancing the user experience for Credit Card and Bank Transfer options, as they are associated with higher return rates. 
+                Offering incentives or rewards for using these payment methods can encourage their adoption and strengthen customer loyalty. 
+                Additionally, investigating the reasons behind the lower satisfaction levels for Debit Card and COD users could help address pain points, potentially leading to improved return rates across these groups.
+            </p>
+        </div>
+        """
+
+        # Display interpretation and business insights
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
     st.markdown("---")  # Separator
 
 # Critical Thinking Insights - Q3
@@ -1120,8 +1651,35 @@ if insight_level == "Critical Thinking Insights":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
-    # Streamlit separator
+    # Button to show/hide interpretation and business insights
+    if 'show_interpretation_q3' not in st.session_state:
+        st.session_state.show_interpretation_q3 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q3'):
+        st.session_state.show_interpretation_q3 = not st.session_state.show_interpretation_q3
+
+    # Show interpretation and business insights based on the button state
+    if st.session_state.show_interpretation_q3:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The analysis reveals that Khulna boasts the highest average purchase amount at $513.94, coupled with the lowest average delivery time of 6.81 days. This efficiency in logistics positions Khulna as a key market. Meanwhile, Dhaka, representing over 40% of e-space consumers, highlights the city's dominance in online shopping, with additional contributions from Chittagong, Sylhet, Rajshahi, and Rangpur. 
+            </p>
+                        <h3 style="color: #1ABC9C;">Recommendations</h3>
+            <p style="color: #ECF0F1;">
+                To capitalize on these insights, the company should consider strategic investments in logistics and marketing efforts in regions outside Khulna. By enhancing operational capabilities in these other cities, there is significant potential to increase purchase amounts and attract a broader consumer base.
+            </p>
+            
+        </div>
+        """
+
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
+        # Streamlit separator
     st.markdown("---")  # Separator
+
 
 
 
@@ -1169,7 +1727,6 @@ if insight_level == "Own Findings":
 
     # Update the layout
     fig.update_layout(
-        #title='Spending Habits and Return Rates by Age Group',
         xaxis=dict(title='Age Group'),
         yaxis=dict(title='Average Purchase Amount ($)', side='left', showgrid=False),
         yaxis2=dict(title='Return Rate (%)', side='right', overlaying='y', showgrid=False),
@@ -1182,8 +1739,37 @@ if insight_level == "Own Findings":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Button to show/hide interpretation and insights
+    if 'show_interpretation_q1' not in st.session_state:
+        st.session_state.show_interpretation_q1 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q1'):
+        st.session_state.show_interpretation_q1 = not st.session_state.show_interpretation_q1
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q1:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation </h3>
+            <p style="color: #ECF0F1;">
+                The visualization illustrates the intricate relationship between age, spending habits, and return rates. 
+                Younger age groups (0-30) show a consistent increase in average spending, alongside stable return rates. 
+                In contrast, middle-aged consumers (31-40) exhibit more variable spending patterns, yet they maintain the highest return rates in this segment. 
+                Older age groups (51+) tend to decrease their spending while experiencing an uptick in return rates.
+            </p>
+            <p style="color: #ECF0F1;">
+                These findings suggest that while age influences spending power, other factors—such as product preferences, brand loyalty, and individual shopping behaviors—also significantly affect return behavior. 
+                The company might consider tailoring marketing strategies and product offerings to each age group to optimize customer retention and maximize sales.
+            </p>
+        </div>
+        """
+
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
     # Streamlit separator
     st.markdown("---")  # Separator
+
 
 # Own Findings - Q2
 if insight_level == "Own Findings":
@@ -1207,17 +1793,48 @@ if insight_level == "Own Findings":
                     color_continuous_scale="Viridis",
                     text_auto=True)  # Add annotations
 
-    fig.update_layout(#title="Product Category Preferences by Location",
-                      xaxis_title="Product Category",
-                      yaxis_title="Location",
-                      height=1000, 
-                      width=1000)
+    fig.update_layout(
+        xaxis_title="Product Category",
+        yaxis_title="Location",
+        height=1000, 
+        width=1000
+    )
 
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Button to show/hide interpretation and insights
+    if 'show_interpretation_q2' not in st.session_state:
+        st.session_state.show_interpretation_q2 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q2'):
+        st.session_state.show_interpretation_q2 = not st.session_state.show_interpretation_q2
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q2:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The analysis of product category preferences across various locations reveals distinct regional variations. 
+                Electronics emerge as a popular choice in Rangpur and Sylhet, boasting preference percentages of 14.37% and 15.28%, respectively. 
+                This indicates a robust market for tech products in these areas. 
+                Conversely, Mymensingh exhibits a higher inclination towards home products and toys, while Chittagong and Dhaka display a balanced distribution across categories, 
+                with a slight preference for books.
+            </p>
+            <p style="color: #ECF0F1;">
+                These insights underscore the importance of targeted marketing strategies that leverage regional preferences. 
+                By optimizing inventory and promotional efforts in line with local consumer interests, the company can enhance customer engagement and boost sales.
+            </p>
+        </div>
+        """
+
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
     # Streamlit separator
     st.markdown("---")  # Separator
+
 
 # Own Findings - Q3
 if insight_level == "Own Findings":
@@ -1233,7 +1850,6 @@ if insight_level == "Own Findings":
 
     # Create a bar plot using Set1 colors
     fig = px.bar(sorted_product_gender_stats, 
-                 #title='Average Spending by Product Category and Gender',
                  labels={'value': 'Average Purchase Amount ($)', 'Product Category': 'Product Category'},
                  barmode='group',
                  color_discrete_sequence=set1_colors  # Set color palette to Set1
@@ -1252,8 +1868,36 @@ if insight_level == "Own Findings":
     # Show the plot in Streamlit
     st.plotly_chart(fig)
 
+    # Button to show/hide interpretation and insights
+    if 'show_interpretation_q3' not in st.session_state:
+        st.session_state.show_interpretation_q3 = False  # Initialize state variable
+
+    # Use a unique key for the button
+    if st.button("🔍 Click here to interpret the result", key='interpretation_button_q3'):
+        st.session_state.show_interpretation_q3 = not st.session_state.show_interpretation_q3
+
+    # Show interpretation based on the button state
+    if st.session_state.show_interpretation_q3:
+        interpretation_text = """
+        <div style="background-color: #2C3E50; padding: 15px; border-radius: 10px; border-left: 5px solid #1ABC9C;">
+            <h3 style="color: #1ABC9C;">Interpretation</h3>
+            <p style="color: #ECF0F1;">
+                The analysis of purchasing patterns across genders reveals minimal variation in average spending within each product category. 
+                All genders demonstrate similar spending habits, with slight differences observed in specific categories such as beauty and electronics. 
+                Notably, females tend to spend marginally more on beauty products, while males exhibit a comparable affinity for electronics.
+            </p>
+            <p style="color: #ECF0F1;">
+                These insights suggest that marketing strategies should prioritize personalized engagement rather than relying solely on general gender-based targeting. 
+                Given the relatively uniform spending patterns across product categories, tailoring marketing efforts to individual preferences may yield better engagement and conversion rates.
+            </p>
+        </div>
+        """
+
+        st.markdown(interpretation_text, unsafe_allow_html=True)
+
     # Streamlit separator
     st.markdown("---")  # Separator
+
 
   
 
