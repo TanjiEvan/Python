@@ -353,7 +353,7 @@ if insight_level == "Basic Insights":
 
 
         # Streamlit separator
-        st.markdown("---")  # Separator
+    st.markdown("---")  # Separator
 
 
 # Basic Insights - Q3
@@ -425,7 +425,7 @@ if insight_level == "Basic Insights":
         """, unsafe_allow_html=True)
 
 
-        st.markdown("---")  # Separator
+    st.markdown("---")  # Separator
 
 
 
