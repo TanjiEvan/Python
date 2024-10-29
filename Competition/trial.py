@@ -241,7 +241,7 @@ if insight_level == "Basic Insights":
         """, unsafe_allow_html=True)
         
         # Separator
-        st.markdown("---")
+    st.markdown("---")
 
 
 
