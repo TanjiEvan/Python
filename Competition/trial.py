@@ -1297,7 +1297,6 @@ if insight_level == "Intermediate Insights":
 
 # -------------------------------------------
 
-# Intermediate Insights - Q5
 if insight_level == "Intermediate Insights":
     st.markdown("<h2 style='text-align: center; color: #1ABC9C;'>Highest Average Purchase By Location</h2>", unsafe_allow_html=True)
 
@@ -1316,25 +1315,25 @@ if insight_level == "Intermediate Insights":
     # Calculate average purchase amount by location
     average_purchase = df.groupby("Location")["Purchase Amount ($)"].mean().reset_index()
 
-    # Get top locations
-    top_locations = average_purchase.nlargest(7, "Purchase Amount ($)")
+    # Get top 8 locations by average purchase
+    top_locations = average_purchase.nlargest(8, "Purchase Amount ($)")
 
     # Add the latitude and longitude to the top_locations DataFrame
     top_locations['Latitude'] = top_locations['Location'].map(lambda x: location_coordinates[x]['lat'])
     top_locations['Longitude'] = top_locations['Location'].map(lambda x: location_coordinates[x]['lon'])
 
     # Define ordinal suffixes for the ranks
-    ordinal_suffixes = ['st', 'nd', 'rd'] + ['th'] * 4  # Adding 'th' for ranks above 3
+    ordinal_suffixes = ['st', 'nd', 'rd'] + ['th'] * 5  # Extending for 8 ranks
     ranks = [f"{i+1}{ordinal_suffixes[i]}" for i in range(len(top_locations))]
 
     # Create a radio button for selecting the rank of the location
-    selected_rank = st.radio("Select the rank of location:", options=ranks, index=1)  # Default to the 2nd highest
+    selected_rank = st.radio("Select the rank of location:", options=ranks, index=1)  # Default to 2nd highest
 
     # Get the selected location based on the rank
-    selected_index = int(selected_rank[:-2]) - 1  # Extract number and convert to index
+    selected_index = int(selected_rank[:-2]) - 1  # Extract rank number and convert to index
     selected_location = top_locations.iloc[selected_index]
 
-    # Get the latitude and longitude for the selected location
+    # Get latitude and longitude for the selected location
     lat = selected_location['Latitude']
     lon = selected_location['Longitude']
     purchase_amount = selected_location['Purchase Amount ($)']
@@ -1412,7 +1411,7 @@ if insight_level == "Intermediate Insights":
         
         st.markdown(interpretation_text, unsafe_allow_html=True)
 
-        # Streamlit separator
+    # Streamlit separator
     st.markdown("---")  # Separator
 
 
