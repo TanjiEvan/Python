@@ -1,13 +1,12 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
-import warnings
-import streamlit as st
 from streamlit.components.v1 import html
+import streamlit as st
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+import numpy as np
+from plotly.subplots import make_subplots
 
-warnings.filterwarnings("ignore")
+
 
 # Set page configuration for Streamlit app
 st.set_page_config(page_title="Transaction Analysis Dashboard", layout="wide")
@@ -151,7 +150,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 @st.cache_data
 def load_data():
     # Load your dataset from the specified path
-    df = pd.read_excel("updated.xlsx")
+    df = pd.read_excel("Competition/updated.xlsx")
     df["Date"] = pd.to_datetime(df["Date"])  # Ensure 'Date' column is datetime
     df["Discount_Applied"].fillna(False, inplace=True)  # Ensure no missing values in 'Discount_Applied'
     return df
