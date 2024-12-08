@@ -151,7 +151,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 @st.cache_data
 def load_data():
     # Load your dataset from the specified path
-    df = pd.read_excel("C:/Users/SPPL IT/Desktop/Study/Python/Competition/Battle Of Insights/Data/updated.xlsx")
+    df = pd.read_excel("updated.xlsx")
     df["Date"] = pd.to_datetime(df["Date"])  # Ensure 'Date' column is datetime
     df["Discount_Applied"].fillna(False, inplace=True)  # Ensure no missing values in 'Discount_Applied'
     return df
