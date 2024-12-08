@@ -145,12 +145,14 @@ body {
 """
 
 st.markdown(custom_css, unsafe_allow_html=True)
-
+@st.cache_data
+def load_data():
+    return pd.read_csv('Competition/ecommerce_customer_behavior_dataset.csv')
 # Load the data with caching
 @st.cache_data
 def load_data():
     # Load your dataset from the specified path
-    df = pd.read_excel("Competition/updated.xlsx")
+    df =pd.read_csv('Competition/updated.csv')
     df["Date"] = pd.to_datetime(df["Date"])  # Ensure 'Date' column is datetime
     df["Discount_Applied"].fillna(False, inplace=True)  # Ensure no missing values in 'Discount_Applied'
     return df
