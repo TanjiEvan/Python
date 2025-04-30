@@ -3,7 +3,7 @@ import pandas as pd
 import json
 import plotly.express as px
 import plotly.graph_objects as go
-from datetime import datetime
+from datetime import datetime, date
 import pytz
 import xlsxwriter
 import logging
@@ -15,10 +15,34 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Streamlit app title
-st.title("Daily Completion Report Dashboard (April 29, 2025)")
+st.title("Daily Completion Report Dashboard")
 
 # Define Set1 color palette
 set1_colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628', '#F781BF', '#999999']
+
+# Sidebar for additional filters
+st.sidebar.header("Filter Options")
+show_table_overview = st.sidebar.checkbox("Show Table Overview", value=True)
+
+# Current date for validation (April 30, 2025)
+current_date = date(2025, 4, 30)
+
+# Date picker for selecting the report date
+selected_date = st.date_input("Select Report Date", value=current_date, min_value=date(2000, 1, 1), max_value=current_date)
+
+# Validate the selected date
+if selected_date > current_date:
+    st.error(f"Invalid date selected. Please choose a date on or before {current_date}.")
+    st.stop()
+
+# Format the selected date for the report
+bangladesh_tz = pytz.timezone('Asia/Dhaka')
+report_date = datetime(selected_date.year, selected_date.month, selected_date.day, tzinfo=bangladesh_tz)
+start_of_day = report_date.replace(hour=0, minute=0, second=0, microsecond=0)
+end_of_day = report_date.replace(hour=23, minute=59, second=59, microsecond=999999)
+
+# Update the title with the selected date
+st.markdown(f"### Report for {report_date.strftime('%B %d, %Y')}")
 
 # File uploader for the JSON file
 uploaded_file = st.file_uploader("Upload the JSON File", type=["json"])
@@ -28,7 +52,7 @@ if uploaded_file is not None:
         # Read the JSON file
         logger.info("Reading the uploaded JSON file")
         data = json.load(uploaded_file)
-        
+
         # Component-to-Department Mapping
         component_department_map = {
             "67baee6d35e2055277c6f7aa": "Creative Marketing",
@@ -120,13 +144,7 @@ if uploaded_file is not None:
             "Retail & Business": "Sunnyat Ali"
         }
 
-        # Set Bangladesh time zone (UTC+6)
-        bangladesh_tz = pytz.timezone('Asia/Dhaka')
-        report_date = datetime(2025, 4, 29, tzinfo=bangladesh_tz)
-        start_of_day = report_date.replace(hour=0, minute=0, second=0, microsecond=0)
-        end_of_day = report_date.replace(hour=23, minute=59, second=59, microsecond=999999)
-
-        # Process tasks for April 29, 2025
+        # Process tasks for the selected date
         processed_data = []
         for item in data:
             try:
@@ -138,7 +156,7 @@ if uploaded_file is not None:
                 created_on_dt = datetime.fromtimestamp(created_on_ts / 1000, pytz.utc).astimezone(bangladesh_tz) if created_on_ts else None
                 due_date_dt = datetime.fromtimestamp(due_date_ts / 1000, pytz.utc).astimezone(bangladesh_tz) if due_date_ts else None
 
-                # Filter tasks relevant to April 29, 2025
+                # Filter tasks relevant to the selected date
                 is_relevant = False
                 if (modified_on_dt and start_of_day <= modified_on_dt <= end_of_day) or (created_on_dt and start_of_day <= created_on_dt <= end_of_day):
                     is_relevant = True
@@ -196,15 +214,18 @@ if uploaded_file is not None:
                 incomplete_tasks = task_title if is_incomplete else ""
                 incomplete_task_urls = task_url if is_incomplete else ""
 
-                # Check for rules violation
+                # Check for rules violation and determine violation type
                 rules_violated = "No"
                 rules_violated_urls = ""
+                violation_type = ""
                 if not component_id or department == "Unknown":
                     rules_violated = "Yes"
                     rules_violated_urls = task_url
+                    violation_type = "Missing Component"
                 elif due_date_dt is None:
                     rules_violated = "Yes"
                     rules_violated_urls = task_url
+                    violation_type = "Missing Due Date"
 
                 # Append "[Rule Violator]" to employee name if rules are violated
                 if rules_violated == "Yes":
@@ -223,14 +244,15 @@ if uploaded_file is not None:
                     "Incomplete Task URLs": incomplete_task_urls,
                     "Due Date": due_date_dt.strftime('%Y-%m-%d') if due_date_dt else "",
                     "Rules Violated": rules_violated,
-                    "Rules Violated URLs": rules_violated_urls
+                    "Rules Violated URLs": rules_violated_urls,
+                    "Violation Type": violation_type
                 })
             except Exception as e:
                 logger.error(f"Error processing task: {item}. Error: {str(e)}")
                 continue
 
         if not processed_data:
-            st.error("No relevant tasks found in the JSON file for April 29, 2025.")
+            st.error(f"No relevant tasks found in the JSON file for {report_date.strftime('%B %d, %Y')}.")
             st.stop()
 
         # Create DataFrame
@@ -249,14 +271,15 @@ if uploaded_file is not None:
             "Incomplete Task URLs",
             "Due Date",
             "Rules Violated",
-            "Rules Violated URLs"
+            "Rules Violated URLs",
+            "Violation Type"
         ]
 
         # Reorder DataFrame
         df = df[column_order]
 
         # Export to Excel (use temporary directory)
-        output_filename = os.path.join(tempfile.gettempdir(), 'daily_completion_report_2025-04-29.xlsx')
+        output_filename = os.path.join(tempfile.gettempdir(), f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx')
         try:
             writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
             df.to_excel(writer, sheet_name='Report', index=False)
@@ -276,10 +299,24 @@ if uploaded_file is not None:
             st.error(f"Failed to save Excel file: {str(e)}")
             st.stop()
 
-        # Display the converted table overview
-        st.header("Overview of Converted Table (JSON to Excel)")
-        st.write("Below is the table generated from the uploaded JSON file:")
-        st.dataframe(df)
+        # Apply filters
+        # Department filter in sidebar
+        departments = ["All"] + sorted(df['Department Name'].unique())
+        selected_department = st.sidebar.selectbox("Filter by Department", departments)
+        if selected_department != "All":
+            df = df[df['Department Name'] == selected_department]
+
+        # Employee filter as a dropdown
+        employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+        selected_employee = st.selectbox("Filter by Employee", employees)
+        if selected_employee != "All":
+            df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
+
+        # Display the converted table overview if toggled on
+        if show_table_overview:
+            st.header("Overview of Converted Table (JSON to Excel)")
+            st.write(f"Below is the table generated from the uploaded JSON file for {report_date.strftime('%B %d, %Y')}:")
+            st.dataframe(df)
 
         # Provide download link for the Excel file
         try:
@@ -287,7 +324,7 @@ if uploaded_file is not None:
                 st.download_button(
                     label="Download Excel File",
                     data=f,
-                    file_name='daily_completion_report_2025-04-29.xlsx',
+                    file_name=f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx',
                     mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 )
         except Exception as e:
@@ -297,8 +334,8 @@ if uploaded_file is not None:
         # --- Analysis Section ---
         st.header("Analysis Dashboard")
 
-        # --- Question 1: Overall Completion Rate ---
-        st.subheader("Q1: What is the overall completion rate of tasks on April 29, 2025?")
+        # --- Question 1: Overall Completion Rate with Task Status Breakdown ---
+        st.subheader(f"Q1: What is the overall completion rate of tasks on {report_date.strftime('%B %d, %Y')}?")
         total_tasks = df.shape[0]
         completed_tasks = df[df['Task Status'].str.startswith('DONE')].shape[0]
         incomplete_tasks = total_tasks - completed_tasks
@@ -309,18 +346,33 @@ if uploaded_file is not None:
         st.write(f"Completed Tasks: {completed_tasks} ({completion_rate:.2f}%)")
         st.write(f"Incomplete Tasks: {incomplete_tasks} ({incomplete_rate:.2f}%)")
 
-        # Visualize: Pie chart
+        # Task Status breakdown
+        task_status_counts = df['Task Status'].value_counts().reset_index()
+        task_status_counts.columns = ['Task Status', 'Count']
+        st.write("**Task Status Breakdown:**")
+        st.write(task_status_counts)
+
+        # Visualize: Pie chart for overall completion
         fig1 = go.Figure(data=[
             go.Pie(labels=['Completed', 'Incomplete'],
                    values=[completed_tasks, incomplete_tasks],
                    textinfo='label+percent',
                    marker=dict(colors=set1_colors[:2]))
         ])
-        fig1.update_layout(title_text='Overall Task Completion Rate (April 29, 2025)')
+        fig1.update_layout(title_text=f'Overall Task Completion Rate ({report_date.strftime("%B %d, %Y")})')
         st.plotly_chart(fig1, use_container_width=True)
 
-        # --- Question 2: Task Completion Rate per Employee ---
-        st.subheader("Q2: What is the task completion rate per employee?")
+        # Visualize: Bar chart for task status breakdown
+        fig1b = px.bar(task_status_counts, x='Task Status', y='Count',
+                       title=f'Task Status Distribution ({report_date.strftime("%B %d, %Y")})',
+                       labels={'Count': 'Number of Tasks'},
+                       color='Task Status',
+                       color_discrete_sequence=set1_colors)
+        fig1b.update_layout(xaxis_title='Task Status', yaxis_title='Number of Tasks', xaxis_tickangle=-45, showlegend=False)
+        st.plotly_chart(fig1b, use_container_width=True)
+
+        # --- Question 2: Task Completion Rate per Employee with Task Status Breakdown ---
+        st.subheader(f"Q2: What is the task completion rate per employee on {report_date.strftime('%B %d, %Y')}?")
         employee_stats = df.groupby('Employee Name').agg({
             'Task Status': [
                 lambda x: sum(x.str.startswith('DONE')),
@@ -333,11 +385,19 @@ if uploaded_file is not None:
         employee_stats['Total Tasks'] = employee_stats['Tasks Completed'] + employee_stats['Incomplete Tasks']
         employee_stats['Completion Rate (%)'] = (employee_stats['Tasks Completed'] / employee_stats['Total Tasks'] * 100).round(2)
 
-        st.write(employee_stats[['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
+        # Task Status breakdown per employee
+        employee_task_status = df.groupby(['Employee Name', 'Task Status']).size().unstack(fill_value=0).reset_index()
+        employee_task_status['Employee Name'] = employee_task_status['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+        employee_task_status = employee_task_status.groupby('Employee Name').sum().reset_index()
 
-        # Visualize: Bar chart
+        st.write("**Completion Rate per Employee:**")
+        st.write(employee_stats[['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
+        st.write("**Task Status Breakdown per Employee:**")
+        st.write(employee_task_status)
+
+        # Visualize: Bar chart for completion rate per employee
         fig2 = px.bar(employee_stats, x='Employee Name', y='Completion Rate (%)',
-                      title='Task Completion Rate per Employee (April 29, 2025)',
+                      title=f'Task Completion Rate per Employee ({report_date.strftime("%B %d, %Y")})',
                       labels={'Completion Rate (%)': 'Completion Rate (%)'},
                       color='Employee Name',
                       color_discrete_sequence=set1_colors)
@@ -345,7 +405,7 @@ if uploaded_file is not None:
         st.plotly_chart(fig2, use_container_width=True)
 
         # --- Question 3: Task Completion Rate per Department ---
-        st.subheader("Q3: What is the task completion rate per department?")
+        st.subheader(f"Q3: What is the task completion rate per department on {report_date.strftime('%B %d, %Y')}?")
         department_stats = df.groupby('Department Name').agg({
             'Task Status': [
                 lambda x: sum(x.str.startswith('DONE')),
@@ -360,20 +420,20 @@ if uploaded_file is not None:
 
         # Visualize: Bar chart
         fig3 = px.bar(department_stats, x='Department Name', y='Completion Rate (%)',
-                      title='Task Completion Rate per Department (April 29, 2025)',
+                      title=f'Task Completion Rate per Department ({report_date.strftime("%B %d, %Y")})',
                       labels={'Completion Rate (%)': 'Completion Rate (%)'},
                       color='Department Name',
                       color_discrete_sequence=set1_colors)
         fig3.update_layout(xaxis_title='Department Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False)
         st.plotly_chart(fig3, use_container_width=True)
 
-        # --- Question 4: Incomplete Tasks with URLs ---
-        st.subheader("Q4: Which incomplete tasks need attention, and what are their direct URLs for review?")
-        incomplete_tasks_df = df[df['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs']]
+        # --- Question 4: Incomplete Tasks with Due Date ---
+        st.subheader(f"Q4: Which incomplete tasks need attention, and what are their direct URLs for review on {report_date.strftime('%B %d, %Y')}?")
+        incomplete_tasks_df = df[df['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date']]
         st.write(incomplete_tasks_df)
 
         # --- Question 5: Duplicate Task Detection ---
-        st.subheader("Q5: Are there any duplicate tasks that might indicate redundant work?")
+        st.subheader(f"Q5: Are there any duplicate tasks that might indicate redundant work on {report_date.strftime('%B %d, %Y')}?")
         df['Employee Name Cleaned'] = df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
         duplicates_within_employee = df.groupby(['Tasks Completed', 'Employee Name Cleaned']).filter(lambda x: len(x) > 1 and x['Tasks Completed'].iloc[0] != '')
         duplicates_within_employee = duplicates_within_employee[['Tasks Completed', 'Employee Name', 'Task Identifier']]
@@ -393,15 +453,19 @@ if uploaded_file is not None:
         else:
             st.write("No duplicates across employees.")
 
-        # --- Question 6: Rule Violations per Employee ---
-        st.subheader("Q6: How many tasks violated rules, and who are the responsible employees?")
-        rule_violations = df[df['Rules Violated'] == 'Yes'].groupby('Employee Name').size().reset_index(name='Rule Violations')
+        # --- Question 6: Rule Violations per Employee with Task Identifier, URL, and Violation Type ---
+        st.subheader(f"Q6: How many tasks violated rules, and who are the responsible employees on {report_date.strftime('%B %d, %Y')}?")
+        rule_violations_df = df[df['Rules Violated'] == 'Yes'][['Employee Name', 'Task Identifier', 'Rules Violated URLs', 'Violation Type']]
+        rule_violations_summary = rule_violations_df.groupby('Employee Name').size().reset_index(name='Rule Violations')
 
-        if not rule_violations.empty:
-            st.write(rule_violations)
+        if not rule_violations_df.empty:
+            st.write("**Rule Violations Summary:**")
+            st.write(rule_violations_summary)
+            st.write("**Details of Rule Violations:**")
+            st.write(rule_violations_df)
             # Visualize: Bar chart
-            fig4 = px.bar(rule_violations, x='Employee Name', y='Rule Violations',
-                          title='Rule Violations per Employee (April 29, 2025)',
+            fig4 = px.bar(rule_violations_summary, x='Employee Name', y='Rule Violations',
+                          title=f'Rule Violations per Employee ({report_date.strftime("%B %d, %Y")})',
                           labels={'Rule Violations': 'Number of Rule Violations'},
                           color='Employee Name',
                           color_discrete_sequence=set1_colors)
@@ -409,6 +473,11 @@ if uploaded_file is not None:
             st.plotly_chart(fig4, use_container_width=True)
         else:
             st.write("No rule violations found.")
+
+        # --- Question 7: Completed Tasks with Due Date, Task Identifier, and URL ---
+        st.subheader(f"Q7: Which tasks were completed, and what are their due dates, task identifiers, and URLs on {report_date.strftime('%B %d, %Y')}?")
+        completed_tasks_df = df[df['Tasks Completed'] != ''][['Employee Name', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs']]
+        st.write(completed_tasks_df)
 
         # Clean up the temporary Excel file
         try:
