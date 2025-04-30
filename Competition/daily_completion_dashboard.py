@@ -14,21 +14,165 @@ import tempfile
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Custom CSS for a dark ash/grey theme with vibrant fonts and improved container spacing
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+    html, body, [class*="css"] {
+        font-family: 'Poppins', sans-serif;
+    }
+    .main, .stApp {
+        background-color: #1f2937;
+        color: #f9fafb;
+    }
+    h1 {
+        color: #34d399;
+        font-size: 2.5em;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+    h2, h3, h4, h5, h6 {
+        color: #34d399;
+        font-weight: 600;
+        margin-bottom: 0.75em;
+    }
+    .stMarkdown, .stDataFrame {
+        color: #d1d5db;
+    }
+    /* Ensure proper spacing around all containers */
+    .stDateInput, .stFileUploader, .stSelectbox, .stCheckbox, .stButton, .stMetric, .stExpander, .stPlotlyChart {
+        margin-bottom: 2em !important;
+        padding: 0.5em;
+    }
+    .stContainer {
+        margin-bottom: 2em !important;
+        padding: 1em;
+    }
+    .overview-card {
+        background-color: #374151;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: #f9fafb;
+        transition: transform 0.2s;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .overview-card:hover {
+        transform: translateY(-5px);
+    }
+    .overview-card i {
+        color: #34d399;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+    .overview-card h3 {
+        margin: 0;
+        font-size: 1em;
+        color: #34d399;
+        font-weight: 400;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+        max-width: 90%;
+    }
+    .overview-card p {
+        margin: 10px 0 0;
+        font-size: 1.8em;
+        font-weight: 600;
+        color: #f9fafb;
+    }
+    .stSelectbox, .stDateInput, .stFileUploader, .stCheckbox, .stButton {
+        background-color: #374151 !important;
+        border-radius: 8px;
+        color: #f9fafb !important;
+    }
+    .stSelectbox > div > div, .stDateInput > div > div, .stFileUploader > div > div {
+        background-color: #374151 !important;
+        color: #f9fafb !important;
+    }
+    .stButton > button {
+        background-color: #34d399;
+        color: #1f2937;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+    .stButton > button:hover {
+        background-color: #6ee7b7;
+    }
+    .stDataFrame table {
+        background-color: #374151;
+        color: #f9fafb;
+        border-radius: 8px;
+    }
+    .stDataFrame th {
+        background-color: #4b5563 !important;
+        color: #34d399 !important;
+        font-weight: 600;
+    }
+    .stDataFrame td {
+        color: #d1d5db !important;
+    }
+    .stMetric {
+        background-color: #374151;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1em;
+    }
+    .stMetric label {
+        color: #34d399 !important;
+        font-weight: 600 !important;
+        white-space: normal;
+        line-height: 1.2;
+        font-size: 0.85em;
+    }
+    .stMetric div {
+        color: #f9fafb !important;
+        font-size: 1.3em !important;
+    }
+    .stTabs [role="tab"] {
+        color: #34d399;
+        font-weight: 600;
+    }
+    .stTabs [role="tab"][aria-selected="true"] {
+        color: #f9fafb;
+        border-bottom: 2px solid #34d399;
+    }
+    .stExpander {
+        background-color: #374151;
+        border-radius: 8px;
+        color: #f9fafb;
+    }
+    .stExpander summary {
+        color: #34d399;
+        font-weight: 600;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Streamlit app title
 st.title("Daily Completion Report Dashboard")
 
-# Define Set1 color palette
-set1_colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628', '#F781BF', '#999999']
-
 # Sidebar for additional filters
 st.sidebar.header("Filter Options")
+st.sidebar.markdown("### Refine Your View")
 show_table_overview = st.sidebar.checkbox("Show Table Overview", value=True)
 
 # Current date for validation (April 30, 2025)
 current_date = date(2025, 4, 30)
 
 # Date picker for selecting the report date
-selected_date = st.date_input("Select Report Date", value=current_date, min_value=date(2000, 1, 1), max_value=current_date)
+with st.container():
+    selected_date = st.date_input("Select Report Date", value=current_date, min_value=date(2000, 1, 1), max_value=current_date)
 
 # Validate the selected date
 if selected_date > current_date:
@@ -42,10 +186,12 @@ start_of_day = report_date.replace(hour=0, minute=0, second=0, microsecond=0)
 end_of_day = report_date.replace(hour=23, minute=59, second=59, microsecond=999999)
 
 # Update the title with the selected date
-st.markdown(f"### Report for {report_date.strftime('%B %d, %Y')}")
+with st.container():
+    st.markdown(f"### Report for {report_date.strftime('%B %d, %Y')}", unsafe_allow_html=True)
 
 # File uploader for the JSON file
-uploaded_file = st.file_uploader("Upload the JSON File", type=["json"])
+with st.container():
+    uploaded_file = st.file_uploader("Upload the JSON File", type=["json"])
 
 if uploaded_file is not None:
     try:
@@ -98,7 +244,7 @@ if uploaded_file is not None:
             "67baba90e8bc928dabddc824": "Operations & Support",
             "67bab31ae8bc928dabdd4d0d": "Operations & Support",
             "67bab620e8bc928dabdd871e": "Operations & Support",
-            "67baba25e8bc928dabddbcdf": "Operations & Support",
+            "67baba25e8bc928dabddbe44": "Operations & Support",
             "67baee9135e2055277c6fc86": "Production & Media",
             "67bab56de8bc928dabdd70eb": "Production & Media",
             "67bab41be8bc928dabdd5950": "Production & Media",
@@ -278,6 +424,104 @@ if uploaded_file is not None:
         # Reorder DataFrame
         df = df[column_order]
 
+        # Apply filters
+        # Department filter in sidebar
+        departments = ["All"] + sorted(df['Department Name'].unique())
+        selected_department = st.sidebar.selectbox("Filter by Department", departments)
+        if selected_department != "All":
+            df = df[df['Department Name'] == selected_department]
+
+        # Employee filter as a dropdown (global filter)
+        with st.container():
+            employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+            selected_employee = st.selectbox("Filter by Employee (Global)", employees)
+            if selected_employee != "All":
+                df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
+
+        # Quick Overview Dashboard
+        with st.container():
+            st.header("Quick Overview")
+            st.markdown("A snapshot of key task performance metrics for the selected date.", unsafe_allow_html=True)
+
+            # Calculate metrics for all task statuses
+            total_tasks = df.shape[0]
+            done_on_time = df[df['Task Status'] == 'DONE(On Time)'].shape[0]
+            done_late = df[df['Task Status'] == 'DONE(Late)'].shape[0]
+            done_no_due_date = df[df['Task Status'] == 'DONE(No Due Date)'].shape[0]
+            incomplete = df[df['Task Status'] == 'Incomplete'].shape[0]
+            in_progress_not_due = df[df['Task Status'] == 'In Progress(not due yet)'].shape[0]
+            in_progress_no_due = df[df['Task Status'] == 'In Progress(No Due Date)'].shape[0]
+            rule_violations_count = df[df['Rules Violated'] == 'Yes'].shape[0]
+
+            # Display metrics in a card layout
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Total Tasks</h3>
+                        <p>{total_tasks}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col2:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Done (On Time)</h3>
+                        <p>{done_on_time}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col3:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Done (Late)</h3>
+                        <p>{done_late}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col4:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Done (No Due Date)</h3>
+                        <p>{done_no_due_date}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+
+            col5, col6, col7, col8 = st.columns(4)
+            with col5:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-hourglass-half"></i>
+                        <h3>Incomplete</h3>
+                        <p>{incomplete}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col6:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-spinner"></i>
+                        <h3>In Progress (Not Due)</h3>
+                        <p>{in_progress_not_due}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col7:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-calendar-times"></i>
+                        <h3>In Progress (No Due)</h3>
+                        <p>{in_progress_no_due}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+            with col8:
+                st.markdown(f"""
+                    <div class="overview-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Rule Violations</h3>
+                        <p>{rule_violations_count}</p>
+                    </div>
+                """, unsafe_allow_html=True)
+
         # Export to Excel (use temporary directory)
         output_filename = os.path.join(tempfile.gettempdir(), f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx')
         try:
@@ -299,185 +543,217 @@ if uploaded_file is not None:
             st.error(f"Failed to save Excel file: {str(e)}")
             st.stop()
 
-        # Apply filters
-        # Department filter in sidebar
-        departments = ["All"] + sorted(df['Department Name'].unique())
-        selected_department = st.sidebar.selectbox("Filter by Department", departments)
-        if selected_department != "All":
-            df = df[df['Department Name'] == selected_department]
-
-        # Employee filter as a dropdown
-        employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
-        selected_employee = st.selectbox("Filter by Employee", employees)
-        if selected_employee != "All":
-            df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
-
         # Display the converted table overview if toggled on
-        if show_table_overview:
-            st.header("Overview of Converted Table (JSON to Excel)")
-            st.write(f"Below is the table generated from the uploaded JSON file for {report_date.strftime('%B %d, %Y')}:")
-            st.dataframe(df)
+        with st.container():
+            if show_table_overview:
+                st.header("Overview of Converted Table (JSON to Excel)")
+                st.write(f"Below is the table generated from the uploaded JSON file for {report_date.strftime('%B %d, %Y')}:")
+                st.dataframe(df)
 
         # Provide download link for the Excel file
-        try:
-            with open(output_filename, 'rb') as f:
-                st.download_button(
-                    label="Download Excel File",
-                    data=f,
-                    file_name=f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx',
-                    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-                )
-        except Exception as e:
-            logger.error(f"Error providing Excel file for download: {str(e)}")
-            st.error(f"Failed to provide Excel file for download: {str(e)}")
+        with st.container():
+            try:
+                with open(output_filename, 'rb') as f:
+                    st.download_button(
+                        label="Download Excel File",
+                        data=f,
+                        file_name=f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx',
+                        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                    )
+            except Exception as e:
+                logger.error(f"Error providing Excel file for download: {str(e)}")
+                st.error(f"Failed to provide Excel file for download: {str(e)}")
 
         # --- Analysis Section ---
-        st.header("Analysis Dashboard")
+        with st.container():
+            st.header("Analysis Dashboard")
 
-        # --- Question 1: Overall Completion Rate with Task Status Breakdown ---
-        st.subheader(f"Q1: What is the overall completion rate of tasks on {report_date.strftime('%B %d, %Y')}?")
-        total_tasks = df.shape[0]
-        completed_tasks = df[df['Task Status'].str.startswith('DONE')].shape[0]
-        incomplete_tasks = total_tasks - completed_tasks
-        completion_rate = (completed_tasks / total_tasks * 100) if total_tasks > 0 else 0
-        incomplete_rate = (incomplete_tasks / total_tasks * 100) if total_tasks > 0 else 0
+            # --- Question 1: Overall Completion Rate with Task Status Breakdown ---
+            st.subheader(f"Q1: What is the overall completion rate of tasks on {report_date.strftime('%B %d, %Y')}?")
+            total_tasks = df.shape[0]
+            completed_tasks = (done_on_time + done_late + done_no_due_date)
+            incomplete_tasks = total_tasks - completed_tasks
+            completion_rate = (completed_tasks / total_tasks * 100) if total_tasks > 0 else 0
+            incomplete_rate = (incomplete_tasks / total_tasks * 100) if total_tasks > 0 else 0
 
-        st.write(f"Total Tasks: {total_tasks}")
-        st.write(f"Completed Tasks: {completed_tasks} ({completion_rate:.2f}%)")
-        st.write(f"Incomplete Tasks: {incomplete_tasks} ({incomplete_rate:.2f}%)")
+            # Display metrics using st.metric
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("Total Tasks", total_tasks)
+            with col2:
+                st.metric("Completed Tasks", f"{completed_tasks} ({completion_rate:.2f}%)")
+            with col3:
+                st.metric("Incomplete Tasks", f"{incomplete_tasks} ({incomplete_rate:.2f}%)")
 
-        # Task Status breakdown
-        task_status_counts = df['Task Status'].value_counts().reset_index()
-        task_status_counts.columns = ['Task Status', 'Count']
-        st.write("**Task Status Breakdown:**")
-        st.write(task_status_counts)
+            # Task Status breakdown with expander
+            task_status_counts = df['Task Status'].value_counts().reset_index()
+            task_status_counts.columns = ['Task Status', 'Count']
+            with st.expander("View Task Status Breakdown"):
+                st.write(task_status_counts)
 
-        # Visualize: Pie chart for overall completion
-        fig1 = go.Figure(data=[
-            go.Pie(labels=['Completed', 'Incomplete'],
-                   values=[completed_tasks, incomplete_tasks],
-                   textinfo='label+percent',
-                   marker=dict(colors=set1_colors[:2]))
-        ])
-        fig1.update_layout(title_text=f'Overall Task Completion Rate ({report_date.strftime("%B %d, %Y")})')
-        st.plotly_chart(fig1, use_container_width=True)
+            # Define Set1 color palette
+            set1_colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628', '#F781BF', '#999999']
 
-        # Visualize: Bar chart for task status breakdown
-        fig1b = px.bar(task_status_counts, x='Task Status', y='Count',
-                       title=f'Task Status Distribution ({report_date.strftime("%B %d, %Y")})',
-                       labels={'Count': 'Number of Tasks'},
-                       color='Task Status',
-                       color_discrete_sequence=set1_colors)
-        fig1b.update_layout(xaxis_title='Task Status', yaxis_title='Number of Tasks', xaxis_tickangle=-45, showlegend=False)
-        st.plotly_chart(fig1b, use_container_width=True)
+            # Visualize: Pie chart for overall completion
+            fig1 = go.Figure(data=[
+                go.Pie(labels=['Completed', 'Incomplete'],
+                       values=[completed_tasks, incomplete_tasks],
+                       textinfo='label+percent',
+                       marker=dict(colors=set1_colors[:2]))
+            ])
+            fig1.update_layout(title_text=f'Overall Task Completion Rate ({report_date.strftime("%B %d, %Y")})',
+                               font=dict(color='#f9fafb'))
+            st.plotly_chart(fig1, use_container_width=True)
 
-        # --- Question 2: Task Completion Rate per Employee with Task Status Breakdown ---
-        st.subheader(f"Q2: What is the task completion rate per employee on {report_date.strftime('%B %d, %Y')}?")
-        employee_stats = df.groupby('Employee Name').agg({
-            'Task Status': [
-                lambda x: sum(x.str.startswith('DONE')),
-                lambda x: sum(~x.str.startswith('DONE'))
-            ]
-        }).reset_index()
-        employee_stats.columns = ['Employee Name', 'Tasks Completed', 'Incomplete Tasks']
-        employee_stats['Employee Name'] = employee_stats['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
-        employee_stats = employee_stats.groupby('Employee Name').sum().reset_index()
-        employee_stats['Total Tasks'] = employee_stats['Tasks Completed'] + employee_stats['Incomplete Tasks']
-        employee_stats['Completion Rate (%)'] = (employee_stats['Tasks Completed'] / employee_stats['Total Tasks'] * 100).round(2)
+            # Visualize: Bar chart for task status breakdown
+            fig1b = px.bar(task_status_counts, x='Task Status', y='Count',
+                           title=f'Task Status Distribution ({report_date.strftime("%B %d, %Y")})',
+                           labels={'Count': 'Number of Tasks'},
+                           color='Task Status',
+                           color_discrete_sequence=set1_colors)
+            fig1b.update_layout(xaxis_title='Task Status', yaxis_title='Number of Tasks', xaxis_tickangle=-45, showlegend=False,
+                                font=dict(color='#f9fafb'))
+            st.plotly_chart(fig1b, use_container_width=True)
 
-        # Task Status breakdown per employee
-        employee_task_status = df.groupby(['Employee Name', 'Task Status']).size().unstack(fill_value=0).reset_index()
-        employee_task_status['Employee Name'] = employee_task_status['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
-        employee_task_status = employee_task_status.groupby('Employee Name').sum().reset_index()
+            # --- Question 2: Task Completion Rate per Employee with Task Status Breakdown ---
+            st.subheader(f"Q2: What is the task completion rate per employee on {report_date.strftime('%B %d, %Y')}?")
+            # Employee filter for Q2
+            with st.container():
+                q2_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                q2_selected_employee = st.selectbox("Filter by Employee (Q2)", q2_employees, key="q2_employee_filter")
+                df_q2 = df.copy()
+                if q2_selected_employee != "All":
+                    df_q2 = df_q2[df_q2['Employee Name'].str.contains(q2_selected_employee, na=False)]
 
-        st.write("**Completion Rate per Employee:**")
-        st.write(employee_stats[['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
-        st.write("**Task Status Breakdown per Employee:**")
-        st.write(employee_task_status)
+            employee_stats = df_q2.groupby('Employee Name').agg({
+                'Task Status': [
+                    lambda x: sum(x.str.startswith('DONE')),
+                    lambda x: sum(~x.str.startswith('DONE'))
+                ]
+            }).reset_index()
+            employee_stats.columns = ['Employee Name', 'Tasks Completed', 'Incomplete Tasks']
+            employee_stats['Employee Name'] = employee_stats['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+            employee_stats = employee_stats.groupby('Employee Name').sum().reset_index()
+            employee_stats['Total Tasks'] = employee_stats['Tasks Completed'] + employee_stats['Incomplete Tasks']
+            employee_stats['Completion Rate (%)'] = (employee_stats['Tasks Completed'] / employee_stats['Total Tasks'] * 100).round(2)
 
-        # Visualize: Bar chart for completion rate per employee
-        fig2 = px.bar(employee_stats, x='Employee Name', y='Completion Rate (%)',
-                      title=f'Task Completion Rate per Employee ({report_date.strftime("%B %d, %Y")})',
-                      labels={'Completion Rate (%)': 'Completion Rate (%)'},
-                      color='Employee Name',
-                      color_discrete_sequence=set1_colors)
-        fig2.update_layout(xaxis_title='Employee Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False)
-        st.plotly_chart(fig2, use_container_width=True)
+            # Task Status breakdown per employee
+            employee_task_status = df_q2.groupby(['Employee Name', 'Task Status']).size().unstack(fill_value=0).reset_index()
+            employee_task_status['Employee Name'] = employee_task_status['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+            employee_task_status = employee_task_status.groupby('Employee Name').sum().reset_index()
 
-        # --- Question 3: Task Completion Rate per Department ---
-        st.subheader(f"Q3: What is the task completion rate per department on {report_date.strftime('%B %d, %Y')}?")
-        department_stats = df.groupby('Department Name').agg({
-            'Task Status': [
-                lambda x: sum(x.str.startswith('DONE')),
-                lambda x: sum(~x.str.startswith('DONE'))
-            ]
-        }).reset_index()
-        department_stats.columns = ['Department Name', 'Tasks Completed', 'Incomplete Tasks']
-        department_stats['Total Tasks'] = department_stats['Tasks Completed'] + department_stats['Incomplete Tasks']
-        department_stats['Completion Rate (%)'] = (department_stats['Tasks Completed'] / department_stats['Total Tasks'] * 100).round(2)
+            # Use tabs to separate the two sections
+            tab1, tab2 = st.tabs(["Completion Rate", "Task Status Breakdown"])
+            with tab1:
+                st.write("**Completion Rate per Employee:**")
+                st.write(employee_stats[['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
+                # Visualize: Bar chart for completion rate per employee
+                fig2 = px.bar(employee_stats, x='Employee Name', y='Completion Rate (%)',
+                              title=f'Task Completion Rate per Employee ({report_date.strftime("%B %d, %Y")})',
+                              labels={'Completion Rate (%)': 'Completion Rate (%)'},
+                              color='Employee Name',
+                              color_discrete_sequence=set1_colors)
+                fig2.update_layout(xaxis_title='Employee Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False,
+                                   font=dict(color='#f9fafb'))
+                st.plotly_chart(fig2, use_container_width=True)
+            with tab2:
+                st.write("**Task Status Breakdown per Employee:**")
+                st.write(employee_task_status)
 
-        st.write(department_stats[['Department Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
+            # --- Question 3: Task Completion Rate per Department ---
+            st.subheader(f"Q3: What is the task completion rate per department on {report_date.strftime('%B %d, %Y')}?")
+            department_stats = df.groupby('Department Name').agg({
+                'Task Status': [
+                    lambda x: sum(x.str.startswith('DONE')),
+                    lambda x: sum(~x.str.startswith('DONE'))
+                ]
+            }).reset_index()
+            department_stats.columns = ['Department Name', 'Tasks Completed', 'Incomplete Tasks']
+            department_stats['Total Tasks'] = department_stats['Tasks Completed'] + department_stats['Incomplete Tasks']
+            department_stats['Completion Rate (%)'] = (department_stats['Tasks Completed'] / department_stats['Total Tasks'] * 100).round(2)
 
-        # Visualize: Bar chart
-        fig3 = px.bar(department_stats, x='Department Name', y='Completion Rate (%)',
-                      title=f'Task Completion Rate per Department ({report_date.strftime("%B %d, %Y")})',
-                      labels={'Completion Rate (%)': 'Completion Rate (%)'},
-                      color='Department Name',
-                      color_discrete_sequence=set1_colors)
-        fig3.update_layout(xaxis_title='Department Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False)
-        st.plotly_chart(fig3, use_container_width=True)
+            # Display metrics using st.metric with adjusted column widths
+            for _, row in department_stats.iterrows():
+                col1, col2, col3, col4 = st.columns([3, 1, 1, 1])  # Even wider column for department name
+                with col1:
+                    st.metric("Department", row['Department Name'])
+                with col2:
+                    st.metric("Tasks Completed", row['Tasks Completed'])
+                with col3:
+                    st.metric("Incomplete Tasks", row['Incomplete Tasks'])
+                with col4:
+                    st.metric("Completion Rate (%)", f"{row['Completion Rate (%)']}%")
 
-        # --- Question 4: Incomplete Tasks with Due Date ---
-        st.subheader(f"Q4: Which incomplete tasks need attention, and what are their direct URLs for review on {report_date.strftime('%B %d, %Y')}?")
-        incomplete_tasks_df = df[df['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date']]
-        st.write(incomplete_tasks_df)
+            # Task Status breakdown per department
+            department_task_status = df.groupby(['Department Name', 'Task Status']).size().unstack(fill_value=0).reset_index()
+            with st.expander("View Task Status Breakdown per Department"):
+                st.write(department_task_status)
 
-        # --- Question 5: Duplicate Task Detection ---
-        st.subheader(f"Q5: Are there any duplicate tasks that might indicate redundant work on {report_date.strftime('%B %d, %Y')}?")
-        df['Employee Name Cleaned'] = df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
-        duplicates_within_employee = df.groupby(['Tasks Completed', 'Employee Name Cleaned']).filter(lambda x: len(x) > 1 and x['Tasks Completed'].iloc[0] != '')
-        duplicates_within_employee = duplicates_within_employee[['Tasks Completed', 'Employee Name', 'Task Identifier']]
-        df['Task Title'] = df['Tasks Completed'].where(df['Tasks Completed'] != '', df['Incomplete Tasks'])
-        duplicates_across_employees = df.groupby('Task Title').filter(lambda x: len(x) > 1 and x['Task Title'].iloc[0] != '')
-        duplicates_across_employees = duplicates_across_employees[['Task Title', 'Employee Name', 'Task Identifier', 'Task Status']]
-
-        st.write("**Duplicates within the same employee (Completed Tasks):**")
-        if not duplicates_within_employee.empty:
-            st.write(duplicates_within_employee)
-        else:
-            st.write("No duplicates within the same employee.")
-
-        st.write("**Duplicates across employees (Completed or Incomplete Tasks):**")
-        if not duplicates_across_employees.empty:
-            st.write(duplicates_across_employees)
-        else:
-            st.write("No duplicates across employees.")
-
-        # --- Question 6: Rule Violations per Employee with Task Identifier, URL, and Violation Type ---
-        st.subheader(f"Q6: How many tasks violated rules, and who are the responsible employees on {report_date.strftime('%B %d, %Y')}?")
-        rule_violations_df = df[df['Rules Violated'] == 'Yes'][['Employee Name', 'Task Identifier', 'Rules Violated URLs', 'Violation Type']]
-        rule_violations_summary = rule_violations_df.groupby('Employee Name').size().reset_index(name='Rule Violations')
-
-        if not rule_violations_df.empty:
-            st.write("**Rule Violations Summary:**")
-            st.write(rule_violations_summary)
-            st.write("**Details of Rule Violations:**")
-            st.write(rule_violations_df)
             # Visualize: Bar chart
-            fig4 = px.bar(rule_violations_summary, x='Employee Name', y='Rule Violations',
-                          title=f'Rule Violations per Employee ({report_date.strftime("%B %d, %Y")})',
-                          labels={'Rule Violations': 'Number of Rule Violations'},
-                          color='Employee Name',
+            fig3 = px.bar(department_stats, x='Department Name', y='Completion Rate (%)',
+                          title=f'Task Completion Rate per Department ({report_date.strftime("%B %d, %Y")})',
+                          labels={'Completion Rate (%)': 'Completion Rate (%)'},
+                          color='Department Name',
                           color_discrete_sequence=set1_colors)
-            fig4.update_layout(xaxis_title='Employee Name', yaxis_title='Number of Rule Violations', xaxis_tickangle=-45, showlegend=False)
-            st.plotly_chart(fig4, use_container_width=True)
-        else:
-            st.write("No rule violations found.")
+            fig3.update_layout(xaxis_title='Department Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False,
+                               font=dict(color='#f9fafb'))
+            st.plotly_chart(fig3, use_container_width=True)
 
-        # --- Question 7: Completed Tasks with Due Date, Task Identifier, and URL ---
-        st.subheader(f"Q7: Which tasks were completed, and what are their due dates, task identifiers, and URLs on {report_date.strftime('%B %d, %Y')}?")
-        completed_tasks_df = df[df['Tasks Completed'] != ''][['Employee Name', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs']]
-        st.write(completed_tasks_df)
+            # --- Question 4: Incomplete Tasks with Due Date ---
+            st.subheader(f"Q4: Which incomplete tasks need attention, and what are their direct URLs for review on {report_date.strftime('%B %d, %Y')}?")
+            # Employee filter for Q4
+            with st.container():
+                q4_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                q4_selected_employee = st.selectbox("Filter by Employee (Q4)", q4_employees, key="q4_employee_filter")
+                df_q4 = df.copy()
+                if q4_selected_employee != "All":
+                    df_q4 = df_q4[df_q4['Employee Name'].str.contains(q4_selected_employee, na=False)]
+
+            incomplete_tasks_df = df_q4[df_q4['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date']]
+            st.write(incomplete_tasks_df)
+
+            # --- Question 5: Rule Violations per Employee with Task Identifier, URL, and Violation Type ---
+            st.subheader(f"Q5: How many tasks violated rules, and who are the responsible employees on {report_date.strftime('%B %d, %Y')}?")
+            # Employee filter for Q5
+            with st.container():
+                q5_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                q5_selected_employee = st.selectbox("Filter by Employee (Q5)", q5_employees, key="q5_employee_filter")
+                df_q5 = df.copy()
+                if q5_selected_employee != "All":
+                    df_q5 = df_q5[df_q5['Employee Name'].str.contains(q5_selected_employee, na=False)]
+
+            rule_violations_df = df_q5[df_q5['Rules Violated'] == 'Yes'][['Employee Name', 'Task Identifier', 'Rules Violated URLs', 'Violation Type']]
+            rule_violations_summary = rule_violations_df.groupby('Employee Name').size().reset_index(name='Rule Violations')
+
+            if not rule_violations_df.empty:
+                st.write("**Rule Violations Summary:**")
+                st.write(rule_violations_summary)
+                st.write("**Details of Rule Violations:**")
+                st.write(rule_violations_df)
+                # Visualize: Bar chart
+                fig4 = px.bar(rule_violations_summary, x='Employee Name', y='Rule Violations',
+                              title=f'Rule Violations per Employee ({report_date.strftime("%B %d, %Y")})',
+                              labels={'Rule Violations': 'Number of Rule Violations'},
+                              color='Employee Name',
+                              color_discrete_sequence=set1_colors)
+                fig4.update_layout(xaxis_title='Employee Name', yaxis_title='Number of Rule Violations', xaxis_tickangle=-45, showlegend=False,
+                                   font=dict(color='#f9fafb'))
+                st.plotly_chart(fig4, use_container_width=True)
+            else:
+                st.write("No rule violations found.")
+
+            # --- Question 6: Completed Tasks with Due Date, Task Identifier, and URL ---
+            st.subheader(f"Q6: Which tasks were completed, and what are their due dates, task identifiers, and URLs on {report_date.strftime('%B %d, %Y')}?")
+            # Employee filter for Q6
+            with st.container():
+                q6_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                q6_selected_employee = st.selectbox("Filter by Employee (Q6)", q6_employees, key="q6_employee_filter")
+                df_q6 = df.copy()
+                if q6_selected_employee != "All":
+                    df_q6 = df_q6[df_q6['Employee Name'].str.contains(q6_selected_employee, na=False)]
+
+            completed_tasks_df = df_q6[df_q6['Tasks Completed'] != ''][['Employee Name', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs']]
+            st.write(completed_tasks_df)
 
         # Clean up the temporary Excel file
         try:
