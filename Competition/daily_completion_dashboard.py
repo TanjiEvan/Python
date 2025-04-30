@@ -14,68 +14,11 @@ import tempfile
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Custom CSS for a professional look
-st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-    html, body, [class*="css"]  {
-        font-family: 'Roboto', sans-serif;
-    }
-    .main {
-        background-color: #1e1e2f;
-        color: #ffffff;
-    }
-    .stApp {
-        background-color: #1e1e2f;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        color: #ffffff;
-    }
-    .stMarkdown, .stDataFrame {
-        color: #d1d1d1;
-    }
-    .overview-card {
-        background-color: #2a2a3d;
-        border-radius: 10px;
-        padding: 20px;
-        margin: 10px 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        color: #ffffff;
-    }
-    .overview-card h3 {
-        margin: 0;
-        font-size: 1.2em;
-        color: #a3bffa;
-    }
-    .overview-card p {
-        margin: 10px 0 0;
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-    .stSelectbox, .stDateInput, .stFileUploader, .stCheckbox, .stButton {
-        background-color: #2a2a3d !important;
-        border-radius: 5px;
-        color: #ffffff !important;
-    }
-    .stSelectbox > div > div, .stDateInput > div > div, .stFileUploader > div > div {
-        background-color: #2a2a3d !important;
-        color: #ffffff !important;
-    }
-    .stButton > button {
-        background-color: #6366f1;
-        color: #ffffff;
-        border-radius: 5px;
-    }
-    .stButton > button:hover {
-        background-color: #818cf8;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
 # Streamlit app title
 st.title("Daily Completion Report Dashboard")
+
+# Define Set1 color palette
+set1_colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628', '#F781BF', '#999999']
 
 # Sidebar for additional filters
 st.sidebar.header("Filter Options")
@@ -335,68 +278,6 @@ if uploaded_file is not None:
         # Reorder DataFrame
         df = df[column_order]
 
-        # Apply filters
-        # Department filter in sidebar
-        departments = ["All"] + sorted(df['Department Name'].unique())
-        selected_department = st.sidebar.selectbox("Filter by Department", departments)
-        if selected_department != "All":
-            df = df[df['Department Name'] == selected_department]
-
-        # Employee filter as a dropdown
-        employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
-        selected_employee = st.selectbox("Filter by Employee", employees)
-        if selected_employee != "All":
-            df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
-
-        # Quick Overview Dashboard
-        st.header("Quick Overview")
-        st.markdown("Get a quick snapshot of task performance metrics for the selected date.")
-
-        # Calculate metrics
-        total_tasks = df.shape[0]
-        completed_tasks = df[df['Task Status'].str.startswith('DONE')].shape[0]
-        incomplete_tasks = total_tasks - completed_tasks
-        completion_rate = (completed_tasks / total_tasks * 100) if total_tasks > 0 else 0
-        rule_violations_count = df[df['Rules Violated'] == 'Yes'].shape[0]
-
-        # Display metrics in a card layout
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col1:
-            st.markdown(f"""
-                <div class="overview-card">
-                    <h3>📋 Total Tasks</h3>
-                    <p>{total_tasks}</p>
-                </div>
-            """, unsafe_allow_html=True)
-        with col2:
-            st.markdown(f"""
-                <div class="overview-card">
-                    <h3>✅ Completed Tasks</h3>
-                    <p>{completed_tasks}</p>
-                </div>
-            """, unsafe_allow_html=True)
-        with col3:
-            st.markdown(f"""
-                <div class="overview-card">
-                    <h3>⏳ Incomplete Tasks</h3>
-                    <p>{incomplete_tasks}</p>
-                </div>
-            """, unsafe_allow_html=True)
-        with col4:
-            st.markdown(f"""
-                <div class="overview-card">
-                    <h3>📊 Completion Rate</h3>
-                    <p>{completion_rate:.2f}%</p>
-                </div>
-            """, unsafe_allow_html=True)
-        with col5:
-            st.markdown(f"""
-                <div class="overview-card">
-                    <h3>⚠️ Rule Violations</h3>
-                    <p>{rule_violations_count}</p>
-                </div>
-            """, unsafe_allow_html=True)
-
         # Export to Excel (use temporary directory)
         output_filename = os.path.join(tempfile.gettempdir(), f'daily_completion_report_{selected_date.strftime("%Y-%m-%d")}.xlsx')
         try:
@@ -417,6 +298,19 @@ if uploaded_file is not None:
             logger.error(f"Error saving Excel file: {str(e)}")
             st.error(f"Failed to save Excel file: {str(e)}")
             st.stop()
+
+        # Apply filters
+        # Department filter in sidebar
+        departments = ["All"] + sorted(df['Department Name'].unique())
+        selected_department = st.sidebar.selectbox("Filter by Department", departments)
+        if selected_department != "All":
+            df = df[df['Department Name'] == selected_department]
+
+        # Employee filter as a dropdown
+        employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+        selected_employee = st.selectbox("Filter by Employee", employees)
+        if selected_employee != "All":
+            df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
 
         # Display the converted table overview if toggled on
         if show_table_overview:
@@ -458,9 +352,6 @@ if uploaded_file is not None:
         st.write("**Task Status Breakdown:**")
         st.write(task_status_counts)
 
-        # Define Set1 color palette
-        set1_colors = ['#E41A1C', '#377EB8', '#4DAF4A', '#984EA3', '#FF7F00', '#FFFF33', '#A65628', '#F781BF', '#999999']
-
         # Visualize: Pie chart for overall completion
         fig1 = go.Figure(data=[
             go.Pie(labels=['Completed', 'Incomplete'],
@@ -468,8 +359,7 @@ if uploaded_file is not None:
                    textinfo='label+percent',
                    marker=dict(colors=set1_colors[:2]))
         ])
-        fig1.update_layout(title_text=f'Overall Task Completion Rate ({report_date.strftime("%B %d, %Y")})',
-                           paper_bgcolor='#2a2a3d', plot_bgcolor='#2a2a3d', font=dict(color='#ffffff'))
+        fig1.update_layout(title_text=f'Overall Task Completion Rate ({report_date.strftime("%B %d, %Y")})')
         st.plotly_chart(fig1, use_container_width=True)
 
         # Visualize: Bar chart for task status breakdown
@@ -478,8 +368,7 @@ if uploaded_file is not None:
                        labels={'Count': 'Number of Tasks'},
                        color='Task Status',
                        color_discrete_sequence=set1_colors)
-        fig1b.update_layout(xaxis_title='Task Status', yaxis_title='Number of Tasks', xaxis_tickangle=-45, showlegend=False,
-                            paper_bgcolor='#2a2a3d', plot_bgcolor='#2a2a3d', font=dict(color='#ffffff'))
+        fig1b.update_layout(xaxis_title='Task Status', yaxis_title='Number of Tasks', xaxis_tickangle=-45, showlegend=False)
         st.plotly_chart(fig1b, use_container_width=True)
 
         # --- Question 2: Task Completion Rate per Employee with Task Status Breakdown ---
@@ -512,8 +401,7 @@ if uploaded_file is not None:
                       labels={'Completion Rate (%)': 'Completion Rate (%)'},
                       color='Employee Name',
                       color_discrete_sequence=set1_colors)
-        fig2.update_layout(xaxis_title='Employee Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False,
-                           paper_bgcolor='#2a2a3d', plot_bgcolor='#2a2a3d', font=dict(color='#ffffff'))
+        fig2.update_layout(xaxis_title='Employee Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False)
         st.plotly_chart(fig2, use_container_width=True)
 
         # --- Question 3: Task Completion Rate per Department ---
@@ -536,8 +424,7 @@ if uploaded_file is not None:
                       labels={'Completion Rate (%)': 'Completion Rate (%)'},
                       color='Department Name',
                       color_discrete_sequence=set1_colors)
-        fig3.update_layout(xaxis_title='Department Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False,
-                           paper_bgcolor='#2a2a3d', plot_bgcolor='#2a2a3d', font=dict(color='#ffffff'))
+        fig3.update_layout(xaxis_title='Department Name', yaxis_title='Completion Rate (%)', xaxis_tickangle=-45, showlegend=False)
         st.plotly_chart(fig3, use_container_width=True)
 
         # --- Question 4: Incomplete Tasks with Due Date ---
@@ -545,8 +432,29 @@ if uploaded_file is not None:
         incomplete_tasks_df = df[df['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date']]
         st.write(incomplete_tasks_df)
 
-        # --- Question 5: Rule Violations per Employee with Task Identifier, URL, and Violation Type ---
-        st.subheader(f"Q5: How many tasks violated rules, and who are the responsible employees on {report_date.strftime('%B %d, %Y')}?")
+        # --- Question 5: Duplicate Task Detection ---
+        st.subheader(f"Q5: Are there any duplicate tasks that might indicate redundant work on {report_date.strftime('%B %d, %Y')}?")
+        df['Employee Name Cleaned'] = df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+        duplicates_within_employee = df.groupby(['Tasks Completed', 'Employee Name Cleaned']).filter(lambda x: len(x) > 1 and x['Tasks Completed'].iloc[0] != '')
+        duplicates_within_employee = duplicates_within_employee[['Tasks Completed', 'Employee Name', 'Task Identifier']]
+        df['Task Title'] = df['Tasks Completed'].where(df['Tasks Completed'] != '', df['Incomplete Tasks'])
+        duplicates_across_employees = df.groupby('Task Title').filter(lambda x: len(x) > 1 and x['Task Title'].iloc[0] != '')
+        duplicates_across_employees = duplicates_across_employees[['Task Title', 'Employee Name', 'Task Identifier', 'Task Status']]
+
+        st.write("**Duplicates within the same employee (Completed Tasks):**")
+        if not duplicates_within_employee.empty:
+            st.write(duplicates_within_employee)
+        else:
+            st.write("No duplicates within the same employee.")
+
+        st.write("**Duplicates across employees (Completed or Incomplete Tasks):**")
+        if not duplicates_across_employees.empty:
+            st.write(duplicates_across_employees)
+        else:
+            st.write("No duplicates across employees.")
+
+        # --- Question 6: Rule Violations per Employee with Task Identifier, URL, and Violation Type ---
+        st.subheader(f"Q6: How many tasks violated rules, and who are the responsible employees on {report_date.strftime('%B %d, %Y')}?")
         rule_violations_df = df[df['Rules Violated'] == 'Yes'][['Employee Name', 'Task Identifier', 'Rules Violated URLs', 'Violation Type']]
         rule_violations_summary = rule_violations_df.groupby('Employee Name').size().reset_index(name='Rule Violations')
 
@@ -561,14 +469,13 @@ if uploaded_file is not None:
                           labels={'Rule Violations': 'Number of Rule Violations'},
                           color='Employee Name',
                           color_discrete_sequence=set1_colors)
-            fig4.update_layout(xaxis_title='Employee Name', yaxis_title='Number of Rule Violations', xaxis_tickangle=-45, showlegend=False,
-                               paper_bgcolor='#2a2a3d', plot_bgcolor='#2a2a3d', font=dict(color='#ffffff'))
+            fig4.update_layout(xaxis_title='Employee Name', yaxis_title='Number of Rule Violations', xaxis_tickangle=-45, showlegend=False)
             st.plotly_chart(fig4, use_container_width=True)
         else:
             st.write("No rule violations found.")
 
-        # --- Question 6: Completed Tasks with Due Date, Task Identifier, and URL ---
-        st.subheader(f"Q6: Which tasks were completed, and what are their due dates, task identifiers, and URLs on {report_date.strftime('%B %d, %Y')}?")
+        # --- Question 7: Completed Tasks with Due Date, Task Identifier, and URL ---
+        st.subheader(f"Q7: Which tasks were completed, and what are their due dates, task identifiers, and URLs on {report_date.strftime('%B %d, %Y')}?")
         completed_tasks_df = df[df['Tasks Completed'] != ''][['Employee Name', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs']]
         st.write(completed_tasks_df)
 
