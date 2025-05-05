@@ -207,7 +207,7 @@ component_department_map = {
     "67bab809e8bc928dabdda799": "Network, IT and Internal Support",
     "67bab786e8bc928dabdd9cfa": "Network, IT and Internal Support",
     "67bab30fe8bc928dabdd4ba8": "Network, IT and Internal Support",
-    "67b9af251a20cc50f3b630cb": "Network, IT and Internal Support",
+    "67bab404e8bc928dabdd5686": "Network, IT and Internal Support",
     "67baba17e8bc928dabddbb7a": "Network, IT and Internal Support",
     "67bab78ce8bc928dabdd9db5": "Operations & Support",
     "67bab81ce8bc928dabdda8fe": "Operations & Support",
