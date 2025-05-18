@@ -9,6 +9,7 @@ import xlsxwriter
 import logging
 import os
 import tempfile
+import requests
 
 # Set up logging to help debug issues
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -195,8 +196,50 @@ st.sidebar.header("Filter Options")
 st.sidebar.markdown("### Refine Your View")
 show_table_overview = st.sidebar.checkbox("Show Table Overview", value=True)
 
-# Current date for validation (May 06, 2025)
-current_date = date(2025, 5, 6)
+# Current date for validation (May 18, 2025, 05:45 PM +06)
+current_date = date(2025, 5, 18)
+
+# Name mapping dictionary
+name_mapping = {
+    "Fahim Hasan Shah": "Md. Fahim Hasan Shah",
+    "Niloy Ahmed": "Sohanur Rahman (Niloy)",
+    "MD. Rezwanul Haque": "Md. Rezwanul Haque",
+    "Sabbir": "Md. Shariar Hossen",
+    "Sabbir Hossen": "Md. Shariar Hossen",
+    "MD Arman Al Sharif": "Md. Arman Al Sharif",
+    "Md. Sohel Rana": "Md. Sohel Rana",
+    "Tanvir Islam": "Tanvir Islam",
+    "Badhon Kumar Roy": "Badhon Kumar Roy",
+    "Md. Muyed Moktadir": "Md. Muyed Moktadir Chowdhury",
+    "Md. Ariful Islam": "Md. Ariful Islam (Rafi)",
+    "Sakib Shahriar": "Md. Sakib Shahriar"
+}
+
+# Employee code mapping dictionary (based on mapped names)
+employee_code_mapping = {
+    "Tanvir Islam": 10003,
+    "Md. Ariful Islam (Rafi)": 10005,
+    "Md. Sakib Shahriar": 10013,
+    "Md. Shariar Hossen": 10014,
+    "Md. Sohel Rana": 10016,
+    "Md Sajibur Rahman": 10018,
+    "Salma Nashin Esha": 10017,
+    "Md. Fahim Hasan Shah": 10019,
+    "Md. Rezwanul Haque": 10020,
+    "Md. Rezaul Karim": 10021,
+    "Md. Jobayer Rahman": 10025,
+    "Sohanur Rahman (Niloy)": 10026,
+    "Md Redwanul Hasan": 10024,
+    "Md. Asif Saharwar": 10027,
+    "Towfiqur Rahman": 10028,
+    "Md. Arman Al Sharif": 10006,
+    "Badhon Kumar Roy": 10011,
+    "Md. Muyed Moktadir Chowdhury": 10004,
+    "Md. Shezan Mahmud": 20001,
+    "Md. Nazim Mahmud": 20002,
+    "Md. Sadik": 30001,
+    "Md Ridwanul Islam": 30002
+}
 
 # Component-to-Department Mapping
 component_department_map = {
@@ -278,13 +321,13 @@ component_department_map = {
     "67bab44be8bc928dabdd5c1a": "Software Development"
 }
 
-# Department heads mapping
+# Department heads mapping (using mapped names)
 department_heads_mapping = {
-    "Network, IT and Internal Support": "Fahim Hasan Shah",
+    "Network, IT and Internal Support": "Md. Fahim Hasan Shah",
     "Operations & Support": "Md. Arman Al Sharif",
     "HR, Admin, Finance & Accounts": "Md. Sohel Rana",
     "Software Development": "Tanvir Islam",
-    "Production & Media": "Md. Shezan Mahmud Tomal, Shariar Hossen",
+    "Production & Media": "Md. Shezan Mahmud, Md. Shariar Hossen",
     "Creative Marketing": "Sunnyat Ali",
     "Retail & Business": "Sunnyat Ali"
 }
@@ -328,11 +371,16 @@ if uploaded_file is not None:
 
                     # Get basic task info
                     employee_raw = item.get("assignee", "Unassigned")
-                    if employee_raw != "Unassigned" and "," in employee_raw:
-                        last_name, first_name = employee_raw.split(",", 1)
+                    # Clean up the name by removing leading/trailing commas and spaces
+                    employee_cleaned = employee_raw.strip(',').strip()
+                    if employee_cleaned != "Unassigned" and "," in employee_cleaned:
+                        last_name, first_name = employee_cleaned.split(",", 1)
                         employee = f"{first_name.strip()} {last_name.strip()}"
                     else:
-                        employee = employee_raw
+                        employee = employee_cleaned
+
+                    # Apply name mapping
+                    mapped_employee = name_mapping.get(employee, employee)
 
                     component_id = item.get("component")
                     department = component_department_map.get(component_id, "Unknown")
@@ -342,7 +390,7 @@ if uploaded_file is not None:
                     task_identifier = item.get("identifier", "No ID")
                     estimation = item.get("estimation", 0)
                     reported_time = item.get("reportedTime", 0)
-                    comment = item.get("comment", "")  # New field for comments
+                    comment = item.get("comment", "")
 
                     # Determine if comment exists
                     has_comment = "Yes" if comment and comment.strip() else "No"
@@ -380,9 +428,40 @@ if uploaded_file is not None:
                     incomplete_tasks = task_title if is_incomplete else ""
                     incomplete_task_urls = task_url if is_incomplete else ""
 
+                    # Check for rules violation and determine violation types
+                    rules_violated = "No"
+                    rules_violated_urls = ""
+                    violation_types = []
+                    # Rule 1: Missing Component
+                    if not component_id or department == "Unknown":
+                        rules_violated = "Yes"
+                        rules_violated_urls = task_url
+                        violation_types.append("Missing Component")
+                    # Rule 2: Missing Due Date
+                    if due_date_dt is None:
+                        rules_violated = "Yes"
+                        rules_violated_urls = task_url
+                        violation_types.append("Missing Due Date")
+                    # Rule 3: Missing Comment after Status Update
+                    if not comment or not comment.strip():
+                        rules_violated = "Yes"
+                        rules_violated_urls = task_url
+                        violation_types.append("Missing Comment")
+
+                    # Join violation types if there are multiple
+                    violation_type = ", ".join(violation_types) if violation_types else ""
+
+                    # Append "[Rule Violator]" to employee name if rules are violated
+                    if rules_violated == "Yes":
+                        mapped_employee = f"{mapped_employee} [Rule Violator]"
+
+                    # Assign employee code based on mapped name (before adding [Rule Violator])
+                    employee_code = employee_code_mapping.get(mapped_employee.split(" [Rule Violator]")[0], None)
+
                     # Add to processed data
                     processed_data.append({
-                        "Employee Name": employee,
+                        "Employee Name": mapped_employee,
+                        "Employee Code": str(employee_code) if employee_code is not None else None,
                         "Department Name": department,
                         "Department Head": department_head,
                         "Task Identifier": task_identifier,
@@ -392,6 +471,9 @@ if uploaded_file is not None:
                         "Incomplete Tasks": incomplete_tasks,
                         "Incomplete Task URLs": incomplete_task_urls,
                         "Due Date": due_date_dt.strftime('%Y-%m-%d') if due_date_dt else "",
+                        "Rules Violated": rules_violated,
+                        "Rules Violated URLs": rules_violated_urls,
+                        "Violation Type": violation_type,
                         "Estimated Time": estimation,
                         "Reported Time": reported_time,
                         "Comments": has_comment,
@@ -416,15 +498,26 @@ if uploaded_file is not None:
                     modified_on_ts = item.get("modifiedOn")
                     modified_on_dt = datetime.fromtimestamp(modified_on_ts / 1000, pytz.utc).astimezone(bangladesh_tz) if modified_on_ts else None
                     employee_raw = item.get("assignee", "Unassigned")
-                    employee = employee_raw.split(",", 1)[-1].strip() + " " + employee_raw.split(",", 1)[0].strip() if "," in employee_raw and employee_raw != "Unassigned" else employee_raw
+                    # Clean up the name by removing leading/trailing commas and spaces
+                    employee_cleaned = employee_raw.strip(',').strip()
+                    employee = employee_cleaned.split(",", 1)[-1].strip() + " " + employee_cleaned.split(",", 1)[0].strip() if "," in employee_cleaned and employee_cleaned != "Unassigned" else employee_cleaned
+
+                    # Apply name mapping
+                    mapped_employee = name_mapping.get(employee, employee)
+
                     component_id = item.get("component")
                     department = component_department_map.get(component_id, "Unknown")
                     task_title = item.get("title", "No Title")
                     status = item.get("status", "Unknown")
                     comment = item.get("comment", "")
 
+                    # Assign employee code based on mapped name
+                    employee_code = employee_code_mapping.get(mapped_employee, None)
+
                     if employee not in employee_tasks or modified_on_dt > employee_tasks[employee].get("last_updated", datetime.min):
                         employee_tasks[employee] = {
+                            "mapped_employee": mapped_employee,
+                            "employee_code": employee_code,
                             "department": department,
                             "department_head": department_heads_mapping.get(department, "N/A"),
                             "current_work": task_title,
@@ -438,13 +531,14 @@ if uploaded_file is not None:
 
             for employee, details in employee_tasks.items():
                 processed_data.append({
-                    "Employee Name": employee,
+                    "Employee Name": details["mapped_employee"],
+                    "Employee Code": str(details["employee_code"]) if details["employee_code"] is not None else None,
                     "Department Name": details["department"],
                     "Department Head": details["department_head"],
                     "Current Work": details["current_work"],
                     "Last Status": details["last_status"],
                     "Last Updated": details["last_updated"].strftime('%Y-%m-%d %H:%M') if details["last_updated"] else "",
-                    "Comment": details["comment"]
+                    "Comment": details["comment"] or "No comment"
                 })
 
             return processed_data
@@ -464,6 +558,7 @@ if uploaded_file is not None:
                 incomplete = df[df['Task Status'] == 'Incomplete'].shape[0]
                 in_progress_not_due = df[df['Task Status'] == 'In Progress(not due yet)'].shape[0]
                 in_progress_no_due = df[df['Task Status'] == 'In Progress(No Due Date)'].shape[0]
+                rule_violations_count = df[df['Rules Violated'] == 'Yes'].shape[0]
 
                 # Display metrics in a card layout
                 col1, col2, col3, col4 = st.columns(4)
@@ -500,7 +595,7 @@ if uploaded_file is not None:
                         </div>
                     """, unsafe_allow_html=True)
 
-                col5, col6, col7 = st.columns(3)
+                col5, col6, col7, col8 = st.columns(4)
                 with col5:
                     st.markdown(f"""
                         <div class="overview-card">
@@ -523,6 +618,14 @@ if uploaded_file is not None:
                             <i class="fas fa-calendar-times"></i>
                             <h3>In Progress (No Due)</h3>
                             <p>{in_progress_no_due}</p>
+                        </div>
+                    """, unsafe_allow_html=True)
+                with col8:
+                    st.markdown(f"""
+                        <div class="overview-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Rule Violations</h3>
+                            <p>{rule_violations_count}</p>
                         </div>
                     """, unsafe_allow_html=True)
 
@@ -577,7 +680,7 @@ if uploaded_file is not None:
                 # Question 2: Task Completion Rate per Employee with Task Status Breakdown
                 st.subheader(f"Q2: What is the task completion rate per employee in the {period_label}?")
                 with st.container():
-                    q2_employees = ["All"] + sorted(df['Employee Name'].unique())
+                    q2_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
                     q2_selected_employee = st.selectbox("Filter by Employee (Q2)", q2_employees, key="q2_employee_filter")
                     df_q2 = df.copy()
                     if q2_selected_employee != "All":
@@ -587,18 +690,23 @@ if uploaded_file is not None:
                     'Task Status': [
                         lambda x: sum(x.str.startswith('DONE')),
                         lambda x: sum(~x.str.startswith('DONE'))
-                    ]
+                    ],
+                    'Employee Code': 'first'
                 }).reset_index()
-                employee_stats.columns = ['Employee Name', 'Tasks Completed', 'Incomplete Tasks']
+                employee_stats.columns = ['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Employee Code']
+                employee_stats['Employee Name'] = employee_stats['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+                employee_stats = employee_stats.groupby('Employee Name').sum().reset_index()
                 employee_stats['Total Tasks'] = employee_stats['Tasks Completed'] + employee_stats['Incomplete Tasks']
                 employee_stats['Completion Rate (%)'] = (employee_stats['Tasks Completed'] / employee_stats['Total Tasks'] * 100).round(2)
 
                 employee_task_status = df_q2.groupby(['Employee Name', 'Task Status']).size().unstack(fill_value=0).reset_index()
+                employee_task_status['Employee Name'] = employee_task_status['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+                employee_task_status = employee_task_status.groupby('Employee Name').sum().reset_index()
 
                 tab1, tab2 = st.tabs(["Completion Rate", "Task Status Breakdown"])
                 with tab1:
                     st.write("**Completion Rate per Employee:**")
-                    st.write(employee_stats[['Employee Name', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
+                    st.write(employee_stats[['Employee Name', 'Employee Code', 'Tasks Completed', 'Incomplete Tasks', 'Total Tasks', 'Completion Rate (%)']])
                     fig2 = px.bar(employee_stats, x='Employee Name', y='Completion Rate (%)',
                                   title=f'Task Completion Rate per Employee ({period_label})',
                                   labels={'Completion Rate (%)': 'Completion Rate (%)'},
@@ -650,29 +758,85 @@ if uploaded_file is not None:
                 # Question 4: Incomplete Tasks with Due Date
                 st.subheader(f"Q4: Which incomplete tasks need attention, and what are their direct URLs for review in the {period_label}?")
                 with st.container():
-                    q4_employees = ["All"] + sorted(df['Employee Name'].unique())
+                    q4_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
                     q4_selected_employee = st.selectbox("Filter by Employee (Q4)", q4_employees, key="q4_employee_filter")
                     df_q4 = df.copy()
                     if q4_selected_employee != "All":
                         df_q4 = df_q4[df_q4['Employee Name'].str.contains(q4_selected_employee, na=False)]
 
-                incomplete_tasks_df = df_q4[df_q4['Incomplete Tasks'] != ''][['Employee Name', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date', 'Comments']]
-                st.write(incomplete_tasks_df)
+                    # Ensure incomplete tasks are filtered correctly
+                    incomplete_tasks_df = df_q4[df_q4['Task Status'] == 'Incomplete'][['Employee Name', 'Employee Code', 'Department Name', 'Incomplete Tasks', 'Incomplete Task URLs', 'Due Date', 'Comments']]
+                    if not incomplete_tasks_df.empty:
+                        st.write("**Incomplete Tasks:**")
+                        st.dataframe(incomplete_tasks_df)
+                    else:
+                        st.write("No incomplete tasks found for the selected period.")
 
-                # Question 5: Completed Tasks with Due Date, Task Identifier, and URL
-                st.subheader(f"Q5: Which tasks were completed, and what are their due dates, task identifiers, and URLs in the {period_label}?")
+                            # Question 5: Rule Violations per Employee with Task Identifier, URL, and Violation Type
+            st.subheader(f"Q5: How many tasks violated rules, and who are the responsible employees in the {period_label}?")
+            with st.container():
+                q5_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                q5_selected_employee = st.selectbox("Filter by Employee (Q5)", q5_employees, key="q5_employee_filter")
+                df_q5 = df.copy()
+                if q5_selected_employee != "All":
+                    df_q5 = df_q5[df_q5['Employee Name'].str.contains(q5_selected_employee, na=False)]
+
+                rule_violations_df = df_q5[df_q5['Rules Violated'] == 'Yes'][['Employee Name', 'Employee Code', 'Task Identifier', 'Rules Violated URLs', 'Violation Type']]
+                rule_violations_df['Employee Name'] = rule_violations_df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True)
+                rule_violations_summary = rule_violations_df.groupby('Employee Name').size().reset_index(name='Rule Violations')
+
+                # API integration to send rule violation data with user feedback
+                if not rule_violations_df.empty:
+                    try:
+                        api_url = "http://103.51.129.55/api.php"
+                        payload = rule_violations_df.to_dict(orient='records')
+                        headers = {'Content-Type': 'application/json'}
+                        response = requests.post(api_url, json=payload, headers=headers, timeout=10)
+                        
+                        if response.status_code == 200:
+                            logger.info("Successfully sent rule violation data to API")
+                            st.success("Rule violation data successfully sent to the portal!")
+                        else:
+                            logger.error(f"Failed to send data to API. Status code: {response.status_code}, Response: {response.text}")
+                            st.error(f"Failed to send rule violation data to the portal. Status code: {response.status_code}")
+                    except requests.exceptions.RequestException as e:
+                        logger.error(f"Error sending data to API: {str(e)}")
+                        st.error(f"Error sending rule violation data to the portal: {str(e)}")
+
+                if not rule_violations_df.empty:
+                    st.write("**Rule Violations Summary:**")
+                    st.write(rule_violations_summary)
+                    st.write("**Details of Rule Violations:**")
+                    st.write(rule_violations_df)
+                    fig5 = px.bar(rule_violations_summary, x='Employee Name', y='Rule Violations',
+                                title=f'Rule Violations per Employee ({period_label})',
+                                labels={'Rule Violations': 'Number of Rule Violations'},
+                                color='Employee Name',
+                                color_discrete_sequence=set1_colors)
+                    fig5.update_layout(xaxis_title='Employee Name', yaxis_title='Number of Rule Violations', xaxis_tickangle=-45, showlegend=False,
+                                    font=dict(color='#f9fafb'))
+                    st.plotly_chart(fig5, use_container_width=True)
+                else:
+                    st.write("No rule violations found for the selected period.")
+
+                # Question 6: Completed Tasks with Due Date, Task Identifier, and URL
+                st.subheader(f"Q6: Which tasks were completed, and what are their due dates, task identifiers, and URLs in the {period_label}?")
                 with st.container():
-                    q5_employees = ["All"] + sorted(df['Employee Name'].unique())
-                    q5_selected_employee = st.selectbox("Filter by Employee (Q5)", q5_employees, key="q5_employee_filter")
-                    df_q5 = df.copy()
-                    if q5_selected_employee != "All":
-                        df_q5 = df_q5[df_q5['Employee Name'].str.contains(q5_selected_employee, na=False)]
+                    q6_employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
+                    q6_selected_employee = st.selectbox("Filter by Employee (Q6)", q6_employees, key="q6_employee_filter")
+                    df_q6 = df.copy()
+                    if q6_selected_employee != "All":
+                        df_q6 = df_q6[df_q6['Employee Name'].str.contains(q6_selected_employee, na=False)]
 
-                completed_tasks_df = df_q5[df_q5['Tasks Completed'] != ''][['Employee Name', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs', 'Comments']]
-                st.write(completed_tasks_df)
+                completed_tasks_df = df_q6[df_q6['Tasks Completed'] != ''][['Employee Name', 'Employee Code', 'Department Name', 'Tasks Completed', 'Task Identifier', 'Due Date', 'Completed Task URLs', 'Comments']]
+                if not completed_tasks_df.empty:
+                    st.write("**Completed Tasks:**")
+                    st.dataframe(completed_tasks_df)
+                else:
+                    st.write("No completed tasks found for the selected period.")
 
-                # Question 6: Comparison of Estimated vs Reported Time per Department
-                st.subheader(f"Q6: How does the estimated time compare to the reported time per department in the {period_label}?")
+                # Question 7: Comparison of Estimated vs Reported Time per Department
+                st.subheader(f"Q7: How does the estimated time compare to the reported time per department in the {period_label}?")
                 df['Estimated Time'] = pd.to_numeric(df['Estimated Time'], errors='coerce')
                 df['Reported Time'] = pd.to_numeric(df['Reported Time'], errors='coerce')
                 time_comparison = df.groupby('Department Name').agg({
@@ -688,11 +852,11 @@ if uploaded_file is not None:
                 st.write(time_comparison)
 
                 # Visualize: Bar chart for total estimated vs reported time
-                fig6 = go.Figure(data=[
+                fig7 = go.Figure(data=[
                     go.Bar(name='Total Estimated Time', x=time_comparison['Department Name'], y=time_comparison['Total Estimated Time'], marker_color=set1_colors[0]),
                     go.Bar(name='Total Reported Time', x=time_comparison['Department Name'], y=time_comparison['Total Reported Time'], marker_color=set1_colors[1])
                 ])
-                fig6.update_layout(
+                fig7.update_layout(
                     title=f'Total Estimated vs Reported Time per Department ({period_label})',
                     xaxis_title='Department Name',
                     yaxis_title='Time (hours)',
@@ -700,7 +864,7 @@ if uploaded_file is not None:
                     barmode='group',
                     font=dict(color='#f9fafb')
                 )
-                st.plotly_chart(fig6, use_container_width=True)
+                st.plotly_chart(fig7, use_container_width=True)
 
         if report_type == "Daily Report":
             # Date picker for selecting the report date
@@ -734,6 +898,7 @@ if uploaded_file is not None:
             # Define column order
             column_order = [
                 "Employee Name",
+                "Employee Code",
                 "Department Name",
                 "Department Head",
                 "Task Identifier",
@@ -743,6 +908,9 @@ if uploaded_file is not None:
                 "Incomplete Tasks",
                 "Incomplete Task URLs",
                 "Due Date",
+                "Rules Violated",
+                "Rules Violated URLs",
+                "Violation Type",
                 "Estimated Time",
                 "Reported Time",
                 "Comments"
@@ -758,7 +926,7 @@ if uploaded_file is not None:
                 df = df[df['Department Name'] == selected_department]
 
             with st.container():
-                employees = ["All"] + sorted(df['Employee Name'].unique())
+                employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
                 selected_employee = st.selectbox("Filter by Employee (Global)", employees)
                 if selected_employee != "All":
                     df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
@@ -854,6 +1022,7 @@ if uploaded_file is not None:
             # Define column order
             column_order = [
                 "Employee Name",
+                "Employee Code",
                 "Department Name",
                 "Department Head",
                 "Task Identifier",
@@ -863,6 +1032,9 @@ if uploaded_file is not None:
                 "Incomplete Tasks",
                 "Incomplete Task URLs",
                 "Due Date",
+                "Rules Violated",
+                "Rules Violated URLs",
+                "Violation Type",
                 "Estimated Time",
                 "Reported Time",
                 "Comments"
@@ -878,7 +1050,7 @@ if uploaded_file is not None:
                 df = df[df['Department Name'] == selected_department]
 
             with st.container():
-                employees = ["All"] + sorted(df['Employee Name'].unique())
+                employees = ["All"] + sorted(df['Employee Name'].str.replace(' \[Rule Violator\]', '', regex=True).unique())
                 selected_employee = st.selectbox("Filter by Employee (Global)", employees)
                 if selected_employee != "All":
                     df = df[df['Employee Name'].str.contains(selected_employee, na=False)]
@@ -958,13 +1130,13 @@ if uploaded_file is not None:
                     for index, row in dept_df.iterrows():
                         st.markdown(f'''
                             <div class="employee-card">
-                                <h4>{row["Employee Name"]}</h4>
+                                <h4>{row["Employee Name"]} (Code: {row["Employee Code"] if row["Employee Code"] is not None else "N/A"})</h4>
                                 <p><strong>Department:</strong> {row["Department Name"]}</p>
                                 <p><strong>Department Head:</strong> {row["Department Head"]}</p>
                                 <p><strong>Current Work:</strong> {row["Current Work"]}</p>
                                 <p><strong>Last Status:</strong> {row["Last Status"]}</p>
                                 <p><strong>Last Updated:</strong> {row["Last Updated"]}</p>
-                                <p><strong>Comment:</strong> {row["Comment"] or "No comment"}</p>
+                                <p><strong>Comment:</strong> {row["Comment"]}</p>
                             </div>
                         ''', unsafe_allow_html=True)
                     st.markdown('</div>', unsafe_allow_html=True)
