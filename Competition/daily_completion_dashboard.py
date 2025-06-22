@@ -21,107 +21,109 @@ bangladesh_tz = pytz.timezone('Asia/Dhaka')
 current_datetime = datetime.now(bangladesh_tz)
 current_date = current_datetime.date()
 
-# Custom CSS
+# Custom CSS with dark theme as default
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
     html, body, [class*="css"] {
         font-family: 'Poppins', sans-serif;
+        background-color: #1f2937 !important;
+        color: #f9fafb !important;
     }
     .main, .stApp {
-        background-color: #1f2937;
-        color: #f9fafb;
+        background-color: #1f2937 !important;
+        color: #f9fafb !important;
     }
     h1 {
-        color: #34d399;
-        font-size: 2.5em;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 1.5em;
+        color: #34d399 !important;
+        font-size: 2.5em !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        margin-bottom: 1.5em !important;
     }
     h2, h3, h4, h5, h6 {
-        color: #34d399;
-        font-weight: 600;
-        margin-bottom: 0.75em;
+        color: #34d399 !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.75em !important;
     }
     .stMarkdown, .stDataFrame {
-        color: #d1d5db;
+        color: #d1d5db !important;
     }
     .stDateInput, .stFileUploader, .stSelectbox, .stCheckbox, .stButton, .stMetric, .stExpander, .stPlotlyChart, .stRadio {
         margin-bottom: 2em !important;
-        padding: 0.5em;
+        padding: 0.5em !important;
     }
     .stContainer {
         margin-bottom: 2em !important;
-        padding: 1em;
+        padding: 1em !important;
     }
     .overview-card {
-        background-color: #374151;
-        border-radius: 12px;
-        padding: 20px;
-        margin: 10px 0;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        color: #f9fafb;
-        transition: transform 0.2s;
-        min-height: 160px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-color: #374151 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        margin: 10px 0 !important;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+        text-align: center !important;
+        color: #f9fafb !important;
+        transition: transform 0.2s !important;
+        min-height: 160px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     .overview-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) !important;
     }
     .overview-card i {
-        color: #34d399;
-        font-size: 1.8em;
-        margin-bottom: 10px;
+        color: #34d399 !important;
+        font-size: 1.8em !important;
+        margin-bottom: 10px !important;
     }
     .overview-card h3 {
-        margin: 0;
-        font-size: 1em;
-        color: #34d399;
-        font-weight: 400;
-        white-space: normal;
-        text-align: center;
-        line-height: 1.2;
-        max-width: 90%;
+        margin: 0 !important;
+        font-size: 1em !important;
+        color: #34d399 !important;
+        font-weight: 400 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        max-width: 90% !important;
     }
     .overview-card p {
-        margin: 10px 0 0;
-        font-size: 1.8em;
-        font-weight: 600;
-        color: #f9fafb;
+        margin: 10px 0 0 !important;
+        font-size: 1.8em !important;
+        font-weight: 600 !important;
+        color: #f9fafb !important;
     }
     .dept-container {
-        background-color: #374151;
-        border-radius: 12px;
-        padding: 15px;
-        margin: 10px 0;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        background-color: #374151 !important;
+        border-radius: 12px !important;
+        padding: 15px !important;
+        margin: 10px 0 !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3) !important;
     }
     .employee-card {
-        background-color: #4b5563;
-        border-radius: 8px;
-        padding: 10px;
-        margin: 10px 0;
-        display: flex;
-        flex-direction: column;
+        background-color: #4b5563 !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+        margin: 10px 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
     .employee-card h4 {
-        margin: 0 0 5px;
-        color: #34d399;
-        font-weight: 600;
+        margin: 0 0 5px !important;
+        color: #34d399 !important;
+        font-weight: 600 !important;
     }
     .employee-card p {
-        margin: 2px 0;
-        color: #d1d5db;
+        margin: 2px 0 !important;
+        color: #d1d5db !important;
     }
     .stSelectbox, .stDateInput, .stFileUploader, .stCheckbox, .stButton, .stRadio {
         background-color: #374151 !important;
-        border-radius: 8px;
+        border-radius: 8px !important;
         color: #f9fafb !important;
     }
     .stSelectbox > div > div, .stDateInput > div > div, .stFileUploader > div > div, .stRadio > label {
@@ -129,61 +131,61 @@ st.markdown("""
         color: #f9fafb !important;
     }
     .stButton > button {
-        background-color: #34d399;
-        color: #1f2937;
-        border-radius: 8px;
-        font-weight: 600;
+        background-color: #34d399 !important;
+        color: #1f2937 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
     }
     .stButton > button:hover {
-        background-color: #6ee7b7;
+        background-color: #6ee7b7 !important;
     }
     .stDataFrame table {
-        background-color: #374151;
-        color: #f9fafb;
-        border-radius: 8px;
+        background-color: #374151 !important;
+        color: #f9fafb !important;
+        border-radius: 8px !important;
     }
     .stDataFrame th {
         background-color: #4b5563 !important;
         color: #34d399 !important;
-        font-weight: 600;
+        font-weight: 600 !important;
     }
     .stDataFrame td {
         color: #d1d5db !important;
     }
     .stMetric {
-        background-color: #374151;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 1em;
+        background-color: #374151 !important;
+        border-radius: 8px !important;
+        padding: 15px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        margin-bottom: 1em !important;
     }
     .stMetric label {
         color: #34d399 !important;
         font-weight: 600 !important;
-        white-space: normal;
-        line-height: 1.2;
-        font-size: 0.85em;
+        white-space: normal !important;
+        line-height: 1.2 !important;
+        font-size: 0.85em !important;
     }
     .stMetric div {
         color: #f9fafb !important;
         font-size: 1.3em !important;
     }
     .stTabs [role="tab"] {
-        color: #34d399;
-        font-weight: 600;
+        color: #34d399 !important;
+        font-weight: 600 !important;
     }
     .stTabs [role="tab"][aria-selected="true"] {
-        color: #f9fafb;
-        border-bottom: 2px solid #34d399;
+        color: #f9fafb !important;
+        border-bottom: 2px solid #34d399 !important;
     }
     .stExpander {
-        background-color: #374151;
-        border-radius: 8px;
-        color: #f9fafb;
+        background-color: #374151 !important;
+        border-radius: 8px !important;
+        color: #f9fafb !important;
     }
     .stExpander summary {
-        color: #34d399;
-        font-weight: 600;
+        color: #34d399 !important;
+        font-weight: 600 !important;
     }
     </style>
 """, unsafe_allow_html=True)
